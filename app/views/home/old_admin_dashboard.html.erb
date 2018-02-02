@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-6">
+        <center>managers</center>
+        <%= link_to 'add manager', new_employee_path %>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+            <% @managers.each do |mag| %>
+                <tr>
+                    <td><%= mag.name %></td>
+                    <td><%= mag.email %></td>
+                    <td>to be determined</td>
+                    <td><%= link_to 'edit', edit_employee_path(mag) %></td>
+                    <td><%= link_to 'delete', employee_path(mag), :method => :delete %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <center>pending orders</center>
+        <table>
+            <tr>
+                <th>client</th>
+                <th>amount</th>
+                <th>duration</th>
+            </tr>
+            <% @pending_orders.each do |ord| %>
+                <tr>
+                    <td><%= User.find(ord.user_id).name %></td>
+                    <td><%= ord.amount %></td>
+                    <td><%= ord.duration %></td>
+                    <td><%= link_to "assign", employees_path(ord) %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <center>Templates</center>
+        <%= link_to 'add template', new_template_path %>
+        <br>
+        <% @templates.each do |tem| %>
+            <%= tem.name %>
+            <img src=<%= tem.image.url %> alt="<%= tem.name %>" height='50px' width='50px'>
+            <%= link_to 'delete', template_path(tem), :method => :delete %> 
+            <br>
+        <% end %>
+    </div>
+    <div class="col-md-6">
+        <center>assigned orders</center>
+        <table>
+            <tr>
+                <th>client</th>
+                <th>manager</th>
+                <th>status</th>
+            </tr>
+            <% @employee_orders.each do |ord| %>
+                <tr>
+                    <td><%= User.find(Order.find(ord.order_id).user_id).name %></td>
+                    <td><%= Employee.find(ord.employee_id).name %></td>
+                    <td><%= Order.find(ord.order_id).status %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--<link href="toastr.css" rel="stylesheet">-->
+    <!--<script src="toastr.js"></script>-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  </head>
+
+  <body>
+    <% if notice.present? %>
+      <script type="text/javascript">
+        toastr["success"]("<%= notice %>")
+      </script>
+    <% end %>
+    <% if alert.present? %>
+      <script type="text/javascript">
+        toastr["error"]("<%= alert %>")
+      </script>
+    <% end %>
+    
+    <%= render 'layouts/header' %>
+    <%= yield %>
+  </body>
+</html>

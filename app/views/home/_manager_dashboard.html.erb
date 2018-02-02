@@ -1,0 +1,39 @@
+<div class="main-div">
+ <div id="wrapper">
+    <%= render 'layouts/sidebar' %>
+<% if @orders.present? %>
+    your orders
+    <table>
+        <tr>
+            <th>No.</th>
+            <th>Status</th>
+            <th>amount</th>
+            <th>deadline </th>
+        </tr>
+        <% @orders.each do |o| %>
+            <tr>
+                <td><%= o.id %></td>
+                <td><%= o.status %></td>
+                <td><%= o.amount %></td>
+                <td>
+                    <%= o.duration %> days from <%= o.created_at %>
+                </td>
+                <td><%= link_to "complete", new_order_attachment_path(o) %></td>
+            </tr>
+        <% end %>
+    </table>
+<% else %>
+    <h4>no orders yet</h4>
+<% end %>
+<div class="footer">
+        <div class="pull-right">
+            Developed by <a href="http://www.systemplus.com.pk/" target="_blank">System Plus</a>
+        </div>
+        <div>
+            <strong>Copyright</strong> Design360 &copy; 2018
+        </div>
+    </div>
+    </div>
+    
+</div>
+</div>

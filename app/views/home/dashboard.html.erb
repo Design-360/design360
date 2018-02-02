@@ -1,0 +1,8 @@
+
+<% if current_user %>
+    <%= render 'client_dashboard' %>
+<% elsif current_employee.role == "admin" %>
+    <%= render 'admin_dashboard' %>
+<% else %>
+    <%= render 'manager_dashboard' %>
+<% end %>

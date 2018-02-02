@@ -1,0 +1,89 @@
+<div class="main-div">
+ <div id="wrapper">
+    <%= render 'layouts/sidebar' %>
+orders
+<%= link_to 'place order', new_order_path %>
+<% if @orders.present? %>
+    <div class="row">
+        <div class="col-md-6">
+            your pending orders
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Status</th>
+                    <th>amount</th>
+                    <th>deadline</th>
+                </tr>
+                <% @pending_orders.each do |o| %>
+                    <tr>
+                        <td><%= o.id %></td>
+                        <td><%= o.status %></td>
+                        <td><%= o.amount %></td>
+                        <td><%= o.duration %></td>
+                        <td><%= link_to "edit", edit_order_path(o) %></td>
+                        <td><%= link_to "delete",order_path(o), :method => :delete %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+        <div class="col-md-6">
+            your complete orders
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>status</th>
+                    <th colspan="2">Files</th>
+                </tr>
+                <% @complete_orders.each do |o| %>
+                    <tr>
+                        <td><%= o.id %></td>
+                        <td><%= o.status %></td>
+                        <% if Attachment.where(:order_id => o.id).first.image.present? %>
+                            <td><%= link_to "image", Attachment.where(:order_id => o.id).first.image.url %></td>
+                        <% end %>
+                        <% if Attachment.where(:order_id => o.id).first.pdf.present? %>
+                            <td><%= link_to "pdf", Attachment.where(:order_id => o.id).first.pdf.url %></td>
+                        <% end %>
+                        <td><%= link_to "accept", order_path(o, :order => {:status => "accepted", :template_id => o.template_id}), :method => :put %></td>
+                        <td><%= link_to "revise", order_path(o, :order => {:status => "in_revision", :template_id => o.template_id}), :method => :put %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <center>accepted orders</center>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Status</th>
+                    <th>amount</th>
+                    <th>deadline</th>
+                </tr>
+                <% @accepted_orders.each do |o| %>
+                    <tr>
+                        <td><%= o.id %></td>
+                        <td><%= o.status %></td>
+                        <td><%= o.amount %></td>
+                        <td><%= o.duration %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    </div>
+<% else %>
+    <h4>no orders yet</h4>
+<% end %>
+<div class="footer">
+        <div class="pull-right">
+            Developed by <a href="http://www.systemplus.com.pk/" target="_blank">System Plus</a>
+        </div>
+        <div>
+            <strong>Copyright</strong> Design360 &copy; 2018
+        </div>
+    </div>
+    </div>
+    
+</div>
+</div>

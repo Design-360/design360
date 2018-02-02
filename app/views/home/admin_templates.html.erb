@@ -1,0 +1,42 @@
+<div class="main-div">
+ <div id="wrapper">
+    <%= render 'layouts/sidebar' %>
+    <div class="row wrapper border-bottom white-bg page-heading" id="Templates">
+        <div class="col-lg-10">
+            <h2>Templates</h2>
+        </div>
+        <div class="col-lg-2">
+            <%= link_to 'Add Template', new_template_path, class:"btn btn-primary", style:"margin-top:15px;" %>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight"  style="padding-bottom:40px;">
+        <div class="row">
+            <% @templates.each do |tem| %>
+            <div class="col-lg-3">
+                <div class="contact-box center-version">
+                    <a style="cursor:default;">
+                        <img alt="image" class="" src="<%= tem.image.url %>" alt="<%= tem.name %>">
+                        <h3 class="m-b-xs"><strong><%= tem.name %></strong></h3>
+                    </a>
+                    <div class="contact-box-footer">
+                        <div class="m-t-xs btn-group">
+                            <%= link_to "<i class='fa fa-trash'></i>  Delete".html_safe, template_path(tem), :method => :delete, :class => "btn btn-xs btn-danger" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="pull-right">
+            Developed by <a href="http://www.systemplus.com.pk/" target="_blank">System Plus</a>
+        </div>
+        <div>
+            <strong>Copyright</strong> Design360 &copy; 2018
+        </div>
+    </div>
+    </div>
+    
+</div>
+</div>

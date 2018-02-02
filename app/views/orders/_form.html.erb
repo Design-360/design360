@@ -1,0 +1,8 @@
+<%= form_for @order do |f| %>
+    
+    Amount: <%= f.text_field :amount %><br>
+    duration: <%= f.number_field :duration %><br>
+    template: <%= f.select :template_id, @templates.all.collect {|t| [t.name, t.id] }, { include_blank: true } %>
+    <br>
+    <%= f.submit %>
+<% end %>

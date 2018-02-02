@@ -1,0 +1,6 @@
+<%= form_for [@order,@attachment] do |f| %>
+    
+    Image: <%= f.file_field :image %><br>
+    PDF: <%= f.file_field :pdf %><br>
+    <%= f.submit %>
+<% end %>

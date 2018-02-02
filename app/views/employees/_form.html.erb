@@ -1,0 +1,29 @@
+        <div class="ibox-content">
+            <%= form_for @manager,  :html => {:class => "form-horizontal"} do |f| %>
+                <div class="form-group"><label class="col-lg-2 control-label">Name</label>
+
+                    <div class="col-lg-10"><%= f.text_field :name, class:"form-control" %>
+                    </div>
+                </div>
+                <div class="form-group"><label class="col-lg-2 control-label">Email</label>
+
+                    <div class="col-lg-10"><%= f.text_field :email, class:"form-control" %>
+                    </div>
+                </div>
+                <div class="form-group"><label class="col-lg-2 control-label">Password</label>
+
+                    <div class="col-lg-10"><%= f.text_field :password, class:"form-control" %>
+                    </div>
+                </div>
+                <div class="form-group"><label class="col-lg-2 control-label">Password Confirm</label>
+
+                    <div class="col-lg-10"><%= f.text_field :password_confirmation, class:"form-control" %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <%= f.submit "Add Manager", class:"btn btn-primary btn-md" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>

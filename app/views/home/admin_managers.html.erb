@@ -1,0 +1,71 @@
+<div class="main-div">
+ <div id="wrapper">
+    <%= render 'layouts/sidebar' %>
+    <div class="row wrapper border-bottom white-bg page-heading" id="Managers">
+        <div class="col-lg-10">
+            <h2>Managers</h2>
+        </div>
+        <div class="col-lg-2">
+            <%= link_to 'Add Manager', new_employee_path, class:"btn btn-primary", style:"margin-top:15px;" %>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>All Managers</h5>
+                    
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+
+        
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover dataTables-example managers" >
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @managers.each do |mag| %>
+                <tr>
+                    <td><%= mag.name %></td>
+                    <td><%= mag.email %></td>
+                    <td>to be determined</td>
+                    <td><%= link_to 'Edit', edit_employee_path(mag) %></td>
+                    <td><%= link_to 'Delete', employee_path(mag), :method => :delete %></td>
+                </tr>
+                <% end %>
+                </tbody>
+                
+                </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="pull-right">
+            Developed by <a href="http://www.systemplus.com.pk/" target="_blank">System Plus</a>
+        </div>
+        <div>
+            <strong>Copyright</strong> Design360 &copy; 2018
+        </div>
+    </div>
+    </div>
+    
+</div>
+</div>

@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require toastr
+ *= require_datatables.min
+ *= require_tree .
+ *= require_self
+ */
+
+
+.form-control, .single-line {
+    background-color: transparent !important;
+}
+
+    .log-label{
+    -webkit-transition: 0.1s !important; /* Safari */
+    -webkit-transition-timing-function: linear !important; /* Safari */
+    transition: 0.1s !important;
+    transition-timing-function: linear !important;
+    z-index:-1;
+    cursor:text;
+    color: #ababab;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-left: 15px;
+    position: absolute;
+    padding: 0 5px;
+    font-size: 17px;}
+    
+    .label-after{
+    -webkit-transition: 0.1s !important; /* Safari */
+    -webkit-transition-timing-function: linear !important; /* Safari */
+    transition: 0.1s !important;
+    transition-timing-function: linear !important;
+    z-index:1 !important;
+    background: #fff !important;
+    color: #4771FA !important;;
+    font-size: 14px !important;;
+    margin-top: -10px !important;;
+    }
+    
+
+.btn-fb {
+    margin-bottom: 20px;
+    width:100%;
+  color: #fff;
+  background-color: #3B5998;
+}
+.btn-fb:hover{
+    background-color: #3B5998;
+    color: #fff;
+}
+.btn-google {
+    width:100%;
+    background-color: #db3236;
+    color: #fff;
+}
+.btn-google:hover, .btn-google:focus{
+    background-color: #db3236;
+    color: #fff;
+}
+.form-horizontal .control-label {
+    text-align: left !important;}
