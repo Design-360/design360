@@ -25,7 +25,7 @@ class EmployeesController < ApplicationController
             EmployeeMailer.sample_email(@manager,params[:employee][:password]).deliver
             redirect_to dashboard_path, notice: 'Manager was successfully created.'
         else
-            redirect_to dashboard_path, alert: "Error, please check the credentials."
+            redirect_to dashboard_path, alert: "Mailer Error! Manager was created but Main didn't go!"
         end
     end
     
