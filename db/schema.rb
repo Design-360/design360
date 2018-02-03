@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180126144511) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "attachments", force: :cascade do |t|
     t.integer "order_id"
     t.integer "employee_id"
