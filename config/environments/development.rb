@@ -5,7 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+config.action_mailer.default_url_options = { host: 'https://floating-spire-35994.herokuapp.com'}
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -21,15 +21,13 @@ Rails.application.configure do
       'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
     }
   else
-    config.action_controller.perform_caching = false
 
     config.cache_store = :null_store
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -52,10 +50,11 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
-  config.action_mailer.default_url_options = { :host => "https://design360-tayyab841.c9users.io" }
+  config.action_mailer.default_url_options = { :host => "https://floating-spire-35994.herokuapp.com" }
   # Paperclip.options[:command_path] = "/usr/local/bin/"
   
   config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true 
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :address => 'smtpout.secureserver.net',
