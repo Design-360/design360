@@ -29,6 +29,10 @@ $(document).on('turbolinks:load', function() {
         $('.label-email').addClass('label-after');
         $('#input-email').css('border-color','#4771FA');
     });
+    $('#input-name').on('focus', function(){
+        $('.label-name').addClass('label-after');
+        $('#input-name').css('border-color','#4771FA');
+    });
     $('#input-pass').on('focus', function(){
         $('.label-pass').addClass('label-after');
         $('#input-pass').css('border-color','#4771FA');
@@ -46,6 +50,18 @@ $(document).on('turbolinks:load', function() {
     else if ( $('#input-email').val() != '' ) {
        $('.label-email').addClass('label-after');
        $('#input-email').css('border-color','#4771FA');
+    }
+    
+    });
+    $('#input-name').on('focusout', function(){
+    if ( $('#input-name').val() == '' ) {
+        $('.label-name').removeClass('label-after');
+        $('#input-name').css('border-color','#e5e6e7');
+            
+    }
+    else if ( $('#input-name').val() != '' ) {
+       $('.label-name').addClass('label-after');
+       $('#input-name').css('border-color','#4771FA');
     }
     
     });

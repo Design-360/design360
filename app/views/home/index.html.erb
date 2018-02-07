@@ -1,616 +1,417 @@
-<div id="page-top" class="landing-page no-skin-config">
-    <div class="navbar-wrapper">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header page-scroll">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/"><img src="logo-360.png"></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/">Home</a></li>
-                    <% if user_signed_in? or employee_signed_in? %>
-                        <li><a href="/dashboard">Dashboard</a></li>
-                        <% if current_user %>
-                        <li><a></a>Signed in as <strong><%= current_user.name %></strong>(<%= current_user.email %>)</a>
-                        </li>
-                        <li><a href="/users/edit">Edit Profile</a></li>
-                        <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
-                    <% end %>
-                    <% if current_employee %>
-                        <li><a>Signed in as <strong><%= current_employee.email %></strong></a>
-                        </li>
-                        <li><a href="/employees/edit">Edit Profile</a></li>
-                        <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
-                    <% end %>
+<div class="landing-page">
+    <div class="main-wrapper">
+     <header class="header header--bg">
+      <div class="container-fluid">
+        <nav class="navbar">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="/"><img src="logo-360.png"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav pull-right">
+               <li><a href="/">Home</a></li>
+                <% if user_signed_in? or employee_signed_in? %>
+                    <% if current_user %>
+                    <li><a href="/clients/dashboard">Dashboard</a></li>
+                    <li><a>Signed in as <strong><%= current_user.name %></strong>(<%= current_user.email %>)</a>
+                    </li>
+                    <li><a href="/users/edit">Edit Profile</a></li>
+                    <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
+                  <% end %>
+                  <% if current_employee %>
+                    <% if current_employee.admin? %>
+                      <li><a href="/admin/dashboard">Dashboard</a></li>
                     <% else %>
-                        <li><a href="/employees/sign_in">Login</a></li>
+                      <li><a href="/managers/dashboard">Dashboard</a></li>
                     <% end %>
-                    </ul>
-                </div>
-            </div>
+                    <li><a>Signed in as <strong><%= current_employee.email %></strong></a>
+                    </li>
+                    <li><a href="/employees/edit">Edit Profile</a></li>
+                    <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
+                  <% end %>
+                <% else %>
+                    <li><a style="cursor:default;">Login As:</a></li>
+                    <li><a href="/employees/sign_in">Employee</a></li>
+                    <li><a href="/users/sign_in">Client</a></li>
+                <% end %>
+            </ul>
+          </div>
         </nav>
-    </div>
-
-<div id="inSlider" class="carousel carousel-fade" data-ride="carousel" style="height:100vh;">
-    <!--<ol class="carousel-indicators">-->
-    <!--    <li data-target="#inSlider" data-slide-to="0" class="active"></li>-->
-    <!--    <li data-target="#inSlider" data-slide-to="1"></li>-->
-    <!--</ol>-->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>We are Expert<br/>
-                        of Designing to<br/>
-                        Brand and Market <br/>
-                        your Business and<br/>
-                        Industry</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                    <p>
-                        <a class="btn btn-lg btn-default" href="#" role="button" style="color:#4771FA;">READ MORE</a>
-                        
-                    </p>
+        <div class="header__content text-center">
+          <h1 class="header__content__title">Design360</h1>
+          <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+          <a class="button button--margin-right button--hover" href="#">LEARN MORE</a>
+          <a class="button button--hover" href="#" >CONTACT</a>
+        </div>
+      </div>
+    </header>
+     <section class="about">
+      <div class="container-fluid" style="padding-right:0;">
+        <div class="page-section">
+          <div class="text-center">
+            <h2 class="page-section__title">ABOUT Design360</h2>
+            <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          </div>
+          <div class="row gutters-50">
+            <div class="about--narrow">
+              <div class="col-md-6">
+                <img class="img-responsive" src="about-pic.png" alt="">
+              </div>
+              <div class="col-md-6 about__extra-padding">
+                <h3 class="about__content-title">We Believe In Simple Design</h3>
+                <p class="about__content-subTitle">Trusted comes with tons of custom widgets, color options, font control and 
+                  much more.</p>
+                  <p class="about__content-paragraph">We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.</p>
+                  
                 </div>
-                <div class="carousel-image wow zoomIn">
-                    <center><img src="design.jpg" width="70%"/></center>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    <section class="contact contact--bg">
+      <div class="container">
+        <div class="page-section text-center">
+          <h2 class="page-section__title--white">We Always Work To Make A Difference</h2>
+          <p class="page-section__paragraph--white">If you like our works and have a project,contact us now</p>
+          <a class="button button--hover" href="#">CONTACT US</a>
+        </div>
+      </div>
+    </section>
+    <section class="service">
+      <div class="container-fluid c-service">
+        <div class="page-section text-center">
+          <h2 class="page-section__title">SERVICES WE OFFER</h2>
+          <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+          <div class="row gutters-40">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <i class="fa fa-bullhorn fa-2x"></i>
+                <h4 class="service__title">Growing Business</h4>
+                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <i class="fa fa-clock fa-2x"></i>
+                <h4 class="service__title">Save Time</h4>
+                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <i class="fa fa-code fa-2x"></i>
+                <h4 class="service__title">Free Support</h4>
+                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </div>
+          </div>
+          <div class="row gutters-40">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <i class="fa fa-camera fa-2x"></i>
+                <h4 class="service__title">Responsive Design</h4>
+                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <i class="fa fa-chess-knight fa-2x"></i>
+                <h4 class="service__title">Target Fill Up</h4>
+                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <i class="fas fa-mobile-alt fa-2x"></i>
+                <h4 class="service__title">Graphic Design</h4>
+                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="overview overview--bg">
+        <div class="container-fluid">
+          <div class="page-section">
+            <div class="overview__wrapper text-center">
+              <ul>
+                <li>
+                  <h1 class="overview__number">550</h1>
+                  <p class="overview__title">CUP OF COFFEE</p>
+                </li>
+                <li>
+                  <h1 class="overview__number">800</h1>
+                  <p class="overview__title">PROJECT DONE</p>
+                </li>
+                <li>
+                  <h1 class="overview__number">400</h1>
+                  <p class="overview__title">HAPPY CLIENT</p>
+                </li>
+                <li>
+                  <h1 class="overview__number">3550</h1>
+                  <p class="overview__title">AWARDS WIN</p>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+     <div class="container c-project">
+        <section class="project">
+          <div class="page-section">
+            <div class="text-center">
+              <h2 class="page-section__title">FEATURED PROJECT</h2>
+              <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="row gutters-50">
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="featured-project-pic1.png" target="_blank">
+                    <img class="img-responsive" src="featured-project-pic1.png" alt="">
+                    <div class="caption">
+                      <h4 class="project__title">DESIGN</h4>
+                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                    </div>
+                  </a>
                 </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="featured-project-pic2.png" target="_blank">
+                    <img class="img-responsive" src="featured-project-pic2.png" alt="">
+                    <div class="caption">
+                      <h4 class="project__title">DESIGN</h4>
+                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="featured-project-pic3.png" target="_blank">
+                    <img class="img-responsive" src="featured-project-pic3.png" alt="">
+                    <div class="caption">
+                      <h4 class="project__title">DESIGN</h4>
+                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
-            <!-- Set background for slide in css -->
-            <div class="header-back one"></div>
-
+            <div class="row gutters-50">
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="featured-project-pic4.png" target="_blank">
+                    <img class="img-responsive" src="featured-project-pic4.png" alt="">
+                    <div class="caption">
+                      <h4 class="project__title">DESIGN</h4>
+                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="featured-project-pic5.png" target="_blank">
+                    <img class="img-responsive" src="featured-project-pic5.png" alt="">
+                    <div class="caption">
+                      <h4 class="project__title">DESIGN</h4>
+                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="featured-project-pic6.png" target="_blank">
+                    <img class="img-responsive" src="featured-project-pic6.png" alt="">
+                    <div class="caption">
+                      <h4 class="project__title">DESIGN</h4>
+                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>  
+    <div class="container-fluid c-team">
+        <section class="container team">
+          <div class="page-section text-center">
+            <h2 class="page-section__title--white">CREATIVE TEAM</h2>
+            <p class="page-section__paragraph--white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="row gutters-50">
+              <div class="col-md-6 col-lg-3">
+                <div class="thumbnail">
+                  <a href="team-pic1.png" target="_blank">
+                    <img src="team-pic1.png" alt="">
+                    <div class="caption team__caption">
+                      <h4 class="team__name">Elodia S. Keefe</h4>
+                      <p class="team__title">Founder</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="thumbnail">
+                  <a href="team-pic2.png" target="_blank">
+                    <img src="team-pic2.png" alt="">
+                    <div class="caption team__caption">
+                      <h4 class="team__name">Sheryl D. Trent</h4>
+                      <p class="team__title">Co-Founder</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="thumbnail">
+                  <a href="team-pic3.png" target="_blank">
+                    <img src="team-pic3.png" alt="">
+                    <div class="caption team__caption">
+                      <h4 class="team__name">Dorothy J. Cook</h4>
+                      <p class="team__title">UI Specialist</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="thumbnail">
+                  <a href="team-pic4.png" target="_blank">
+                    <img src="team-pic4.png" alt="">
+                    <div class="caption team__caption">
+                      <h4 class="team__name">Stuart D. Mahaffey</h4>
+                      <p class="team__title">Admin</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    <div class="container c-blog">
+        <section class="blog">
+          <div class="page-section">
+            <div class="text-center">
+              <h2 class="page-section__title">OUR BLOG</h2>
+              <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div>
+            <div class="row gutters-50">
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="blog-pic1.png" target="_blank">
+                    <img class="img-responsive" src="blog-pic1.png" alt="">
+                    <div class="caption">
+                      <h3 class="blog__title">Global Traffic Search</h3>
+                      <p class="blog__paragraph">By Jhon Doe <span class="blog__paragraph--slash">&#47;</span> 12 July, 2017 <span class="blog__paragraph--slash">&#47;</span> 2 Comments</p>
+                      <h4 class="blog__read-more">READ MORE</h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="blog-pic2.png" target="_blank">
+                    <img class="img-responsive" src="blog-pic2.png" alt="">
+                    <div class="caption">
+                      <h3 class="blog__title">Global Traffic Search</h3>
+                      <p class="blog__paragraph">By Jhon Doe &#47; 12 July, 2017 &#47; 2 Comments</p>
+                      <h4 class="blog__read-more">READ MORE</h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="blog-pic3.png" target="_blank">
+                    <img class="img-responsive" src="blog-pic3.png" alt="">
+                    <div class="caption">
+                      <h3 class="blog__title">Global Traffic Search</h3>
+                      <p class="blog__paragraph">By Jhon Doe &#47; 12 July, 2017 &#47; 2 Comments</p>
+                      <h4 class="blog__read-more">READ MORE</h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    <footer class="footer footer--bg">
+        <div class="container-fluid">
+          <div class="page-section">
+            <div class="row gutters-100">
+              <div class="col-md-4 col-lg-3">
+                <div class="footer__first">
+                  <h2 class="footer__title">Design360</h2>
+                  <p class="footer-first__paragraph">Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
+                  <ul class="footer-first__social-icons">
+                    <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                    <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
+                    <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
+                    <li><a href="#"><i class="flaticon-behance-logo"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-2">
+                <div class="footer__second">
+                  <h2 class="footer__title">QUICK LINK</h2>
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="footer__third">
+                  <h2 class="footer__title">CONTACT US</h2>
+                  <ul>
+                    <li><i class="fa fa-envelope"></i> <a href="#">design360@gmail.com</a></li>
+                    <li><i class="fa fa-phone"></i> <a href="#">+0123-345-6789</a></li>
+                  </ul>
+                  <h4 class="footer__subscribe__title">Subscribe</h4>
+                  <div class="subscribe-section">
+                    <input type="email" class="form-control" size="50" placeholder="Enter Your Email" required>
+                    <button class="subscribe-section__button" type="button"><img src="send-icon.png" alt=""></button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="footer__fourth">
+                  <h4 class="footer__title">INSTAGRAM</h4>
+                  <div class="row">
+                    <ul>
+                      <li><a href="#"><img src="instagram-pic1.png" alt=""></a></li>
+                      <li><a href="#"><img src="instagram-pic2.png" alt=""></a></li>
+                      <li><a href="#"><img src="instagram-pic3.png" alt=""></a></li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <ul>
+                      <li><a href="#"><img src="instagram-pic4.png" alt=""></a></li>
+                      <li><a href="#"><img src="instagram-pic5.png" alt=""></a></li>
+                      <li><a href="#"><img src="instagram-pic6.png" alt=""></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="footer__horizontal-bar">
+            <p class="footer__bottom-paragraph">&copy; Copyright 2017 Design360. All Rights Reserved</p>
+          </div>
         </div>
-        <!--<div class="item">-->
-        <!--    <div class="container">-->
-        <!--        <div class="carousel-caption blank">-->
-        <!--            <h1>We create meaningful <br/> interfaces that inspire.</h1>-->
-        <!--            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>-->
-        <!--            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
-        <!--        </div>-->
-        <!--    </div>-->
-            <!-- Set background for slide in css -->
-        <!--    <div class="header-back two"></div>-->
-        <!--</div>-->
-    </div>
-    <!--<a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">-->
-    <!--    <span class="fa fa-chevron-left" aria-hidden="true"></span>-->
-    <!--    <span class="sr-only">Previous</span>-->
-    <!--</a>-->
-    <!--<a class="right carousel-control" href="#inSlider" role="button" data-slide="next">-->
-    <!--    <span class="fa fa-chevron-right" aria-hidden="true"></span>-->
-    <!--    <span class="sr-only">Next</span>-->
-    <!--</a>-->
-</div>
-
-<!--<section id="features" class="container services">-->
-<!--    <div class="row">-->
-<!--        <div class="col-sm-3">-->
-<!--            <h2>Full responsive</h2>-->
-<!--            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            <p><a class="navy-link" href="#" role="button">Details &raquo;</a></p>-->
-<!--        </div>-->
-<!--        <div class="col-sm-3">-->
-<!--            <h2>LESS/SASS Files</h2>-->
-<!--            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            <p><a class="navy-link" href="#" role="button">Details &raquo;</a></p>-->
-<!--        </div>-->
-<!--        <div class="col-sm-3">-->
-<!--            <h2>6 Charts Library</h2>-->
-<!--            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            <p><a class="navy-link" href="#" role="button">Details &raquo;</a></p>-->
-<!--        </div>-->
-<!--        <div class="col-sm-3">-->
-<!--            <h2>Advanced Forms</h2>-->
-<!--            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            <p><a class="navy-link" href="#" role="button">Details &raquo;</a></p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--<section  class="container features">-->
-<!--    <div class="row">-->
-<!--        <div class="col-lg-12 text-center">-->
-<!--            <div class="navy-line"></div>-->
-<!--            <h1>Over 40+ unique view<br/> <span class="navy"> with many custom components</span> </h1>-->
-<!--            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--        <div class="col-md-3 text-center wow fadeInLeft">-->
-<!--            <div>-->
-<!--                <i class="fa fa-mobile features-icon"></i>-->
-<!--                <h2>Full responsive</h2>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            </div>-->
-<!--            <div class="m-t-lg">-->
-<!--                <i class="fa fa-bar-chart features-icon"></i>-->
-<!--                <h2>6 Charts Library</h2>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-md-6 text-center  wow zoomIn">-->
-<!--            <img src="landing/perspective.png" alt="dashboard" class="img-responsive">-->
-<!--        </div>-->
-<!--        <div class="col-md-3 text-center wow fadeInRight">-->
-<!--            <div>-->
-<!--                <i class="fa fa-envelope features-icon"></i>-->
-<!--                <h2>Mail pages</h2>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            </div>-->
-<!--            <div class="m-t-lg">-->
-<!--                <i class="fa fa-google features-icon"></i>-->
-<!--                <h2>AngularJS version</h2>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--        <div class="col-lg-12 text-center">-->
-<!--            <div class="navy-line"></div>-->
-<!--            <h1>Discover great feautres</h1>-->
-<!--            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row features-block">-->
-<!--        <div class="col-lg-6 features-text wow fadeInLeft">-->
-<!--            <small>INSPINIA</small>-->
-<!--            <h2>Perfectly designed </h2>-->
-<!--            <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>-->
-<!--            <a href="#" class="btn btn-primary">Learn more</a>-->
-<!--        </div>-->
-<!--        <div class="col-lg-6 text-right wow fadeInRight">-->
-<!--            <img src="landing/dashboard.png" alt="dashboard" class="img-responsive pull-right">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--<section id="team" class="gray-section team">-->
-<!--    <div class="container">-->
-<!--        <div class="row m-b-lg">-->
-<!--            <div class="col-lg-12 text-center">-->
-<!--                <div class="navy-line"></div>-->
-<!--                <h1>Our Team</h1>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-sm-4 wow fadeInLeft">-->
-<!--                <div class="team-member">-->
-<!--                    <img src="landing/avatar3.jpg" class="img-responsive img-circle img-small" alt="">-->
-<!--                    <h4><span class="navy">Amelia</span> Smith</h4>-->
-<!--                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus. </p>-->
-<!--                    <ul class="list-inline social-icon">-->
-<!--                        <li><a href="#"><i class="fa fa-twitter"></i></a>-->
-<!--                        </li>-->
-<!--                        <li><a href="#"><i class="fa fa-facebook"></i></a>-->
-<!--                        </li>-->
-<!--                        <li><a href="#"><i class="fa fa-linkedin"></i></a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-4">-->
-<!--                <div class="team-member wow zoomIn">-->
-<!--                    <img src="landing/avatar1.jpg" class="img-responsive img-circle" alt="">-->
-<!--                    <h4><span class="navy">John</span> Novak</h4>-->
-<!--                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>-->
-<!--                    <ul class="list-inline social-icon">-->
-<!--                        <li><a href="#"><i class="fa fa-twitter"></i></a>-->
-<!--                        </li>-->
-<!--                        <li><a href="#"><i class="fa fa-facebook"></i></a>-->
-<!--                        </li>-->
-<!--                        <li><a href="#"><i class="fa fa-linkedin"></i></a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-sm-4 wow fadeInRight">-->
-<!--                <div class="team-member">-->
-<!--                    <img src="landing/avatar2.jpg" class="img-responsive img-circle img-small" alt="">-->
-<!--                    <h4><span class="navy">Peter</span> Johnson</h4>-->
-<!--                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>-->
-<!--                    <ul class="list-inline social-icon">-->
-<!--                        <li><a href="#"><i class="fa fa-twitter"></i></a>-->
-<!--                        </li>-->
-<!--                        <li><a href="#"><i class="fa fa-facebook"></i></a>-->
-<!--                        </li>-->
-<!--                        <li><a href="#"><i class="fa fa-linkedin"></i></a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">-->
-<!--                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--<section class="features">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-12 text-center">-->
-<!--                <div class="navy-line"></div>-->
-<!--                <h1>Even more great feautres</h1>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row features-block">-->
-<!--            <div class="col-lg-3 features-text wow fadeInLeft">-->
-<!--                <small>INSPINIA</small>-->
-<!--                <h2>Perfectly designed </h2>-->
-<!--                <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>-->
-<!--                <a href="#" class="btn btn-primary">Learn more</a>-->
-<!--            </div>-->
-<!--            <div class="col-lg-6 text-right m-t-n-lg wow zoomIn">-->
-<!--                <img src="landing/iphone.jpg" class="img-responsive" alt="dashboard">-->
-<!--            </div>-->
-<!--            <div class="col-lg-3 features-text text-right wow fadeInRight">-->
-<!--                <small>INSPINIA</small>-->
-<!--                <h2>Perfectly designed </h2>-->
-<!--                <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>-->
-<!--                <a href="#" class="btn btn-primary">Learn more</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</section>-->
-
-<!--<section class="timeline gray-section">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-12 text-center">-->
-<!--                <div class="navy-line"></div>-->
-<!--                <h1>Our workflow</h1>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row features-block">-->
-
-<!--            <div class="col-lg-12">-->
-<!--                <div id="vertical-timeline" class="vertical-container light-timeline center-orientation">-->
-<!--                    <div class="vertical-timeline-block">-->
-<!--                        <div class="vertical-timeline-icon navy-bg">-->
-<!--                            <i class="fa fa-briefcase"></i>-->
-<!--                        </div>-->
-
-<!--                        <div class="vertical-timeline-content">-->
-<!--                            <h2>Meeting</h2>-->
-<!--                            <p>Conference on the sales results for the previous year. Monica please examine sales trends in marketing and products. Below please find the current status of the sale.-->
-<!--                            </p>-->
-<!--                            <a href="#" class="btn btn-xs btn-primary"> More info</a>-->
-<!--                            <span class="vertical-date"> Today <br/> <small>Dec 24</small> </span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="vertical-timeline-block">-->
-<!--                        <div class="vertical-timeline-icon navy-bg">-->
-<!--                            <i class="fa fa-file-text"></i>-->
-<!--                        </div>-->
-
-<!--                        <div class="vertical-timeline-content">-->
-<!--                            <h2>Decision</h2>-->
-<!--                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>-->
-<!--                            <a href="#" class="btn btn-xs btn-primary"> More info</a>-->
-<!--                            <span class="vertical-date"> Tomorrow <br/> <small>Dec 26</small> </span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="vertical-timeline-block">-->
-<!--                        <div class="vertical-timeline-icon navy-bg">-->
-<!--                            <i class="fa fa-cogs"></i>-->
-<!--                        </div>-->
-
-<!--                        <div class="vertical-timeline-content">-->
-<!--                            <h2>Implementation</h2>-->
-<!--                            <p>Go to shop and find some products. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>-->
-<!--                            <a href="#" class="btn btn-xs btn-primary"> More info</a>-->
-<!--                            <span class="vertical-date"> Monday <br/> <small>Jan 02</small> </span>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</section>-->
-
-<!--<section id="testimonials" class="navy-section testimonials" style="margin-top: 0">-->
-
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-12 text-center wow zoomIn">-->
-<!--                <i class="fa fa-comment big-icon"></i>-->
-<!--                <h1>-->
-<!--                    What our users say-->
-<!--                </h1>-->
-<!--                <div class="testimonials-text">-->
-<!--                    <i>"Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."</i>-->
-<!--                </div>-->
-<!--                <small>-->
-<!--                    <strong>12.02.2014 - Andy Smith</strong>-->
-<!--                </small>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</section>-->
-
-<!--<section class="comments gray-section" style="margin-top: 0">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-12 text-center">-->
-<!--                <div class="navy-line"></div>-->
-<!--                <h1>What our partners say</h1>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada. </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row features-block">-->
-<!--            <div class="col-lg-4">-->
-<!--                <div class="bubble">-->
-<!--                    "Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."-->
-<!--                </div>-->
-<!--                <div class="comments-avatar">-->
-<!--                    <a href="#" class="pull-left">-->
-<!--                        <img alt="image" src="landing/avatar3.jpg">-->
-<!--                    </a>-->
-<!--                    <div class="media-body">-->
-<!--                        <div class="commens-name">-->
-<!--                            Andrew Williams-->
-<!--                        </div>-->
-<!--                        <small class="text-muted">Company X from California</small>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col-lg-4">-->
-<!--                <div class="bubble">-->
-<!--                    "Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."-->
-<!--                </div>-->
-<!--                <div class="comments-avatar">-->
-<!--                    <a href="#" class="pull-left">-->
-<!--                        <img alt="image" src="landing/avatar1.jpg">-->
-<!--                    </a>-->
-<!--                    <div class="media-body">-->
-<!--                        <div class="commens-name">-->
-<!--                            Andrew Williams-->
-<!--                        </div>-->
-<!--                        <small class="text-muted">Company X from California</small>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col-lg-4">-->
-<!--                <div class="bubble">-->
-<!--                    "Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)."-->
-<!--                </div>-->
-<!--                <div class="comments-avatar">-->
-<!--                    <a href="#" class="pull-left">-->
-<!--                        <img alt="image" src="landing/avatar2.jpg">-->
-<!--                    </a>-->
-<!--                    <div class="media-body">-->
-<!--                        <div class="commens-name">-->
-<!--                            Andrew Williams-->
-<!--                        </div>-->
-<!--                        <small class="text-muted">Company X from California</small>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-
-
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</section>-->
-
-<!--<section class="features">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-12 text-center">-->
-<!--                <div class="navy-line"></div>-->
-<!--                <h1>More and more extra great feautres</h1>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-5 col-lg-offset-1 features-text">-->
-<!--                <small>INSPINIA</small>-->
-<!--                <h2>Perfectly designed </h2>-->
-<!--                <i class="fa fa-bar-chart big-icon pull-right"></i>-->
-<!--                <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>-->
-<!--            </div>-->
-<!--            <div class="col-lg-5 features-text">-->
-<!--                <small>INSPINIA</small>-->
-<!--                <h2>Perfectly designed </h2>-->
-<!--                <i class="fa fa-bolt big-icon pull-right"></i>-->
-<!--                <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-5 col-lg-offset-1 features-text">-->
-<!--                <small>INSPINIA</small>-->
-<!--                <h2>Perfectly designed </h2>-->
-<!--                <i class="fa fa-clock-o big-icon pull-right"></i>-->
-<!--                <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>-->
-<!--            </div>-->
-<!--            <div class="col-lg-5 features-text">-->
-<!--                <small>INSPINIA</small>-->
-<!--                <h2>Perfectly designed </h2>-->
-<!--                <i class="fa fa-users big-icon pull-right"></i>-->
-<!--                <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</section>-->
-<!--<section id="pricing" class="pricing">-->
-<!--    <div class="container">-->
-<!--        <div class="row m-b-lg">-->
-<!--            <div class="col-lg-12 text-center">-->
-<!--                <div class="navy-line"></div>-->
-<!--                <h1>App Pricing</h1>-->
-<!--                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-4 wow zoomIn">-->
-<!--                <ul class="pricing-plan list-unstyled">-->
-<!--                    <li class="pricing-title">-->
-<!--                        Basic-->
-<!--                    </li>-->
-<!--                    <li class="pricing-desc">-->
-<!--                        Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.-->
-<!--                    </li>-->
-<!--                    <li class="pricing-price">-->
-<!--                        <span>$16</span> / month-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Dashboards-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Projects view-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Contacts-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Calendar-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        AngularJs-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a class="btn btn-primary btn-xs" href="#">Signup</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-
-<!--            <div class="col-lg-4 wow zoomIn">-->
-<!--                <ul class="pricing-plan list-unstyled selected">-->
-<!--                    <li class="pricing-title">-->
-<!--                        Standard-->
-<!--                    </li>-->
-<!--                    <li class="pricing-desc">-->
-<!--                        Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.-->
-<!--                    </li>-->
-<!--                    <li class="pricing-price">-->
-<!--                        <span>$22</span> / month-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Dashboards-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Projects view-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Contacts-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Calendar-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        AngularJs-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <strong>Support platform</strong>-->
-<!--                    </li>-->
-<!--                    <li class="plan-action">-->
-<!--                        <a class="btn btn-primary btn-xs" href="#">Signup</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-
-<!--            <div class="col-lg-4 wow zoomIn">-->
-<!--                <ul class="pricing-plan list-unstyled">-->
-<!--                    <li class="pricing-title">-->
-<!--                        Premium-->
-<!--                    </li>-->
-<!--                    <li class="pricing-desc">-->
-<!--                        Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.-->
-<!--                    </li>-->
-<!--                    <li class="pricing-price">-->
-<!--                        <span>$160</span> / month-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Dashboards-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Projects view-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Contacts-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        Calendar-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        AngularJs-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <a class="btn btn-primary btn-xs" href="#">Signup</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row m-t-lg">-->
-<!--            <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg">-->
-<!--                <p>*Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. <span class="navy">Various versions</span>  have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</section>-->
-
-<section id="contact" class="gray-section contact">
-    <div class="container">
-        <div class="row m-b-lg">
-            <div class="col-lg-12 text-center">
-                <div class="navy-line"></div>
-                <h1>Contact Us</h1>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
-            </div>
-        </div>
-        <div class="row m-b-lg">
-            <div class="col-lg-3 col-lg-offset-3">
-                <address>
-                    <strong><span class="navy">Company name, Inc.</span></strong><br/>
-                    ABC Street, House No, 123<br/>
-                    ABC City, CAB 12345<br/>
-                    <abbr title="Phone">P:</abbr> (123) 456-7890
-                </address>
-            </div>
-            <div class="col-lg-4">
-                <p class="text-color">
-                    Consectetur adipisicing elit. Aut eaque, totam corporis laboriosam veritatis quis ad perspiciatis, totam corporis laboriosam veritatis, consectetur adipisicing elit quos non quis ad perspiciatis, totam corporis ea,
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <a href="mailto:test@email.com" class="btn btn-primary">Send us mail</a>
-                <p class="m-t-sm">
-                    Or follow us on social platform
-                </p>
-                <ul class="list-inline social-icon">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+      </footer>
+  </div>
 </div>

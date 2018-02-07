@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
     before_action :set_order, only: [ :edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new, :create]
+    load_and_authorize_resource
     
     def new
         @order = current_user.orders.new
@@ -10,7 +11,7 @@ class OrdersController < ApplicationController
     def create
         @order = current_user.orders.new(order_params)
         if @order.save
-            redirect_to dashboard_path, notice: 'Order was successfully created.'
+            redirect_to clients_dashboard_path, notice: 'Order was successfully created.'
         else
             redirect_to dashboard_path, notice: 'error'
         end

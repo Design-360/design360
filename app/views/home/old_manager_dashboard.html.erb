@@ -18,22 +18,13 @@
                 <td>
                     <%= o.duration %> days from <%= o.created_at %>
                 </td>
-                <td><%= link_to "complete", new_order_attachment_path(o) %></td>
+                <td><%= link_to "Complete", new_order_attachment_path(o) %></td>
             </tr>
         <% end %>
     </table>
 <% else %>
     <h4>no orders yet</h4>
 <% end %>
-<div class="footer">
-        <div class="pull-right">
-            Developed by <a href="http://www.systemplus.com.pk/" target="_blank">System Plus</a>
-        </div>
-        <div>
-            <strong>Copyright</strong> Design360 &copy; 2018
-        </div>
-    </div>
-    </div>
-    
+<%= render 'layouts/footer' %>
 </div>
 </div>

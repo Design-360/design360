@@ -35,12 +35,18 @@
                   <%= f.check_box :remember_me %>
                   <%= f.label :remember_me %>
                 </div>
-              <% end -%></a>
-              <a href="/users/password/new"> Forgot Your Password</a>
+              <% end %></a>
+              <% if resource_name.to_s == "user" %>
+                <a href="/users/password/new"> Forgot Your Password?</a>
+              <% else %>
+                <a href="/employees/password/new"> Forgot Your Password?</a>
+              <% end %>
               </center>
-              
-                <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-block btn-primary" href="/users/sign_up">Create an account</a>
+                <% if resource_name.to_s == "user" %>
+                    
+                    <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                    <a class="btn btn-sm btn-block btn-primary" href="/users/sign_up">Create an account</a>
+                <% end %>
             <% end %>
             
         </div>

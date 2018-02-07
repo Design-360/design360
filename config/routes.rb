@@ -3,15 +3,20 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
-  resources :employees
-  resources :templates
-  resources :orders do
-    resources :attachments
+  resources :employees, :except => [:index]
+  get '/assign/employees', to: "employees#listing"
+  resources :templates, :except => [:show, :index]
+  resources :userhome, :except => [:new, :create, :edit, :update, :show, :destroy]
+  resources :orders, :except => [:show, :index] do
+    resources :attachments, :only => [:new, :create]
   end
   get '/admin/orders', to: 'home#admin_orders'
   get '/admin/managers', to: 'home#admin_managers'
   get '/admin/templates', to: 'home#admin_templates'
   get '/admin/clients', to: 'home#admin_clients'
-  get '/dashboard', to: 'home#dashboard'
+  get '/managers/dashboard', to: 'home#manager_dashboard'
+  get '/clients/dashboard', to: 'home#client_dashboard'
+  get '/admin/dashboard', to: 'home#admin_dashboard'
   root 'home#index'
+  match "*path", to: "home#error", via: :all
 end

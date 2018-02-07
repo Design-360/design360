@@ -7,4 +7,5 @@ class Employee < ApplicationRecord
   has_many :orders, through: :employee_order
   has_one :employee_order, dependent: :destroy
   enum role: [ :admin, :manager]
+  
 end

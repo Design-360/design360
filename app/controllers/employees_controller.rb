@@ -1,10 +1,11 @@
 class EmployeesController < ApplicationController
     before_action :set_manager, only: [ :edit, :update, :destroy]
+    authorize_resource
     def new
         @manager = Employee.new
     end
     
-    def index
+    def listing
        @managers = Employee.where(:role => "manager")
     end
     
@@ -13,19 +14,19 @@ class EmployeesController < ApplicationController
         assign = EmployeeOrder.new(:employee_id => params[:id], :order_id => @order.id)
         if assign.save
             @order.update!(:status => "assigned", :template_id => @order.template_id)
-            redirect_to dashboard_path, notice: 'Order was successfully assigned'
+            redirect_to admin_dashboard_path, notice: 'Order was successfully assigned'
         else
-            redirect_to dashboard_path, alert: 'error'
+            redirect_to admin_dashboard_path, alert: 'error'
         end
     end
     
     def create
         @manager = Employee.new(manager_params)
         if @manager.save
-            EmployeeMailer.sample_email(@manager,params[:employee][:password]).deliver
-            redirect_to dashboard_path, notice: 'Manager was successfully created.'
+            # EmployeeMailer.sample_email(@manager,params[:employee][:password]).deliver
+            redirect_to admin_dashboard_path, notice: 'Manager was successfully created.'
         else
-            redirect_to dashboard_path, alert: "Mailer Error! Manager was created but Main didn't go!"
+            redirect_to admin_dashboard_path, alert: "Error"
         end
     end
     
@@ -34,12 +35,12 @@ class EmployeesController < ApplicationController
     
     def update
         @manager = Employee.update(manager_params)
-        redirect_to dashboard_path, notice: 'Manager was successfully updated.'
+        redirect_to admin_dashboard_path, notice: 'Profile was successfully updated.'
     end
     
     def destroy
         @manager.destroy
-        redirect_to dashboard_path, notice: 'Manager was successfully destroyed.'
+        redirect_to admin_dashboard_path, notice: 'Manager was successfully destroyed.'
     end
     
     private
