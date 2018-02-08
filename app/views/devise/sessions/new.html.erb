@@ -17,7 +17,7 @@
             <% end %>
             
 			
-            <center><h2 style="padding-bottom:10px;">Login to Design360</h2></center>
+            <center><h2 style="padding-bottom:10px;">Login to <a href="/">Design360</a></h2></center>
             
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => "m-t") do |f| %>
                 <div class="form-group">
@@ -43,9 +43,9 @@
               <% end %>
               </center>
                 <% if resource_name.to_s == "user" %>
+                    <br/>
+                    <p class="text-muted text-center">Do not have an account? <a href="/users/sign_up" style="font-size:18px; font-weight:bold;"> SignUp</a></p>
                     
-                    <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                    <a class="btn btn-sm btn-block btn-primary" href="/users/sign_up">Create an account</a>
                 <% end %>
             <% end %>
             

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-    before_action :set_order, only: [:show, :edit, :update, :destroy]
+    before_action :set_order, only: [:show,:edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new, :create]
     load_and_authorize_resource
     
@@ -39,7 +39,12 @@ class OrdersController < ApplicationController
     private
     
     def set_order
-        @order = Order.find(params[:id])
+        # begin
+            @order = Order.find(params[:id])
+        # rescue ActiveRecord::RecordNotFound
+            # Rails.logger.debugger.error exception.messagec
+            # render plain: '404 Not found', status: 404 
+        # end
     end
     
     def load_client

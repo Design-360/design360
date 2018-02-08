@@ -19,8 +19,11 @@
                     D
                 </div>
             </li>
-           <li class="active">
-                <a href="/clients/dashboard"><i class="fa fa-user"></i> <span class="nav-label">Dashboard</span></a>
+           <li class="<%= active_class(clients_dashboard_path) %>">
+                <a href="<%= clients_dashboard_path %>"><i class="fa fa-user"></i> <span class="nav-label">Dashboard</span></a>
+            </li>
+            <li class="<%= active_class('/users/edit') %>">
+                <a href="/users/edit"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
             </li>
         </ul>
     <% end %>
@@ -66,6 +69,9 @@
                 <li class="<%= active_class(admin_clients_path) %>">
                     <a href="/admin/clients"><i class="fa fa-user"></i> <span class="nav-label">Clients</span></a>
                 </li>
+                <li class="<%= active_class(edit_employee_path(current_employee)) %>">
+                    <a href="<%= edit_employee_path(current_employee) %>"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
+                </li>
             </ul>
         <% else %>
             <ul class="nav metismenu" id="side-menu">
@@ -87,8 +93,11 @@
                         D
                     </div>
                 </li>
-               <li class="active">
-                    <a href="/managers/dashboard"><i class="fa fa-user"></i> <span class="nav-label">Dashboard</span></a>
+               <li class="<%= active_class(managers_dashboard_path) %>">
+                    <a href="<%= managers_dashboard_path %>"><i class="fa fa-user"></i> <span class="nav-label">Dashboard</span></a>
+                </li>
+                <li class="<%= active_class(edit_employee_path(current_employee)) %>">
+                    <a href="<%= edit_employee_path(current_employee) %>"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
                 </li>
             </ul>
         <% end %>
@@ -154,19 +163,19 @@
             <!--        </a>-->
             <!--    </li>-->
             <!--<#% end %>-->
-            <!--<#% if current_employee %>-->
-            <!--    <li>-->
-            <!--        <a href="/employees/sign_out" data-method="delete">-->
-            <!--            <i class="fa fa-sign-out"></i> Log out-->
-            <!--        </a>-->
-            <!--    </li>-->
-            <!--<#% elsif current_user %>-->
-            <!--    <li>-->
-            <!--        <a href="/users/sign_out" data-method="delete">-->
-            <!--            <i class="fa fa-sign-out"></i> Log out-->
-            <!--        </a>-->
-            <!--    </li>-->
-            <!--<#% end %>-->
+            <% if current_employee %>
+                <li>
+                    <a href="/employees/sign_out" data-method="delete">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            <% elsif current_user %>
+                <li>
+                    <a href="/users/sign_out" data-method="delete">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            <% end %>
             
         </ul>
 

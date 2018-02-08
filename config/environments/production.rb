@@ -88,4 +88,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  config.action_mailer.default_url_options = { :host => "floating-spire-35994.herokuapp.com" }
+  # Paperclip.options[:command_path] = "/usr/local/bin/"
+  
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtpout.secureserver.net',
+    :port      => 80,
+    :user_name => ENV["MAILER_USERNAME"],
+    :password => ENV["MAILER_PASSWORD"],
+    :authentication => :plain
+    }
+  
 end

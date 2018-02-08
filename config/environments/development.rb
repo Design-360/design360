@@ -60,8 +60,8 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     :address => 'smtpout.secureserver.net',
     :port      => 80,
-    :user_name => 'test@guidistan.com',
-    :password => 'admin123',
+    :user_name => ENV["MAILER_USERNAME"],
+    :password => ENV["MAILER_PASSWORD"],
     :authentication => :plain
     }
 

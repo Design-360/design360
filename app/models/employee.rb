@@ -4,8 +4,19 @@ class Employee < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  before_destroy :reset_order
   has_many :orders, through: :employee_order
   has_one :employee_order, dependent: :destroy
   enum role: [ :admin, :manager]
   
+  def reset_order
+    employee_orders = EmployeeOrder.where(:employee_id => self.id)
+      
+    employee_orders.each do |eorder|
+      order = Order.find(eorder.order_id)
+      if order.status == "assigned" or order.status == "in_revision"
+        order.update(:status => "pending")
+      end
+    end
+  end
 end

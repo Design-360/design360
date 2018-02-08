@@ -23,19 +23,14 @@ class ApplicationController < ActionController::Base
       @current_ability or @current_ability = Ability.new(current_auth_resource)
   end
   
-  rescue_from ActionController::RoutingError do |exception|
-    logger.error 'Routing error occurred'
-    render plain: '404 Not found', status: 404 
-  end
+  
   
   rescue_from ActionView::MissingTemplate do |exception|
-    Rails.logger.debug ger.error exception.message
-    render plain: '404 Not found', status: 404 
+    render file: 'home/error', status: 404 
   end
   
   rescue_from ActiveRecord::RecordNotFound do |exception|
-    Rails.logger.debug ger.error exception.message
-    render plain: '404 Not found', status: 404 
+    render file: 'home/error', status: 404 
   end
   
   rescue_from CanCan::AccessDenied do |exception|

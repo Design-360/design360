@@ -20,10 +20,18 @@
                     <div class="col-lg-10"><%= f.text_field :password_confirmation, class:"form-control" %>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <%= f.submit "Add Manager", class:"btn btn-primary btn-md" %>
+                <% if current_page?("/employees/new") %>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <%= f.submit "Add Manager", class:"btn btn-primary btn-md" %>
+                        </div>
                     </div>
-                </div>
+                <% else %>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <%= f.submit "Update", class:"btn btn-primary btn-md" %>
+                        </div>
+                    </div>
+                <% end %>
             <% end %>
         </div>
