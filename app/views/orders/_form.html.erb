@@ -1,8 +1,27 @@
-<%= form_for @order do |f| %>
-    
-    Amount: <%= f.text_field :amount %><br>
-    duration: <%= f.number_field :duration %><br>
-    template: <%= f.select :template_id, @templates.all.collect {|t| [t.name, t.id] }, { include_blank: true } %>
-    <br>
-    <%= f.submit %>
-<% end %>
+
+
+                <div class="ibox-content">
+                    <%= form_for @order, :html => {:class => "form-horizontal"} do |f| %>
+                        <div class="form-group"><label class="col-lg-2 control-label">Amonut:</label>
+        
+                            <div class="col-lg-10"><%= f.number_field :amount, class:"form-control", :required => :true %>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-lg-2 control-label">Duration:</label>
+        
+                            <div class="col-lg-10"><%= f.number_field :duration, class:"form-control", :required => :true %>
+                            </div>
+                        </div>
+                        <div class="form-group"><label class="col-lg-2 control-label">Template:</label>
+        
+                            <%= f.select :template_id, @templates.all.collect {|t| [t.name, t.id] }, { include_blank: true }, :required => :true %>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <%= f.submit "Create Order", class:"btn btn-primary btn-md" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            

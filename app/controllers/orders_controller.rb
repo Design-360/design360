@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
         
     end
     def edit
+        @templates = Template.all
     end
     
     def update

@@ -23,7 +23,7 @@ class EmployeesController < ApplicationController
     def create
         @manager = Employee.new(manager_params)
         if @manager.save
-            # EmployeeMailer.sample_email(@manager,params[:employee][:password]).deliver
+            EmployeeMailer.sample_email(@manager,params[:employee][:password]).deliver
             redirect_to admin_dashboard_path, notice: 'Manager was successfully created.'
         else
             redirect_to admin_dashboard_path, alert: "Error"
