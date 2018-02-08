@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/assign/employees', to: "employees#listing"
   resources :templates, :except => [:show, :index]
   resources :userhome, :except => [:new, :create, :edit, :update, :show, :destroy]
-  resources :orders, :except => [:show, :index] do
+  resources :orders, :except => [:index] do
     resources :attachments, :only => [:new, :create]
   end
   get '/admin/orders', to: 'home#admin_orders'

@@ -8,9 +8,10 @@ class Ability
       if user.admin?
         can :manage, :all
       else
-        can :update, Order, EmployeeOrder do |ord|
-          check = ord.where(:order_id => id, :employee_id => user.id)
-          check.present?
+        can :update, Employee, id: user.id
+        can [:show,:update], Order do |ord|
+          eorder = EmployeeOrder.where(:order_id => ord.id, :employee_id => user.id)
+          eorder.present?
         end
         can :manager_dashboard, :home
         can :index, :home
