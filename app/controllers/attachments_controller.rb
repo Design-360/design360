@@ -1,29 +1,30 @@
 class AttachmentsController < ApplicationController
-    
-    before_action :load_order, only: [:new, :create]
+    before_action :authenticate_employee!
     
     def new
+        @order = Order.find(params[:format])
         @attachment = @order.attachments.new
     end
     
     def create
+        @order = Order.find(params[:order_id])
         @attachment = @order.attachments.new(attachment_params)
+        @attachment.employee_id = current_employee.id
+        if params[:avatar_type] == "complete"
+            @attachment.avatar_type = "complete"
+            @order.update(:status => "complete")
+        end
         if @attachment.save
-            @order.update(:status => "complete", :template_id => @order.template_id)
-            redirect_to dashboard_path, notice: 'Files successfully attached.'
+            redirect_to order_path(@order), notice: "Order Marked Complete!"
         else
-            redirect_to dashboard_path, alert: 'error'
+            redirect_to managers_dashboard_path, alert: "Order could not be completed"
         end
     end
     
     private
     
-    def load_order
-        @order = Order.find(params[:order_id])
-    end
-    
     # Never trust parameters from the scary internet, only allow the white list through.
     def attachment_params
-        params.require(:attachment).permit(:image, :pdf)
+        params.require(:attachment).permit(:avatar, :avatar_type)
     end
 end

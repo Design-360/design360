@@ -1,38 +1,68 @@
-
 <div class="main-div">
- <div id="wrapper">
+<div id="wrapper">
     <%= render 'layouts/sidebar' %>
-<div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row"> 
-        <div class="col-lg-12">
-    <div class="ibox float-e-margins">
-        <div class="ibox-title">
-            <h5>Your Order Details</h5>
-            <div class="ibox-tools">
-                <a class="collapse-link">
-                    <i class="fa fa-chevron-up"></i>
-                </a>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>Order Details</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row"> 
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <% if (not @order.status == "pending") and current_user %>
+                                    <div class="page-heading">
+                                        <h2>Manager's Info</h2>
+                                    </div>
+                                    <strong>Name:  </strong><%= @order.employee_order.employee.name %><br>
+                                    <strong>Email:  </strong><%= @order.employee_order.employee.email %>
+                                <% elsif (not @order.status == "pending") and current_employee %>
+                                    <div class="page-heading">
+                                        <h2>Client's Info</h2>
+                                    </div>
+                                    <strong>Name:  </strong><%= @order.user.name %><br>
+                                    <strong>Email:  </strong><%= @order.user.email %><br>
+                                <% end %>
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4">
+                                <div>
+                                    <h2>Order's Status:  <%= @order.status %></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Other Details</h2>
+                        <strong>Design Type:  </strong><%= @order.design_type %><br>
+                        <strong>Size and Format:  </strong><%= @order.size_format %><br>
+                        <strong>Content:  </strong><%= @order.content %><br>
+                        <strong>Color Preferences:  </strong><%= @order.color %><br>
+                        <strong>Description:  </strong><%= @order.description %><br>
+                        <% if @order.attachments.present? %>
+                            <h2>Files</h2>
+                            <%= @order.attachments.count %><br>
+                            <% @order.attachments.each do |att| %>
+                                <strong>Type:  </strong><%= att.avatar_type %><br>
+                                <%= link_to 'Download File', att.avatar.url, :target => :blank %><br>
+                                <br>
+                            <% end %>
+                        <% end %>
+                        <% if (not @order.status == "pending") and current_employee %>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completeModal">Completion</button>
+
+                            <%#= link_to "Attach Completion Files", new_attachment_path(@order), class:"btn btn-primary" %>
+                        <% end %>
+                        <% if (@order.status == "complete" or @order.status == "in_revision") and current_user %>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Accept</button>
+                            <%= link_to "Ask for Revision", order_path(@order, :order => {:status => "in_revision"}), :method => :put, class:"btn btn-primary" %>
+                        <% end %>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="ibox-content">
-            <strong>Amount:</strong> <%= @order.amount %><br>
-            <strong>Duration:</strong> <%= @order.duration %><br>
-            <strong>Status:</strong> <%= @order.status %><br>
-            <% if @order.status == "assigned" and current_user %>
-                <h3>Your order is assigned to</h3>
-                <%= Employee.find(EmployeeOrder.where(:order_id => @order.id).first.employee_id).name %><br>
-                <%= Employee.find(EmployeeOrder.where(:order_id => @order.id).first.employee_id).email %>
-            <% elsif @order.status == "assigned" and current_employee %>
-                <h3>This Order belongs to</h3>
-                <%= User.find(@order.user_id).name %><br>
-                <%= User.find(@order.user_id).email %><br>
-            <% end %>
-        </div>
-
-        </div>
-        </div>
-        </div>
-        </div>    
+    </div>    
     <div class="footer">
         <div class="pull-right">
             Developed by <a href="http://www.systemplus.com.pk/" target="_blank">System Plus</a>
@@ -41,7 +71,78 @@
             <strong>Copyright</strong> Design360 &copy; 2018
         </div>
     </div>
+</div>
+</div>
+</div>
+  
+
+<!-- The Modal -->
+<div class="modal fade" id="acceptModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+  
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Rate the Delivery</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
     
+    <!-- Modal body -->
+    <div class="modal-body">
+      <%= form_for @order do |f| %>
+            Rating:  <%= f.select :rating, options_for_select(["one_star", "two_star", "three_star", "four_star", "five_star"]), { include_blank: true }, :required => :true %><br>
+            Review:  <%= f.text_area :review, class:"form-control", :required => :true %>
+            <%= hidden_field_tag "status", "accepted" %>
+            <%= f.submit "Submit", class:"btn btn-primary" %>
+            </div>
+      <% end %>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="completeModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+  
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Please Attach relevant files for completion</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    
+    <!-- Modal body -->
+    <div class="modal-body">
+        <%= form_for @attachment,  :html => {:class => "form-horizontal"} do |f| %>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">File:</label>
+                <div class="col-lg-10">
+                    <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                        <div class="form-control" data-trigger="fileinput">
+                            <i class="fa fa-image fileinput-exists"></i>
+                        <span class="fileinput-filename"></span>
+                        </div>
+                        <span class="input-group-addon btn btn-default btn-file">
+                            <span class="fileinput-new">Select file</span>
+                            <span class="fileinput-exists">Change</span>
+                            <%= f.file_field :avatar, :required => :true %>
+                        </span>
+                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                    </div> 
+                </div>
+                <%= hidden_field_tag "avatar_type", "complete" %>
+            </div>
+            <%= hidden_field_tag "order_id", @order.id %>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <%= f.submit "Complete Order", class:"btn btn-primary btn-md" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    
+  </div>
 </div>
 </div>

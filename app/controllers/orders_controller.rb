@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
     before_action :set_order, only: [:show,:edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new, :create]
-    load_and_authorize_resource
+    authorize_resource
     
     def new
         @order = current_user.orders.new
-        @templates = Template.all
+        @attachment = @order.attachments.new
     end
     
     def create
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     end
     
     def show
-        
+        @attachment = @order.attachments.new
     end
     def edit
         @templates = Template.all
@@ -26,26 +26,24 @@ class OrdersController < ApplicationController
     
     def update
         if @order.update(order_params)
-            redirect_to dashboard_path, notice: 'Order was successfully updated.'
+            if params[:status] == "accepted"
+                @order.update(:status => "accepted")
+            end
+            redirect_to clients_dashboard_path, notice: 'Order was successfully updated.'
         else
-            redirect_to dashboard_path, notice: 'error.'
+            redirect_to clients_dashboard_path, notice: 'error.'
         end
     end
     
     def destroy
         @order.destroy
-        redirect_to dashboard_path, notice: 'Order was successfully destroyed.'
+        redirect_to clients_dashboard_path, notice: 'Order was successfully destroyed.'
     end
     
     private
     
     def set_order
-        # begin
-            @order = Order.find(params[:id])
-        # rescue ActiveRecord::RecordNotFound
-            # Rails.logger.debugger.error exception.messagec
-            # render plain: '404 Not found', status: 404 
-        # end
+        @order = Order.find(params[:id])
     end
     
     def load_client
@@ -54,6 +52,6 @@ class OrdersController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-        params.require(:order).permit(:amount, :duration, :template_id, :status)
+        params.require(:order).permit(:amount, :rating, :review,:duration, :design_type, :size_format,:color,:content,:description, :status, attachments_attributes: [:id, :order_id, :employee_id, :avatar_type, :avatar, :_destroy])
     end
 end

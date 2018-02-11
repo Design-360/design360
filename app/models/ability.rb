@@ -13,6 +13,7 @@ class Ability
           eorder = EmployeeOrder.where(:order_id => ord.id, :employee_id => user.id)
           eorder.present?
         end
+        can [:create, :update], Attachment, employee_id: user.id
         can :manager_dashboard, :home
         can :index, :home
         can :error, :home

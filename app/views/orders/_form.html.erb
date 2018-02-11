@@ -12,11 +12,41 @@
                             <div class="col-lg-10"><%= f.number_field :duration, class:"form-control", :required => :true %>
                             </div>
                         </div>
-                        <div class="form-group"><label class="col-lg-2 control-label">Template:</label>
+                        <div class="form-group"><label class="col-lg-2 control-label">Design Type:</label>
         
-                            <%= f.select :template_id, @templates.all.collect {|t| [t.name, t.id] }, { include_blank: true }, :required => :true %>
+                            <%= f.select :design_type, options_for_select(["Logo","Poster/flyer","Book/magazine cover","Web ad","Social media graphic","Podcast cover","T-shirt","Business card","Blog image","PowerPoint template","Infographic","Email signature","Background removal","Brochure","Billboard","Label","Restaurant Menu","Other…"]), { include_blank: true }, :required => :true %>
                         </div>
                         
+                        <%= f.fields_for :attachments do |att| %>
+                            <%= render 'attachment_fields', f: att %>
+                            <div class="btn btn-default">
+                                <%= link_to_add_association 'Add Another File', f, :attachments %>
+                            </div>
+                        <% end %>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Size and Format:</label>
+                            <div class="col-lg-10">
+                                <%= f.text_area :size_format, class:"form-control", :required => :true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Content:</label>
+                            <div class="col-lg-10">
+                                <%= f.text_area :content, class:"form-control", :required => :true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Color Preferneces:</label>
+                            <div class="col-lg-10">
+                                <%= f.text_field :color, class:"form-control", :required => :true %>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Description:</label>
+                            <div class="col-lg-10">
+                                <%= f.text_area :description, class:"form-control", :required => :true %>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <%= f.submit "Create Order", class:"btn btn-primary btn-md" %>

@@ -5,8 +5,8 @@ class Employee < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   before_destroy :reset_order
+  has_many :employee_order, dependent: :destroy
   has_many :orders, through: :employee_order
-  has_one :employee_order, dependent: :destroy
   enum role: [ :admin, :manager]
   
   def reset_order

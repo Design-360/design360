@@ -15,9 +15,9 @@
             </div>
         </div>
                 <div class="ibox-content">
-            <%= form_for [@order,@attachment],  :html => {:class => "form-horizontal"} do |f| %>
+            <%= form_for @attachment,  :html => {:class => "form-horizontal"} do |f| %>
                 <div class="form-group">
-                    <label class="col-lg-2 control-label">Image</label>
+                    <label class="col-lg-2 control-label">File:</label>
                     <div class="col-lg-10">
                         <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                             <div class="form-control" data-trigger="fileinput">
@@ -27,27 +27,17 @@
                             <span class="input-group-addon btn btn-default btn-file">
                                 <span class="fileinput-new">Select file</span>
                                 <span class="fileinput-exists">Change</span>
-                                <%= f.file_field :image, :required => :true %>
+                                <%= f.file_field :avatar, :required => :true %>
                             </span>
                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div> 
                     </div>
-                    <label class="col-lg-2 control-label">PDF</label>
-                    <div class="col-lg-10">
-                        <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                            <div class="form-control" data-trigger="fileinput">
-                                <i class="fa fa-image fileinput-exists"></i>
-                            <span class="fileinput-filename"></span>
-                            </div>
-                            <span class="input-group-addon btn btn-default btn-file">
-                                <span class="fileinput-new">Select file</span>
-                                <span class="fileinput-exists">Change</span>
-                                <%= f.file_field :pdf, :required => :true %>
-                            </span>
-                            <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-                        </div> 
+                    <div class="col-lg-4">
+                        <label class="col-lg-4 control-label">Type:</label>
+                        <%= f.select :avatar_type, options_for_select(["complete"]), :required => :true %>
                     </div>
                 </div>
+                <%= hidden_field_tag "order_id", params[:format] %>
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
                         <%= f.submit "Complete Order", class:"btn btn-primary btn-md" %>

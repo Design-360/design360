@@ -28,22 +28,21 @@
             <table class="table table-striped table-bordered table-hover dataTables-example managers" >
             <thead>
             <tr>
-                <th>No.</th>
+                <th>Client</th>
                 <th>Status</th>
-                <th>Amount</th>
-                <th>Deadline</th>
-                <th colspan="2">Actions</th>
+                <th>Project Type</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
            <% @orders.each do |o| %>
             <tr>
-                <td><%= o.id %></td>
+                <td><%= o.user.name %></td>
                 <td><%= o.status %></td>
-                <td><%= o.amount %></td>
-                <td><%= o.duration %> days from <%= o.created_at %></td>
-                <td><%= link_to "Mark as Complete", new_order_attachment_path(o) %></td>
-                <td><%= link_to "Show", order_path(o) %></td>
+                <td><%= o.design_type %></td>
+                <% if not o.status == "accepted" %>
+                    <td><%= link_to "Work on Order", order_path(o) %></td>
+                <% end %>
             </tr>
             <% end %>
             </tbody>

@@ -18,16 +18,13 @@ ActiveRecord::Schema.define(version: 20180126144511) do
   create_table "attachments", force: :cascade do |t|
     t.integer "order_id"
     t.integer "employee_id"
+    t.integer "avatar_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
-    t.string "pdf_file_name"
-    t.string "pdf_content_type"
-    t.integer "pdf_file_size"
-    t.datetime "pdf_updated_at"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "employee_orders", force: :cascade do |t|
@@ -64,6 +61,11 @@ ActiveRecord::Schema.define(version: 20180126144511) do
     t.integer "rating"
     t.text "review"
     t.integer "template_id"
+    t.string "design_type"
+    t.text "size_format"
+    t.text "content"
+    t.string "color"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

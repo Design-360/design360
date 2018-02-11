@@ -25,18 +25,20 @@ class HomeController < ApplicationController
     end
     
     def admin_dashboard
+        @pending_orders = Order.where(:status => "pending")
     end
     
     def manager_dashboard
-        @employee_orders = EmployeeOrder.where(:employee_id => current_employee.id)
-        @order_ids = @employee_orders.pluck(:order_id).uniq
-        @orders = []
-        @order_ids.each do  |a|
-            @o = Order.find(a)
-            if @o.status == "assigned" or @o.status == "in_revision"
-                @orders << @o
-            end
-        end
+        # @employee_orders = EmployeeOrder.where(:employee_id => current_employee.id)
+        # @order_ids = @employee_orders.pluck(:order_id).uniq
+        # @orders = []
+        # @order_ids.each do  |a|
+        #     @o = Order.find(a)
+        #     if @o.status == "assigned" or @o.status == "in_revision"
+        #         @orders << @o
+        #     end
+        # end
+        @orders = current_employee.orders
     end
     
     def client_dashboard

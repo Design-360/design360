@@ -32,7 +32,6 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Status</th>
                     <th>Actions</th>
                     <th>Actions</th>
                 </tr>
@@ -42,7 +41,6 @@
                 <tr>
                     <td><%= mag.name %></td>
                     <td><%= mag.email %></td>
-                    <td>to be determined</td>
                     <td><%= link_to 'Edit', edit_employee_path(mag) %></td>
                     <td><%= link_to 'Delete', employee_path(mag), :method => :delete %></td>
                 </tr>

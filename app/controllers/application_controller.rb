@@ -25,9 +25,9 @@ class ApplicationController < ActionController::Base
   
   
   
-  rescue_from ActionView::MissingTemplate do |exception|
-    render file: 'home/error', status: 404 
-  end
+  # rescue_from ActionView::MissingTemplate do |exception|
+  #   render file: 'home/error', status: 404 
+  # end
   
   rescue_from ActiveRecord::RecordNotFound do |exception|
     render file: 'home/error', status: 404 

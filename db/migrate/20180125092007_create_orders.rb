@@ -8,6 +8,12 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.integer :rating
       t.text :review
       t.integer :template_id
+      t.string :design_type
+      t.text :size_format
+      t.text :content
+      t.string :color
+      t.text :description
+      
 
       t.timestamps
     end

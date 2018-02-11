@@ -1,0 +1,28 @@
+<div class="nested-fields">
+    <div class="form-group">
+        <label class="col-lg-2 control-label">File</label>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                    <div class="form-control" data-trigger="fileinput">
+                        <i class="fa fa-image fileinput-exists"></i>
+                    <span class="fileinput-filename"></span>
+                    </div>
+                    <span class="input-group-addon btn btn-default btn-file">
+                        <span class="fileinput-new">Select file</span>
+                        <span class="fileinput-exists">Change</span>
+                        <%= f.file_field :avatar %>
+                    </span>
+                    <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <label class="col-lg-4 control-label">Type:</label>
+                <%= f.select :avatar_type, options_for_select([["Brand Asset","brand_asset"],["Inspiration", "inspiration"]]), :required => :true %>
+            </div>
+        </div>
+    </div>
+    <div class="btn btn-default">
+        <%= link_to_remove_association "Remove", f %>
+    </div>
+</div>
