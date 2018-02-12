@@ -12,13 +12,14 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery_slim_scroll
+//= require bootstrap.min
 //= require cocoon
 //= require turbolinks
 //= require toastr
 //= require datatables.min
 //= require metisMenu
 //= require inspinia
-//= require bootstrap.min
 //= require jasny-bootstrap.min
 
 
