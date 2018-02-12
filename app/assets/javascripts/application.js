@@ -14,17 +14,12 @@
 //= require jquery
 //= require cocoon
 //= require turbolinks
-//= require landing-page
 //= require toastr
-//= require inspinia
 //= require datatables.min
-//= require landing-page
-//= require jquery.circliful.min
-//= require jquery.counterup.min
-//= require jquery.magnific-popup.min
-//= require owl.carousel
-//= require typed
-//= require_tree .
+//= require metisMenu
+//= require inspinia
+//= require bootstrap.min
+//= require jasny-bootstrap.min
 
 
 // $(document).on('turbolinks:load', function() {
