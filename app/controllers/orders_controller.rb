@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     end
     
     def show
-        @attachment = @order.attachments.new
+        #@attachment = @order.attachments.new
     end
     def edit
         @templates = Template.all

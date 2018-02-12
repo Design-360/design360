@@ -115,7 +115,7 @@
     
     <!-- Modal body -->
     <div class="modal-body">
-        <%= form_for @attachment,  :html => {:class => "form-horizontal"} do |f| %>
+        <%= form_for @order.attachments.new,  :html => {:class => "form-horizontal"} do |f| %>
             <div class="form-group">
                 <label class="col-lg-2 control-label">File:</label>
                 <div class="col-lg-10">
