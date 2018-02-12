@@ -5,7 +5,7 @@
 <% if @orders.present? %>
 <div class="row wrapper border-bottom white-bg page-heading">
         
-    <% if not @orders.accepted.present? %>
+    <% if not (@orders.pending.present? or @orders.assigned.present? or @orders.complete.present?) %>
         <div class="col-lg-10">
             <h2>Orders</h2>
         </div>
