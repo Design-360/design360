@@ -5,7 +5,7 @@
 <% if @orders.present? %>
 <div class="row wrapper border-bottom white-bg page-heading">
         
-    <% if not (@orders.pending.present? or @orders.assigned.present?) %>
+    <% if not @orders.accepted.present? %>
         <div class="col-lg-10">
             <h2>Orders</h2>
         </div>
@@ -17,7 +17,7 @@
             <h2>Orders</h2>
         </div>
         <div class="col-lg-4" style="margin-top:15px;">
-            <p class="btn btn-primary">You have on-going orders. You cannot add new ones.</p>
+            <p class="btn btn-primary" disabled>You have on-going orders. You cannot add new ones.</p>
         </div>
     <% end %>
 </div>
@@ -136,8 +136,8 @@
             <tr>
                 <th>No.</th>
                 <th>Status</th>
-                <th>Amount</th>
-                <th>Deadline</th>
+                <th>Rating</th>
+                <th>Review</th>
             </tr>
             </thead>
             <tbody>
@@ -145,8 +145,8 @@
             <tr>
                 <td><%= o.id %></td>
                 <td><%= o.status %></td>
-                <td><%= o.amount %></td>
-                <td><%= o.duration %></td>
+                <td><%= o.rating %></td>
+                <td><%= o.review %></td>
             </tr>
             <% end %>
             </tbody>

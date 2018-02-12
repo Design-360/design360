@@ -1,19 +1,48 @@
-<div class="landing-page">
-    <div class="main-wrapper">
-     <header class="header header--bg">
-      <div class="container-fluid">
-        <nav class="navbar">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span> 
-            </button>
-            <a class="navbar-brand" href="/"><img src="logo-360.png"></a>
+<div class="landing-page">    
+    <div class="tagline hidden-xs"> 
+      <div class="container"> 
+        <div class="pull-left"> 
+          <div class="phone">
+            <i class="fas fa-phone"></i> +1 123 456 78 90
           </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav pull-right">
-               <li><a href="/">Home</a></li>
+          <div class="email">
+            <a href="mailto:#">
+              <i class="far fa-envelope"></i> Support@design360.graphics
+            </a>
+          </div>
+        </div>
+        <div class="pull-right"> 
+          <ul class="top_socials"> 
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/"><i class="fab fa-google-plus"></i></a></li>
+            <li><a href="https://www.dribble.com/"><i class="fab fa-dribbble"></i></a></li>
+            <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a></li>
+          </ul> 
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-custom sticky">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Design360</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="/">Home</a></li>
                 <% if user_signed_in? or employee_signed_in? %>
                     <% if current_user %>
                     <li><a href="/clients/dashboard">Dashboard</a></li>
@@ -38,385 +67,754 @@
                     <li><a href="/employees/sign_in">Employee</a></li>
                     <li><a href="/users/sign_in">Client</a></li>
                 <% end %>
-            </ul>
-          </div>
-        </nav>
-        <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="header__content">
-          <h1 class="header__content__title hidden-md hidden-lg">Design360</h1>
-          <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-          <a class="button button--margin-right button--hover" href="#">LEARN MORE</a>
-          <a class="button button--hover" href="#" >CONTACT</a>
-        </div>
-        </div>
-        <div class="col-md-6 hidden-sm hidden-xs">
-        <center><img class="img-responsive" src="design.jpg" width="50%"></center>
-        </div>  
-        </div>
-    </header>
-     <section class="about">
-      <div class="container-fluid" style="padding-right:0;">
-        <div class="page-section">
-          <div class="text-center">
-            <h2 class="page-section__title">ABOUT Design360</h2>
-            <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          </div>
-          <div class="row gutters-50">
-            <div class="about--narrow">
-              <div class="col-md-6">
-                <img class="img-responsive" src="about-pic.png" alt="">
-              </div>
-              <div class="col-md-6 about__extra-padding">
-                <h3 class="about__content-title">We Believe In Simple Design</h3>
-                <p class="about__content-subTitle">Trusted comes with tons of custom widgets, color options, font control and 
-                  much more.</p>
-                  <p class="about__content-paragraph">We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.</p>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    <!-- /Header -->
 
-      </section>
-    <section class="contact contact--bg">
+    <!-- Home -->
+    <section id="home">
+      <div class="home-bg"></div><!-- Bg-image -->
       <div class="container">
-        <div class="page-section text-center">
-          <h2 class="page-section__title--white">We Always Work To Make A Difference</h2>
-          <p class="page-section__paragraph--white">If you like our works and have a project,contact us now</p>
-          <a class="button button--hover" href="#">CONTACT US</a>
-        </div>
-      </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="intro-title">We are<span class="element" data-elements="Design agency,Design360,Modern"></span></h1>
+            <p class="intro-text">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,<br/>cum soluta nobis est eligendi optio cumque nihil impedit quo facilis</p>
+            <div class="btn-bar">
+              <a href="#" class="btn btn-custom">Get Started</a>
+              <a href="#contact" class="btn btn-custom-outline">Contact Us</a>
+            </div>
+          </div> <!-- /col -->
+        </div> <!-- /row -->
+      </div> <!-- /container -->
     </section>
-    <section class="service">
-      <div class="container-fluid c-service">
-        <div class="page-section text-center">
-          <h2 class="page-section__title">SERVICES WE OFFER</h2>
-          <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          <div class="row gutters-40">
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="fa fa-bullhorn fa-2x"></i>
-                <h4 class="service__title">Growing Business</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="fa fa-clock fa-2x"></i>
-                <h4 class="service__title">Save Time</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="fa fa-code fa-2x"></i>
-                <h4 class="service__title">Free Support</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-          </div>
-          <div class="row gutters-40">
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="fa fa-camera fa-2x"></i>
-                <h4 class="service__title">Responsive Design</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="fa fa-chess-knight fa-2x"></i>
-                <h4 class="service__title">Target Fill Up</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="fas fa-mobile-alt fa-2x"></i>
-                <h4 class="service__title">Graphic Design</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="overview overview--bg">
-        <div class="container-fluid">
-          <div class="page-section">
-            <div class="overview__wrapper text-center">
-              <ul>
-                <li>
-                  <h1 class="overview__number">550</h1>
-                  <p class="overview__title">CUP OF COFFEE</p>
-                </li>
-                <li>
-                  <h1 class="overview__number">800</h1>
-                  <p class="overview__title">PROJECT DONE</p>
-                </li>
-                <li>
-                  <h1 class="overview__number">400</h1>
-                  <p class="overview__title">HAPPY CLIENT</p>
-                </li>
-                <li>
-                  <h1 class="overview__number">3550</h1>
-                  <p class="overview__title">AWARDS WIN</p>
-                </li>
-              </ul>
-            </div>
+    <!-- /Home -->
 
-          </div>
-        </div>
-      </section>
-     <div class="container c-project">
-        <section class="project">
-          <div class="page-section">
-            <div class="text-center">
-              <h2 class="page-section__title">FEATURED PROJECT</h2>
-              <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <!-- About -->
+    <section id="about-us">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title">About Us</h3>
+                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                </div>
+                <!-- /col -->
             </div>
-            <div class="row gutters-50">
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="featured-project-pic1.png" target="_blank">
-                    <img class="img-responsive" src="featured-project-pic1.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+            <!-- /row -->
+
+            <div class="row features-box">
+                <div class="col-sm-4 text-right">
+                    <div class="margin-b-md">
+                        <i class="far fa-sticky-note"></i>
+                        <h4>POWER OF FLEXIBILITY</h4>
+                        <p>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.</p>
                     </div>
-                  </a>
+                    <!-- / margin -->
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="featured-project-pic2.png" target="_blank">
-                    <img class="img-responsive" src="featured-project-pic2.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                <!-- /col -->
+                <div class="col-sm-4 features-line">
+                    <div class="margin-b-md">
+                        <i class="far fa-gem"></i>
+                        <h4>FULLY RESPONSIVE</h4>
+                        <p>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.</p>
                     </div>
-                  </a>
+                    <!-- / margin -->
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="featured-project-pic3.png" target="_blank">
-                    <img class="img-responsive" src="featured-project-pic3.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
+                <!-- /col -->
+                <div class="col-sm-4 text-left">
+                    <div class="margin-b-md">
+                        <i class="far fa-lightbulb"></i>
+                        <h4>GREAT WEB IDEAS</h4>
+                        <p>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.</p>
                     </div>
-                  </a>
+                    <!-- / margin -->
                 </div>
-              </div>
+                <!-- /col -->
             </div>
-            <div class="row gutters-50">
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="featured-project-pic4.png" target="_blank">
-                    <img class="img-responsive" src="featured-project-pic4.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="featured-project-pic5.png" target="_blank">
-                    <img class="img-responsive" src="featured-project-pic5.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="featured-project-pic6.png" target="_blank">
-                    <img class="img-responsive" src="featured-project-pic6.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>  
-    <div class="container-fluid c-team">
-        <section class="container team">
-          <div class="page-section text-center">
-            <h2 class="page-section__title--white">CREATIVE TEAM</h2>
-            <p class="page-section__paragraph--white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <div class="row gutters-50">
-              <div class="col-md-6 col-lg-3">
-                <div class="thumbnail">
-                  <a href="team-pic1.png" target="_blank">
-                    <img src="team-pic1.png" alt="">
-                    <div class="caption team__caption">
-                      <h4 class="team__name">Elodia S. Keefe</h4>
-                      <p class="team__title">Founder</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="thumbnail">
-                  <a href="team-pic2.png" target="_blank">
-                    <img src="team-pic2.png" alt="">
-                    <div class="caption team__caption">
-                      <h4 class="team__name">Sheryl D. Trent</h4>
-                      <p class="team__title">Co-Founder</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="thumbnail">
-                  <a href="team-pic3.png" target="_blank">
-                    <img src="team-pic3.png" alt="">
-                    <div class="caption team__caption">
-                      <h4 class="team__name">Dorothy J. Cook</h4>
-                      <p class="team__title">UI Specialist</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="thumbnail">
-                  <a href="team-pic4.png" target="_blank">
-                    <img src="team-pic4.png" alt="">
-                    <div class="caption team__caption">
-                      <h4 class="team__name">Stuart D. Mahaffey</h4>
-                      <p class="team__title">Admin</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    <div class="container c-blog">
-        <section class="blog">
-          <div class="page-section">
-            <div class="text-center">
-              <h2 class="page-section__title">OUR BLOG</h2>
-              <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
-            <div class="row gutters-50">
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="blog-pic1.png" target="_blank">
-                    <img class="img-responsive" src="blog-pic1.png" alt="">
-                    <div class="caption">
-                      <h3 class="blog__title">Global Traffic Search</h3>
-                      <p class="blog__paragraph">By Jhon Doe <span class="blog__paragraph--slash">&#47;</span> 12 July, 2017 <span class="blog__paragraph--slash">&#47;</span> 2 Comments</p>
-                      <h4 class="blog__read-more">READ MORE</h4>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="blog-pic2.png" target="_blank">
-                    <img class="img-responsive" src="blog-pic2.png" alt="">
-                    <div class="caption">
-                      <h3 class="blog__title">Global Traffic Search</h3>
-                      <p class="blog__paragraph">By Jhon Doe &#47; 12 July, 2017 &#47; 2 Comments</p>
-                      <h4 class="blog__read-more">READ MORE</h4>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="blog-pic3.png" target="_blank">
-                    <img class="img-responsive" src="blog-pic3.png" alt="">
-                    <div class="caption">
-                      <h3 class="blog__title">Global Traffic Search</h3>
-                      <p class="blog__paragraph">By Jhon Doe &#47; 12 July, 2017 &#47; 2 Comments</p>
-                      <h4 class="blog__read-more">READ MORE</h4>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    <footer class="footer footer--bg">
-        <div class="container-fluid">
-          <div class="page-section">
-            <div class="row gutters-100">
-              <div class="col-md-4 col-lg-3">
-                <div class="footer__first">
-                  <h2 class="footer__title">Design360</h2>
-                  <p class="footer-first__paragraph">Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod tempor incididunt ut labore </p>
-                  <ul class="footer-first__social-icons">
-                    <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                    <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                    <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                    <li><a href="#"><i class="flaticon-behance-logo"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-2">
-                <div class="footer__second">
-                  <h2 class="footer__title">QUICK LINK</h2>
-                  <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="footer__third">
-                  <h2 class="footer__title">CONTACT US</h2>
-                  <ul>
-                    <li><i class="fa fa-envelope"></i> <a href="#">design360@gmail.com</a></li>
-                    <li><i class="fa fa-phone"></i> <a href="#">+0123-345-6789</a></li>
-                  </ul>
-                  <h4 class="footer__subscribe__title">Subscribe</h4>
-                  <div class="subscribe-section">
-                    <input type="email" class="form-control" size="50" placeholder="Enter Your Email" required>
-                    <button class="subscribe-section__button" type="button"><img src="send-icon.png" alt=""></button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="footer__fourth">
-                  <h4 class="footer__title">INSTAGRAM</h4>
-                  <div class="row">
-                    <ul>
-                      <li><a href="#"><img src="instagram-pic1.png" alt=""></a></li>
-                      <li><a href="#"><img src="instagram-pic2.png" alt=""></a></li>
-                      <li><a href="#"><img src="instagram-pic3.png" alt=""></a></li>
+            <!-- /row -->
+
+            <div class="row advanced-about">
+                <div class="col-sm-6 text-left">
+                    <h4><b>Responsive Web Design </b></h4>
+                    <hr/>
+                    <p>Employment respond committed meaningful fight against oppression social challenges rural legal aid governance. Meaningful work, implementation, process cooperation, campaign inspire.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-angle-right"></i>Consectetur adipisicing elit, sed do eiusmod
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right"></i>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right"></i>Meaningful fight against oppression social challenges rural legal aid governance.
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right"></i>Consectetur adipisicing elit, sed do eiusmod
+                        </li>
+                        <li>
+                            <i class="fas fa-angle-right"></i>CUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                        </li>
                     </ul>
-                  </div>
-                  <div class="row">
-                    <ul>
-                      <li><a href="#"><img src="instagram-pic4.png" alt=""></a></li>
-                      <li><a href="#"><img src="instagram-pic5.png" alt=""></a></li>
-                      <li><a href="#"><img src="instagram-pic6.png" alt=""></a></li>
-                    </ul>
-                  </div>
+                    <a href="#" class="btn btn-custom margin-t-md">Learn More</a>
                 </div>
-              </div>
+                <!-- /col -->
+
+                <div class="col-sm-6 text-center">
+                    <img src="about-1.png" alt="about" class="img-responsive">
+                </div>
+                <!-- /col -->
             </div>
-            <hr class="footer__horizontal-bar">
-            <p class="footer__bottom-paragraph">&copy; Copyright 2017 Design360. All Rights Reserved</p>
-          </div>
+            <!-- /row -->
         </div>
-      </footer>
-  </div>
+        <!-- /container -->
+    </section>
+    <!-- About -->
+
+    <!-- FUN-FACTS -->
+    <section class="fun-facts bg-dark" id="fun-facts">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-3 facts">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h1><span id="counter-award">6577</span> k</h1>
+                    <h4>Lines Coded</h4>
+                </div>
+                <!-- /facts-1 -->
+                <div class="col-md-3 col-sm-3 facts">
+                    <i class="fas fa-magic"></i>
+                    <h1> <span id="counter-works">7800 </span> +</h1>
+                    <h4>Working Hours</h4>
+                </div>
+                <!-- /facts-2 -->
+                <div class="col-md-3 col-sm-3 facts">
+                    <i class="far fa-file"></i>
+                    <h1 id="counter-client">399</h1>
+                    <h4>No. Of Template</h4>
+                </div>
+                <!-- /facts-3 -->
+                <div class="col-md-3 col-sm-3 facts">
+                    <i class="far fa-image"></i>
+                    <h1 id="counter-pro">9995</h1>
+                    <h4>Photos</h4>
+                </div>
+                <!-- /facts-4 -->
+            </div>
+            <!-- / row -->
+        </div>
+        <!--  /container -->
+    </section>
+    <!-- / FUN-FACTS -->
+
+    <!-- Portfolio -->
+    <section id="works" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title">Recent Works</h3>
+                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <img src="work-1.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="work-1.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Mockup Design</a></h3>
+                        <span>Photoshop</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <img src="work-2.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="work-2.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Graphic Design</a></h3>
+                        <span>Illustrator</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <img src="work-3.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="work-3.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Web Design</a></h3>
+                        <span>Html / Css</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <img src="work-4.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="work-4.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Mockup Design</a></h3>
+                        <span>Photoshop</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <img src="work-5.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="work-5.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Graphic Design</a></h3>
+                        <span>Illustrator</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <img src="work-6.jpg" class="img-responsive" alt="workimg">
+                        <div class="item-img-overlay">
+                            <a href="work-6.jpg" class="show-image">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Web Design</a></h3>
+                        <span>Html / Css</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="#" class="btn btn-custom">Load More</a>
+                </div>
+            </div>
+            <!-- /row -->
+
+        </div>
+        <!-- /container -->
+    </section>
+    <!-- / Portfolio -->
+
+    <!--  Intro-section -->
+    <section class="parallax" data-stellar-background-ratio="0.3" id="inner-section">
+        <div class="container">
+            <div class="row">
+                <article class="col-md-12 text-center">
+                    <div class="intermediate-container">
+                        <div class="subheading">
+                            <h4>Are You Ready To Enjoy?</h4>
+                        </div>
+                        <div class="heading">
+                            <h2>inspire your customer here!</h2>
+                        </div>
+                        <div class="">
+                            <a class="btn btn-custom-outline" href="#"><span>get started</span></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- / Intro-section -->
+
+    <!-- Team -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3 class="title">Creative Team</h3>
+                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+
+            <div class="row text-center">
+                <div class="col-sm-3">
+                    <img src="team-1.jpg" alt="team-member" class="img-responsive">
+                    <h4>John Smith</h4>
+                    <h5>Founder</h5>
+                    <p>Hey, I’m Johm Smith residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+
+                <div class="col-sm-3">
+                    <img src="team-2.jpg" alt="team-member" class="img-responsive">
+                    <h4>Cristina Deo</h4>
+                    <h5>Web Designer</h5>
+                    <p>Hey, I’m Cristina Deo residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+
+                <div class="col-sm-3">
+                    <img src="team-3.jpg" alt="team-member" class="img-responsive">
+                    <h4>Jonathan Deo</h4>
+                    <h5>Manager</h5>
+                    <p>Hey, I’m Jonathan Deo residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+
+                <div class="col-sm-3">
+                    <img src="team-4.jpg" alt="team-member" class="img-responsive">
+                    <h4>Anton Kovalsky</h4>
+                    <h5>Graphic Designer</h5>
+                    <p>Hey, I’m Anton Kovalsky residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+            </div>
+            <!-- end row -->
+
+            <div class="row margin-t-md">
+                <div class="col-md-12 text-center">
+                    <a href="#" class="btn btn-custom">We are Hiring</a>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- container -->
+    </section>
+    <!-- /Team -->
+
+
+    <!-- Skills -->
+    <section class="bg-dark">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-3">
+                    <div class="skill">
+                        <div id="mySkill1" class="skill-chart" data-dimension="160" data-text="77%" data-width="6" data-fontsize="28" data-percent="77" data-fgcolor="#666" data-bgcolor="#eee"></div>
+                        <h4><i class="icon-umbrella"></i>Creativity</h4>
+                    </div>
+                </div>
+                <!-- skill -->
+
+                <div class="col-sm-3">
+                    <div class="skill">
+                        <div id="mySkill2" class="skill-chart" data-dimension="160" data-text="86%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>
+                        <h4><i class="icon-cloud-download"></i>Wordpress</h4>
+                    </div>
+                </div>
+                <!-- skill -->
+
+                <div class="col-sm-3">
+                    <div class="skill">
+                        <div id="mySkill3" class="skill-chart" data-dimension="160" data-text="93%" data-width="6" data-fontsize="28" data-percent="93" data-fgcolor="#666" data-bgcolor="#eee"></div>
+                        <h4><i class="icon-screen-desktop"></i> Design</h4>
+                    </div>
+                </div>
+                <!-- skill -->
+
+                <div class="col-sm-3">
+                    <div class="skill">
+                        <div id="mySkill4" class="skill-chart" data-dimension="160" data-text="81%" data-width="6" data-fontsize="28" data-percent="81" data-fgcolor="#666" data-bgcolor="#eee"></div>
+                        <h4><i class="icon-bulb"></i> Coding</h4>
+                    </div>
+                </div>
+                <!-- skill -->
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- container -->
+    </section>
+    <!-- / Skills -->
+
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3 class="title">We Are Good In</h3>
+                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-diamond"></i>
+                        <div class="service-detail">
+                            <h4>Strategy Solutions</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-screen-tablet"></i>
+                        <div class="service-detail">
+                            <h4>Digital Design</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-magnifier"></i>
+                        <div class="service-detail">
+                            <h4>SEO</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-rocket"></i>
+                        <div class="service-detail">
+                            <h4>Graphic Design</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-graph"></i>
+                        <div class="service-detail">
+                            <h4>Analystics</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-earphones-alt"></i>
+                        <div class="service-detail">
+                            <h4>Dedicated Support</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-basket"></i>
+                        <div class="service-detail">
+                            <h4>Truly Multipurpose</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-disc"></i>
+                        <div class="service-detail">
+                            <h4>Unlimited Colors</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <i class="icon-layers"></i>
+                        <div class="service-detail">
+                            <h4>Easy to customize</h4>
+                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- end row -->
+
+        </div>
+        <!-- container -->
+    </section>
+    <!-- /Services -->
+
+
+    <!-- Testimonials -->
+    <section class="testi-slide parallax" id="testimonials" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div id="testi-carousel" class="owl-carousel owl-spaced">
+                        <div>
+                            <img src="test-1.jpg" alt="test-1" class="img-circle img-user">
+                            <h5>
+                  <span><i class=""></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat, eligendi magni quibusdam iure cupiditate ex voluptas unde Lorem ipsum dolor sit amet..
+                </h5>
+                            <p>- Jonathan Deo</p>
+                        </div>
+                        <!--testimonials item like paragraph-->
+                        <div>
+                            <img src="test-2.jpg" alt="test-1" class="img-circle img-user">
+                            <h5>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat, eligendi magni quibusdam iure cupiditate ex voluptas unde Lorem ipsum dolor sit amet..
+                </h5>
+                            <p>- Jonathan Deo</p>
+                        </div>
+                        <!--testimonials item like paragraph-->
+                        <div>
+                            <img src="test-3.jpg" alt="test-1" class="img-circle img-user">
+                            <h5>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat, eligendi magni quibusdam iure cupiditate ex voluptas unde Lorem ipsum dolor sit amet..
+                </h5>
+                            <p>- Jonathan Deo</p>
+                        </div>
+                        <!--testimonials item like paragraph-->
+                    </div>
+                </div>
+                <!-- end col-md-8 -->
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <img src="1.png" alt="Partner 1" class="img-responsive">
+                </div>
+
+                <div class="col-sm-3">
+                    <img src="2.png" alt="Partner 1" class="img-responsive">
+                </div>
+
+                <div class="col-sm-3">
+                    <img src="3.png" alt="Partner 1" class="img-responsive">
+                </div>
+
+                <div class="col-sm-3">
+                    <img src="4.png" alt="Partner 1" class="img-responsive">
+                </div>
+            </div>
+        </div>
+        <!-- container -->
+    </section>
+    <!-- / Testimonials -->
+
+
+
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="">
+        <div class="container">
+            <div class="row text-center info-contact">
+                <div class="col-sm-4 margin-b-md">
+                    <i class="icon-envelope"></i>
+                    <h4>Get in touch</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:support@Cubana.com">E: support@Cubana.com</a>
+                        </li>
+                        <li><a href="tel:0123456789">P: 0123 456 789</a>
+                        </li>
+                        <li><a href="#">W: www.Cubana.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end Get in touch -->
+
+                <div class="col-sm-4 margin-b-md">
+                    <i class="icon-pointer"></i>
+                    <h4>Our Location</h4>
+                    <address>Cubana<br> 123 street <br>Saint Peter, MN 12345<br> 059 – 12345678</address>
+                </div>
+                <!-- end Our Location -->
+
+                <div class="col-sm-4 margin-b-md">
+                    <i class="icon-support"></i>
+                    <h4>Free Support</h4> Call Now
+                    <a class="support" href="tel:0123456789">12345 67890</a>
+                </div>
+                <!-- end Support -->
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" name="ajax-form" id="ajax-form" action="" method="post" class="form-main">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <label for="name2">Name</label>
+                                    <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+                                    <div class="error" id="err-name" style="display: none;">Please enter name</div>
+                                </div>
+                                <!-- /Form-name -->
+
+                                <div class="form-group col-sm-4">
+                                    <label for="email2">Email</label>
+                                    <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+                                    <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+                                </div>
+                                <!-- /Form-email -->
+
+                                <div class="form-group col-sm-4">
+                                    <label for="subject1">Subject</label>
+                                    <input class="form-control" id="subject1" name="name" onblur="if(this.value == '') this.value='Subject'" onfocus="if(this.value == 'Subject') this.value=''" type="text" value="Subject">
+                                </div>
+                                <!-- /Form-Subject -->
+                            </div>
+                            <!-- /row -->
+
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <label for="message2">Message</label>
+                                    <textarea class="form-control" id="message2" name="message" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+                                    <div class="error" id="err-message" style="display: none;">Please enter message</div>
+                                </div>
+                                <!-- /col -->
+                            </div>
+                            <!-- /row -->
+
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <p class="text-center con_sub_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren.</p>
+                                </div>
+                                <!-- /col -->
+                            </div>
+                            <!-- /row -->
+
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <div id="ajaxsuccess">E-mail was successfully sent.</div>
+                                    <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
+                                    <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                                    <div class="error" id="err-state"></div>
+                                    <button type="submit" class="btn btn-custom" id="send">Submit</button>
+                                </div>
+                                <!-- /col -->
+                            </div>
+                            <!-- /row -->
+
+                        </div>
+                        <!-- /row -->
+                    </form>
+                    <!-- /form -->
+                </div>
+                <!-- end col-md-12 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- container -->
+    </section>
+    <!-- End CONTACT -->
+    <!-- Footer -->
+    <footer class="footer-a text-center">
+        <!-- Footer-copyright -->
+        <p>©2018 Design360. Developed by <a href="http://www.systemplus.com.pk/">System Plus</a></p>
+    </footer>
+    <!-- /Footer -->
+
 </div>
+<script type="text/javascript"> <!-- cross browser -->
+    window.requestAnimationFrame||(window.requestAnimationFrame=function(){return window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}());
+</script>
