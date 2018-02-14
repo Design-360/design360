@@ -17,6 +17,8 @@
 //= require cocoon
 //= require turbolinks
 //= require toastr
+//= require datatables.min
+//= require inspinia
 
 
 // $(document).on('turbolinks:load', function() {
