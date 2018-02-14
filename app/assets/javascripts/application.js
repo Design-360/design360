@@ -19,6 +19,7 @@
 //= require toastr
 //= require datatables.min
 //= require inspinia
+//= require metisMenu
 
 
 // $(document).on('turbolinks:load', function() {
