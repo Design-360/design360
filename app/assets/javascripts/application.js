@@ -128,7 +128,7 @@ $(document).on('turbolinks:load', function() {
     });
 
     
-    
+});
     
     // Typing
     
@@ -439,7 +439,5 @@ $(document).on('turbolinks:load', function() {
         };
     }(jQuery));
 
-
-});
 
 });
