@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
+//= require rails-ujs
+//= require jquery
+//= require jquery_slim_scroll
+//= require bootstrap.min
+//= require cocoon
+//= require turbolinks
+//= require toastr
+//= require datatables.min
+//= require metisMenu
+//= require inspinia
+//= require jasny-bootstrap.min
 
 
 // $(document).on('turbolinks:load', function() {
