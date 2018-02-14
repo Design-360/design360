@@ -42,7 +42,6 @@
                         <strong>Description:  </strong><%= @order.description %><br>
                         <% if @order.attachments.present? %>
                             <h2>Files</h2>
-                            <%= @order.attachments.count %><br>
                             <% @order.attachments.each do |att| %>
                                 <strong>Type:  </strong><%= att.avatar_type %><br>
                                 <%= link_to 'Download File', att.avatar.url, :target => :blank %><br>
@@ -54,7 +53,7 @@
 
                             <%#= link_to "Attach Completion Files", new_attachment_path(@order), class:"btn btn-primary" %>
                         <% end %>
-                        <% if (@order.status == "complete" or @order.status == "in_revision") and current_user %>
+                        <% if (@order.status == "complete") and current_user %>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Accept</button>
                             <%= link_to "Ask for Revision", order_path(@order, :order => {:status => "in_revision"}), :method => :put, class:"btn btn-primary" %>
                         <% end %>

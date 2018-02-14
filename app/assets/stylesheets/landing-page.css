@@ -134,16 +134,7 @@
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
 }
-/* 3 Parallax
------------------------------------------------------------------------------ */
-.landing-page .parallax {
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    width: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-}
+
 
 
 /* 5 Topbar / Navigation
@@ -162,7 +153,6 @@
 	font-size: 15px;
 }
 .landing-page .tagline .pull-left i {
-	font-weight: 400;
 	display: inline-block;
 	margin-right: 5px;
 }
@@ -438,6 +428,10 @@
 ----------------------------------------------------------------------------- */
 .landing-page #inner-section {
 	background: url(../img-2.jpg) center;
+	 background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .landing-page .intermediate-container .subheading h4 {
 	color: #ffffff;
@@ -454,23 +448,36 @@
 }
 /* 11 Team / Skills
 ----------------------------------------------------------------------------- */
-.landing-page .team h5 {
-	color: #9aa7af;
+.circliful {
+    margin:auto;
+    position: relative; 
 }
-.landing-page .skill-chart {
-	margin: 0px auto;
+
+.circle-text, .circle-info, .circle-text-half, .circle-info-half {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
 }
-.landing-page .skill i {
-	font-size: 20px;
-	vertical-align: middle;
-	margin-right: 5px;
+
+.circle-info, .circle-info-half {
+	color: #999;
+}
+
+.circliful .fa {
+	margin: -10px 3px 0 3px;
+	position: relative;
+	bottom: 4px;
+}
+.progress{
+	height:100%;
 }
 /* 12 Services
 ----------------------------------------------------------------------------- */
 .landing-page .service-item i {
 	float: left;
 	font-size: 28px;
-	line-height: 36px;
+	line-height: 20px;
 	width: 30px;
 }
 .landing-page .service-item .service-detail {
@@ -484,6 +491,10 @@
 ----------------------------------------------------------------------------- */
 .landing-page #testimonials {
 	background: url(../img-2.jpg) center;
+	 background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .landing-page .testi-slide {
 	color: #f1f2f3;

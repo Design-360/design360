@@ -42,7 +42,8 @@ class HomeController < ApplicationController
     end
     
     def client_dashboard
-        @orders = Order.where(:user_id => current_user.id)
+        # @orders = Order.where(:user_id => current_user.id)
+        @orders = current_user.orders
         @pending_orders = []
         @complete_orders = []
         @accepted_orders = []
