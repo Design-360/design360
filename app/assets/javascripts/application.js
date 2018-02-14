@@ -20,6 +20,7 @@
 //= require datatables.min
 //= require inspinia
 //= require metisMenu
+//= require jasny-bootstrap.min
 
 
 // $(document).on('turbolinks:load', function() {
