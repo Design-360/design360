@@ -23,10 +23,10 @@ class EmployeesController < ApplicationController
     def create
         @manager = Employee.new(manager_params)
         if @manager.save
-            EmployeeMailer.sample_email(@manager,params[:employee][:password]).deliver
-            redirect_to admin_dashboard_path, notice: 'Manager was successfully created.'
+            EmployeeMailer.welcome_email(@manager,params[:employee][:password]).deliver
+            redirect_to admin_managers_path, notice: 'Manager was successfully created.'
         else
-            redirect_to admin_dashboard_path, alert: "Error"
+            redirect_to admin_managers_path, alert: "Error"
         end
     end
     
@@ -35,12 +35,16 @@ class EmployeesController < ApplicationController
     
     def update
         @manager = Employee.update(manager_params)
-        redirect_to admin_dashboard_path, notice: 'Profile was successfully updated.'
+        if current_employee.admin?
+            return redirect_to admin_dashboard_path, notice: 'Profile was successfully updated.'
+        elsif current_employee.manager?
+            redirect_to managers_dashboard_path, notice: 'Profile was successfully updated.'
+        end
     end
     
     def destroy
         @manager.destroy
-        redirect_to admin_dashboard_path, notice: 'Manager was successfully destroyed.'
+        redirect_to admin_managers_path, notice: 'Manager was successfully destroyed.'
     end
     
     private

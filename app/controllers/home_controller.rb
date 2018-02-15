@@ -8,8 +8,9 @@ class HomeController < ApplicationController
     
     def admin_orders
         @pending_orders = Order.where(:status => "pending")
-        @completed_orders = Order.where(:status => "complete")
-        @employee_orders = EmployeeOrder.all
+        @assigned_orders = Order.where(:status => "assigned")
+        @delivered_orders = Order.where(:status => "delivered")
+        @complete_orders = Order.where(:status => "complete")
     end
     
     def admin_managers
@@ -29,35 +30,18 @@ class HomeController < ApplicationController
     end
     
     def manager_dashboard
-        # @employee_orders = EmployeeOrder.where(:employee_id => current_employee.id)
-        # @order_ids = @employee_orders.pluck(:order_id).uniq
-        # @orders = []
-        # @order_ids.each do  |a|
-        #     @o = Order.find(a)
-        #     if @o.status == "assigned" or @o.status == "in_revision"
-        #         @orders << @o
-        #     end
-        # end
         @orders = current_employee.orders
+        @pending_orders = @orders.assigned + @orders.in_revision
+        @delivered_orders = @orders.delivered
+        @complete_orders = @orders.complete
     end
     
     def client_dashboard
-        # @orders = Order.where(:user_id => current_user.id)
         @orders = current_user.orders
-        @pending_orders = []
-        @complete_orders = []
-        @accepted_orders = []
-        @orders.each do |ord|
-            if ord.status == "pending" or ord.status == "assigned"
-                @pending_orders << ord
-            elsif ord.status == "accepted"
-                @accepted_orders << ord
-            else
-                @complete_orders << ord
-            end
-                
-        end
-        @templates = Template.all
+        @pending_orders = current_user.orders.pending + current_user.orders.in_revision
+        @assigned_orders = current_user.orders.assigned
+        @delivered_orders = current_user.orders.delivered
+        @complete_orders = current_user.orders.complete
     end
     
     def error

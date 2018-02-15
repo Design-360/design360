@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :templates, :except => [:show, :index]
   resources :userhome, :except => [:new, :create, :edit, :update, :show, :destroy]
   resources :orders, :except => [:index]
-  resources :attachments, :only => [:new, :create]
+  resources :attachments, :only => [:create]
   get '/admin/orders', to: 'home#admin_orders'
   get '/admin/managers', to: 'home#admin_managers'
   get '/admin/templates', to: 'home#admin_templates'

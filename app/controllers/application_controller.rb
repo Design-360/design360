@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
   
   def after_sign_in_path_for(resource)
     if current_user
@@ -20,14 +21,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_ability
-      @current_ability or @current_ability = Ability.new(current_auth_resource)
+    @current_ability or @current_ability = Ability.new(current_auth_resource)
   end
   
+
   
-  
-  # rescue_from ActionView::MissingTemplate do |exception|
-  #   render file: 'home/error', status: 404 
-  # end
   
   rescue_from ActiveRecord::RecordNotFound do |exception|
     render file: 'home/error', status: 404 
@@ -36,4 +34,9 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_url, :alert => exception.message
   end
+  
+  protected
+    def configure_permitted_parameters
+       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    end
 end

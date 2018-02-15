@@ -48,14 +48,22 @@
                                 <br>
                             <% end %>
                         <% end %>
-                        <% if (not @order.status == "pending") and current_employee %>
+                        <% if @order.in_revision? %>
+                            <h2>Client's Comments</h2>
+                            <%= @order.review %><br>
+                        <% end %>
+                        <% if current_user and (@order.pending? or @order.assigned? or @order.in_revision?)%>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#attachmentModal">Attach More Files</button>
+                            <br>
+                        <% end %>
+                        <% if not (@order.delivered?) and current_employee %>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completeModal">Attach Completion Files</button>
 
                             <%#= link_to "Attach Completion Files", new_attachment_path(@order), class:"btn btn-primary" %>
                         <% end %>
-                        <% if (@order.status == "complete") and current_user %>
+                        <% if (@order.status == "delivered") and current_user %>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Accept</button>
-                            <%= link_to "Ask for Revision", order_path(@order, :order => {:status => "in_revision"}), :method => :put, class:"btn btn-primary" %>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#revisionModal">Ask for Revision</button>
                         <% end %>
                     </div>
                 </div>
@@ -90,8 +98,8 @@
     <div class="modal-body">
       <%= form_for @order do |f| %>
             Rating:  <%= f.select :rating, options_for_select(["one_star", "two_star", "three_star", "four_star", "five_star"]), { include_blank: true }, :required => :true %><br>
-            Review:  <%= f.text_area :review, class:"form-control", :required => :true %>
-            <%= hidden_field_tag "status", "accepted" %>
+            Review:  <%= f.text_area :review, autocomplete: 'off', class:"form-control", :required => :true %>
+            <%= f.hidden_field :status, value: "complete" %>
             <%= f.submit "Submit", class:"btn btn-primary" %>
             </div>
       <% end %>
@@ -103,6 +111,52 @@
 
 <!-- The Modal -->
 <div id="completeModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <div class="modal-content">
+  
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Please Attach relevant files for delivery</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    
+    <!-- Modal body -->
+    <div class="modal-body">
+        <%= form_for @order.attachments.new,  :html => {:class => "form-horizontal"} do |f| %>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">File:</label>
+                <div class="col-lg-10">
+                    <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                        <div class="form-control" data-trigger="fileinput">
+                            <i class="fa fa-image fileinput-exists"></i>
+                        <span class="fileinput-filename"></span>
+                        </div>
+                        <span class="input-group-addon btn btn-default btn-file">
+                            <span class="fileinput-new">Select file</span>
+                            <span class="fileinput-exists">Change</span>
+                            <%= f.file_field :avatar, :required => :true %>
+                            <%= f.hidden_field :avatar_type, value: "complete" %>
+                            <%#= f.hidden_field :chat_id, value: @chat.id ,id: 'chat-id' %>
+                        </span>
+                        <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                    </div> 
+                </div>
+                <%#= hidden_field_tag "avatar_type", "complete" %>
+            </div>
+            <%= hidden_field_tag "order_id", @order.id %>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <%= f.submit "Deliver Order", class:"btn btn-primary btn-md" %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<div id="attachmentModal" class="modal fade" role="dialog">
 <div class="modal-dialog">
   <div class="modal-content">
   
@@ -127,19 +181,49 @@
                             <span class="fileinput-new">Select file</span>
                             <span class="fileinput-exists">Change</span>
                             <%= f.file_field :avatar, :required => :true %>
+                            
+                            <%#= f.hidden_field :chat_id, value: @chat.id ,id: 'chat-id' %>
                         </span>
                         <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                     </div> 
                 </div>
-                <%= hidden_field_tag "avatar_type", "complete" %>
+                <br>
+                <label class="col-lg-2 control-label">Type:</label>
+                <%= f.select :avatar_type, options_for_select([["Brand Asset","brand_asset"],["Inspiration", "inspiration"]]), :required => :true %>
+                <%#= hidden_field_tag "avatar_type", "complete" %>
             </div>
             <%= hidden_field_tag "order_id", @order.id %>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <%= f.submit "Complete Order", class:"btn btn-primary btn-md" %>
+                    <%= f.submit "Add Attachment", class:"btn btn-primary btn-md" %>
                 </div>
             </div>
         <% end %>
+    </div>
+    
+  </div>
+</div>
+</div>
+
+<!-- The Modal -->
+<div id="revisionModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <div class="modal-content">
+  
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Your comments for revision</h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+    
+    <!-- Modal body -->
+    <div class="modal-body">
+      <%= form_for @order do |f| %>
+            Comments:  <%= f.text_area :review, autocomplete: 'off', class:"form-control", :required => :true %>
+            <%= f.hidden_field :status, value: "in_revision" %>
+            <%= f.submit "Submit", class:"btn btn-primary" %>
+            </div>
+      <% end %>
     </div>
     
   </div>

@@ -27,17 +27,15 @@
                     <thead>
                     <tr>
                         <th>Client</th>
-                        <th>Amount</th>
-                        <th>Duration</th>
+                        <th>Actions</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     <% @pending_orders.each do |ord| %>
                     <tr>
-                        <td><%= User.find(ord.user_id).name %></td>
-                        <td><%= ord.amount %></td>
-                        <td><%= ord.duration %></td>
+                        <td><%= ord.user.name %></td>
+                        <td><%= link_to "Show", order_path(ord) %></td>
                         <td><%= link_to "Assign", assign_employees_path(ord) %></td>
                     </tr>
                     <% end %>

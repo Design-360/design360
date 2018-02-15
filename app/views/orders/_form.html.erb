@@ -2,16 +2,7 @@
 
                 <div class="ibox-content">
                     <%= form_for @order, :html => {:class => "form-horizontal"} do |f| %>
-                        <div class="form-group"><label class="col-lg-2 control-label">Amonut:</label>
-        
-                            <div class="col-lg-10"><%= f.number_field :amount, class:"form-control", :required => :true %>
-                            </div>
-                        </div>
-                        <div class="form-group"><label class="col-lg-2 control-label">Duration:</label>
-        
-                            <div class="col-lg-10"><%= f.number_field :duration, class:"form-control", :required => :true %>
-                            </div>
-                        </div>
+                        
                         <div class="form-group"><label class="col-lg-2 control-label">Design Type:</label>
         
                             <%= f.select :design_type, options_for_select(["Logo","Poster/flyer","Book/magazine cover","Web ad","Social media graphic","Podcast cover","T-shirt","Business card","Blog image","PowerPoint template","Infographic","Email signature","Background removal","Brochure","Billboard","Label","Restaurant Menu","Other…"]), { include_blank: true }, :required => :true %>

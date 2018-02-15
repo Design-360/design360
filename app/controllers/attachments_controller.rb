@@ -1,21 +1,20 @@
 class AttachmentsController < ApplicationController
-    before_action :authenticate_employee!
-    
-    def new
-        @order = Order.find(params[:format])
-        @attachment = @order.attachments.new
-    end
     
     def create
         @order = Order.find(params[:order_id])
         @attachment = @order.attachments.new(attachment_params)
-        @attachment.employee_id = current_employee.id
-        if params[:avatar_type] == "complete"
-            @attachment.avatar_type = "complete"
-            @order.update(:status => "complete")
+        if current_employee
+            @attachment.employee_id = current_employee.id
+        end
+        # if params[:avatar_type] == "complete"
+        #     @attachment.avatar_type = "complete"
+        #     @order.update(:status => "complete")
+        # end
+        if @attachment.avatar_type == "complete"
+            @order.update(:status => "delivered")
         end
         if @attachment.save
-            redirect_to order_path(@order), notice: "Order Marked Complete!"
+            redirect_to order_path(@order), notice: "Order Updated!"
         else
             redirect_to managers_dashboard_path, alert: "Order could not be completed"
         end
