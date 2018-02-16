@@ -35,7 +35,7 @@
 }
 .landing-page a:hover,.landing-page a:focus,.landing-page a:active {
     text-decoration: none;
-    color: #4771FA;
+    color: #1dc6df;
 }
 .landing-page p {
     color: #737373;
@@ -161,7 +161,7 @@
 	-webkit-transition: all 300ms;
 }
 .landing-page .email a:hover {
-	color: #4771FA;
+	color: #1dc6df;
 }
 .landing-page .top_socials {
     margin: 0 12px;
@@ -645,28 +645,28 @@
 }
 
 .landing-page .btn-custom{
-	background-color: #4771FA;
-	border-color: #8BE6F4;
+	background-color: #4771fa;
+	border-color: #fff;
 }
 .landing-page .btn-custom:hover,.btn-custom:focus{
     background-color: #0039A2;
-    border-color: #4771FA;
+    border-color: #fff;
 }
 .landing-page .form-control:focus {
-	border-color: #4771FA;
+	border-color: #1dc6df;
 }
 .landing-page .navbar-custom .navbar-nav>.active>a,.landing-page .navbar-custom .navbar-nav>.active>a:hover,.landing-page .navbar-custom .navbar-nav>.active>a:focus,
 .landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .navbar-custom .navbar-nav>.open>a:hover,.landing-page .navbar-custom .navbar-nav>.open>a:focus,
 .landing-page .navbar-custom .navbar-nav>li>a:hover,.landing-page .navbar-custom .navbar-nav>li>a:focus,
 .landing-page .intro-title span,.landing-page .testi-slide p,.landing-page #ajaxsuccess,.landing-page #contact i,.landing-page #contact h4{
-	color: #4771FA !important;
+	color: #4771fa !important;
 }
 .landing-page .item-img-overlay span{
     background: url(../plus.png) no-repeat center center rgba(71, 113, 250, 0.7);
 }
 .landing-page .work-desc{
-    border-bottom: 2px solid rgba(71, 113, 250, 0.7);
+    border-bottom: 2px solid #4771fa;
 }
 .landing-page .back-to-top {
-    background: #4771FA;
+    background: #1dc6df;
 }

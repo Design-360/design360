@@ -9,8 +9,8 @@
         
         
           <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="#pending_orders" role="tab" data-toggle="tab">Pending</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="#pending_orders" role="tab" data-toggle="tab">Pending</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#assigned_orders" role="tab" data-toggle="tab">Assigned</a>
@@ -43,17 +43,25 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example managers" >
                             <thead>
                             <tr>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th>Order No</th>
+                                <th>Creation date</th>
+                                <th>Client</th>
+                                <th>Project Type</th>
+                                <th>Action</th>
+                                <th>Action</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <% @pending_orders.each do |o| %>
                             <tr>
-                                <td><%= o.status %></td>
+                                <td><%= o.id %></td>
+                                <td><%= o.created_at %></td>
+                                <td><%= o.user.name %></td>
+                                <td><%= o.design_type %></td>
                                 <td><%= link_to "Edit", edit_order_path(o) %></td>
                                 <td><%= link_to "Delete",order_path(o), :method => :delete %></td>
-                                <td><%= link_to "Show", order_path(o) %></td>
+                                <td><%= link_to "View details", order_path(o) %></td>
                             </tr>
                             <% end %>
                             </tbody>
@@ -67,7 +75,7 @@
                 </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane fade in active" id="assigned_orders">
+            <div role="tabpanel" class="tab-pane fade in" id="assigned_orders">
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div class="row">
                         <div class="col-lg-12">
@@ -87,13 +95,17 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example managers" >
                             <thead>
                             <tr>
+                                <th>Order No</th>
+                                <th>Client</th>
                                 <th>Manager</th>
-                                <th>Actions</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <% @assigned_orders.each do |o| %>
                             <tr>
+                                <td><%= o.id %></td>
+                                <td><%= o.user.name %></td>
                                 <td><%= o.employee_order.employee.name %></td>
                                 <td><%= link_to "Show", order_path(o) %></td>
                             </tr>
@@ -109,7 +121,7 @@
                 </div>
                 </div>
             </div>
-            <div role="tabpanel" class="tab-pane fade in active" id="delivered_orders">
+            <div role="tabpanel" class="tab-pane fade in" id="delivered_orders">
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div class="row">
                         <div class="col-lg-12">
@@ -129,7 +141,9 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example managers" >
                             <thead>
                             <tr>
+                                <th>Order No</th>
                                 <th>Manager</th>
+                                <th>Client</th>
                                 <th>Comments</th>
                                 <th>Actions</th>
                             </tr>
@@ -137,7 +151,9 @@
                             <tbody>
                             <% @delivered_orders.each do |o| %>
                             <tr>
+                                <td><%= o.id %></td>
                                 <td><%= o.employee.name %></td>
+                                <td><%= o.user.name %></td>
                                 <td><%= o.review %></td>
                                 <td><%= link_to "Show", order_path(o) %></td>
                             </tr>
@@ -154,7 +170,7 @@
                 </div>
         
             </div>
-            <div role="tabpanel" class="tab-pane fade in active" id="complete_orders">
+            <div role="tabpanel" class="tab-pane fade in" id="complete_orders">
                 <div class="wrapper wrapper-content animated fadeInRight">
                     <div class="row">
                         <div class="col-lg-12">
@@ -174,6 +190,8 @@
                             <table class="table table-striped table-bordered table-hover dataTables-example managers" >
                             <thead>
                             <tr>
+                                <th>Order No</th>
+                                <th>Client</th>
                                 <th>Manager</th>
                                 <th>Rating</th>
                                 <th>Review</th>
@@ -182,6 +200,8 @@
                             <tbody>
                             <% @complete_orders.each do |o| %>
                             <tr>
+                                <td><%= o.id %></td>
+                                <td><%= o.user.name %></td>
                                 <td><%= o.employee.name %></td>
                                 <td><%= o.rating %></td>
                                 <td><%= o.review %></td>
