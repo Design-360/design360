@@ -35,18 +35,44 @@
                             </div>
                         </div>
                         <h2>Other Details</h2>
-                        <strong>Design Type:  </strong><%= @order.design_type %><br>
-                        <strong>Size and Format:  </strong><%= @order.size_format %><br>
-                        <strong>Content:  </strong><%= @order.content %><br>
-                        <strong>Color Preferences:  </strong><%= @order.color %><br>
-                        <strong>Description:  </strong><%= @order.description %><br>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Design Type</th>
+                                    <th>Size and Format</th>
+                                    <th>Content</th>
+                                    <th>Color Preferences</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%= @order.design_type %></td>
+                                    <td><%= @order.size_format %></td>
+                                    <td><%= @order.content %></td>
+                                    <td><%= @order.color %></td>
+                                    <td><%= @order.description %></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <% if @order.attachments.present? %>
                             <h2>Files</h2>
-                            <% @order.attachments.each do |att| %>
-                                <strong>Type:  </strong><%= att.avatar_type %><br>
-                                <%= link_to 'Download File', att.avatar.url, :target => :blank %><br>
-                                <br>
-                            <% end %>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>File Type</th>
+                                        <th>Download URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @order.attachments.each do |att| %>
+                                        <tr>
+                                            <td><%= att.avatar_type %></td>
+                                            <td><%= link_to 'Download File', att.avatar.url, :target => :blank %></td>
+                                        </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
                         <% end %>
                         <% if @order.in_revision? %>
                             <h2>Client's Comments</h2>
@@ -98,7 +124,7 @@
     <div class="modal-body">
       <%= form_for @order do |f| %>
             Rating:  <%= f.select :rating, options_for_select(["one_star", "two_star", "three_star", "four_star", "five_star"]), { include_blank: true }, :required => :true %><br>
-            Review:  <%= f.text_area :review, autocomplete: 'off', class:"form-control", :required => :true %>
+            Review:  <%= f.text_area :review, autocomplete: 'off', class:"form-control", :required => :true, style: 'display:none' %>
             <%= f.hidden_field :status, value: "complete" %>
             <%= f.submit "Submit", class:"btn btn-primary" %>
             </div>
@@ -219,7 +245,7 @@
     <!-- Modal body -->
     <div class="modal-body">
       <%= form_for @order do |f| %>
-            Comments:  <%= f.text_area :review, autocomplete: 'off', class:"form-control", :required => :true %>
+            Comments:  <%= f.text_area :review, autocomplete: 'off', class:"form-control", :required => :true, style: 'display:none' %>
             <%= f.hidden_field :status, value: "in_revision" %>
             <%= f.submit "Submit", class:"btn btn-primary" %>
             </div>
