@@ -16,16 +16,19 @@
                             <h2>Order No: <%= @order.id %></h2>
                         </div>
                     </div>
+                    <div style="margin-left:15px;">
+                    <div class="m-b-md">    
                     <div class="row">
                         <div class="col-lg-12">
-                            <dl class="dl-horizontal">
-                                <dt>Description:</dt>
-                                <dd><%= @order.description %></dd>
-                            </dl>
+                                
+                                <strong>Description:</strong>
+                                <%= @order.description %>
+                            
                         </div>
                     </div>
+                    </div>
                     <% if @order.in_revision? and current_employee %>
-                        <div class="row">
+                    <div class="row">
                             <div class="col-lg-12">
                                 <dl class="dl-horizontal">
                                     <dt style="width: 210px;">Client Comments for Revision:</dt>
@@ -36,8 +39,7 @@
                     <% end %>
                     <% if current_user and (@order.pending? or @order.assigned? or @order.in_revision?)%>
                         <div class="row">
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#attachmentModal">Attach More Files</button>
                             </div>
                         </div>
@@ -45,8 +47,8 @@
                     <% end %>
                     <% if not (@order.delivered?) and current_employee %>
                         <div class="row">
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-4">
+                            
+                            <div class="col-lg-12">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completeModal">Attach Completion Files</button>
                             </div>
                         </div>
@@ -54,14 +56,14 @@
                     <% end %>
                     <% if (@order.status == "delivered") and current_user %>
                         <div class="row">
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-12">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#acceptModal">Accept</button>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#revisionModal">Ask for Revision</button>
                             </div>
                         </div>
                         <br/>
                     <% end %>
+                    </div>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="ibox float-e-margins">
