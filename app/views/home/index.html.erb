@@ -1,3 +1,4 @@
+
 <!--Start of Zendesk Chat Script-->
 <script type="text/javascript">
 window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
@@ -16,9 +17,11 @@ $.src="https://v2.zopim.com/?5UEn6e6GUFue1VXgSTLO3RNGCaEGTWuU";z.t=+new Date;$.
 type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 </script>
 <!--End of Zendesk Chat Script-->
-<script type="text/javascript" src="/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="/jquery.counterup.min.js"></script>
+<link rel="stylesheet" media="all" href="/pricing.css" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/faq.css" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/testimonials.css" data-turbolinks-track="reload" />
 <script type="text/javascript" src="/landing-page.js"></script>
+<script type="text/javascript" src="/equal-height.js"></script>
 <div class="landing-page">    
     <div class="tagline hidden-xs"> 
       <div class="container"> 
@@ -56,7 +59,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Design360</a>
+          <a class="navbar-brand" href="#"><img src="/design360-logo.png" class="img-responsive"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -104,8 +107,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <span class="wrap"></span></span></h1>
             <p class="intro-text">Unlimited Designs. Unlimited Revisions. One Low Flat-Fee.</p>
             <div class="btn-bar">
-              <a href="#" class="btn btn-custom">GET STARTED</a>
-              <a href="#contact" class="btn btn-custom-outline">PLANS & PRICING</a>
+              <a href="/users/sign_in" class="btn btn-custom">GET STARTED</a>
+              <a href="#pricing" class="btn btn-custom-outline">PLANS & PRICING</a>
             </div>
           </div> <!-- /col -->
         </div> <!-- /row -->
@@ -128,7 +131,15 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <div class="row features-box">
                 <div class="col-sm-4 text-right">
                     <div class="margin-b-md">
-                        <i class="far fa-sticky-note"></i>
+                        <div class="row hidden-sm hidden-xs">
+                            <div class="col-md-10 col-sm-10">
+                                
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <img class="img-responsive margin-b-sm" src="left.png">
+                            </div>
+                        </div>
+                        <center><img class="img-responsive margin-b-sm hidden-md hidden-lg" src="left.png"></center>
                         <h4>UNLIMITED REQUESTS</h4>
                         <p>Create as many projects as you need, we will work through them one at a time.</p>
                     </div>
@@ -137,7 +148,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                 <!-- /col -->
                 <div class="col-sm-4 features-line">
                     <div class="margin-b-md">
-                        <i class="far fa-gem"></i>
+                        <center><img class="img-responsive" src="center.png"></center>
                         <h4>24 HOUR TURNAROUND</h4>
                         <p>Enjoy our insanely fast turnaround times. Your finished design will be delivered back to you within one business day.</p>
                     </div>
@@ -146,7 +157,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                 <!-- /col -->
                 <div class="col-sm-4 text-left">
                     <div class="margin-b-md">
-                        <i class="far fa-lightbulb"></i>
+                        <img class="img-responsive hidden-xs" src="right.png">
+                        <center><img class="img-responsive hidden-sm hidden-md hidden-lg" src="right.png"></center>
                         <h4>7 DAY FREE TRIAL</h4>
                         <p>Try us out free for 7 days to make sure we are the perfect fit. We only bill you after your free trial ends.</p>
                     </div>
@@ -178,12 +190,12 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                             <i class="fas fa-angle-right"></i>Pay the same low monthly price (no matter how many projects you create). .
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-custom margin-t-md">Plans & Pricing</a>
+                    <a href="#pricing" class="btn btn-custom margin-t-md">Plans & Pricing</a>
                 </div>
                 <!-- /col -->
 
                 <div class="col-sm-6 text-center">
-                    <img src="about-1.png" alt="about" class="img-responsive">
+                    <img src="Client Dashboard.png" alt="Client Dashboard" class="img-responsive" width="130%">
                 </div>
                 <!-- /col -->
             </div>
@@ -193,229 +205,38 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </section>
     <!-- About -->
 
-   
-
-    <!-- Portfolio -->
-    <section id="works" class="text-center">
+    <!-- Brands -->
+    <section class="testi-slide parallax" id="testimonials">
         <div class="container">
+            <article class="col-md-12 text-center">
+                <div class="intermediate-container">
+                    <div class="heading">
+                        <h2>Brands We’ve Worked With</h2>
+                    </div>
+                </div>
+            </article>
             <div class="row">
-                <div class="col-md-12">
-                    <h3 class="title">How It Works</h3>
+                <div class="col-sm-3">
+                    <img src="1.png" alt="Partner 1" class="img-responsive">
                 </div>
-                <!-- /col -->
+
+                <div class="col-sm-3">
+                    <img src="2.png" alt="Partner 1" class="img-responsive">
+                </div>
+
+                <div class="col-sm-3">
+                    <img src="3.png" alt="Partner 1" class="img-responsive">
+                </div>
+
+                <div class="col-sm-3">
+                    <img src="4.png" alt="Partner 1" class="img-responsive">
+                </div>
             </div>
-            <!-- /row -->
-
-            <div class="row">
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-1.jpg" class="img-responsive" alt="workimg">
-
-                    </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Login to Your Dashboard</a></h3>
-                        <span>Sign in to your easy-to-use client dashboard. This is where you will create new projects and can do things such as edit your profile or manage billing.</span>
-                    </div>
-                </div>
-                <!-- /portfolio-item -->
-
-              
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-3.jpg" class="img-responsive" alt="workimg">
-
-                    </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Create A Task</a></h3>
-                        <span>You can create a project directly from your dashboard. Select the design type, answer a few questions about the project, and submit your request.</span>
-                    </div>
-                </div>
-                <!-- /portfolio-item -->
-
-                 <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-4.jpg" class="img-responsive" alt="workimg">
-
-                    </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Sit Back and Relax</a></h3>
-                        <span>We begin working on your design as soon as it gets requested! Expect to receive your finished design in your dashboard within one business day. You can then mark the project as complete, or if you need to, request a revision!</span>
-                    </div>
-                </div>
-                <!-- /portfolio-item -->
-            </div>
-            <!-- /row -->
-
-        </div>
-        <!-- /container -->
-    </section>
-    <!-- / Portfolio -->
-
-    <!--  Intro-section -->
-    <section class="parallax" id="inner-section">
-        <div class="container">
-            <div class="row">
-                <article class="col-md-12 text-center">
-                    <div class="intermediate-container">
-                        <div class="subheading">
-                            <h4>Our designs are meant to inspire action and convert customers into buyers. We approach every project with a marketer’s mindset, focusing on what works best in your industry. Are you ready to ignite your brand?</h4>
-                        </div>
-                        <div class="heading">
-                            <h2>START YOUR FREE TRIAL!</h2>
-                        </div>
-                        <div class="">
-                            <a class="btn btn-custom" href="#"><span>Plans & Pricing</span></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!-- / Intro-section -->
-
-    <!-- Team -->
-  <!-- tempraroy close this section 
-  <section class="team" id="team"> 
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <h3 class="title">Creative Team</h3>
-                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
-                </div>
-                <!-- /col -->
-          <!--  </div>
-            <!-- /row -->
-
-           <!-- <div class="row text-center">
-                <div class="col-sm-3">
-                    <img src="team-1.jpg" alt="team-member" class="img-responsive">
-                    <h4>John Smith</h4>
-                    <h5>Founder</h5>
-                    <p>Hey, I’m Johm Smith residing in this beautiful world. I create websites and mobile...</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- team-member -->
-
-               <!-- <div class="col-sm-3">
-                    <img src="team-2.jpg" alt="team-member" class="img-responsive">
-                    <h4>Cristina Deo</h4>
-                    <h5>Web Designer</h5>
-                    <p>Hey, I’m Cristina Deo residing in this beautiful world. I create websites and mobile...</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- team-member -->
-
-              <!--  <div class="col-sm-3">
-                    <img src="team-3.jpg" alt="team-member" class="img-responsive">
-                    <h4>Jonathan Deo</h4>
-                    <h5>Manager</h5>
-                    <p>Hey, I’m Jonathan Deo residing in this beautiful world. I create websites and mobile...</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- team-member -->
-
-               <!-- <div class="col-sm-3">
-                    <img src="team-4.jpg" alt="team-member" class="img-responsive">
-                    <h4>Anton Kovalsky</h4>
-                    <h5>Graphic Designer</h5>
-                    <p>Hey, I’m Anton Kovalsky residing in this beautiful world. I create websites and mobile...</p>
-                    <ul class="list-inline">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- team-member -->
-           <!-- </div>
-            <!-- end row -->
-
-          <!-- <div class="row margin-t-md">
-                <div class="col-md-12 text-center">
-                    <a href="#" class="btn btn-custom">We are Hiring</a>
-                </div>
-                <!-- /col -->
-          <!--  </div>
-            <!-- /row -->
-       <!-- </div> 
-        <!-- container -->
-  <!-- </section>  -->
-    <!-- /Team -->
-
-
-    <!-- Skills -->
-    <section class="bg-dark">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-3">
-                    <div class="progress" data-dimension="160" data-text="77%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                    <h4><i class="fas fa-umbrella"></i>Creativity</h4>
-                </div>
-                <!-- skill -->
-
-                <div class="col-sm-3">
-                    <div class="skill">
-                        <div class="progress" class="skill-chart" data-dimension="160" data-text="86%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                        <h4><i class="fas fa-cloud-download-alt"></i>Wordpress</h4>
-                    </div>
-                </div>
-                <!-- skill -->
-
-                <div class="col-sm-3">
-                    <div class="skill">
-                        <div class="progress" class="skill-chart" data-dimension="160" data-text="93%" data-width="6" data-fontsize="28" data-percent="93" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                        <h4><i class="fas fa-desktop"></i> Design</h4>
-                    </div>
-                </div>
-                <!-- skill -->
-
-                <div class="col-sm-3">
-                    <div class="skill">
-                        <div class="progress" class="skill-chart" data-dimension="160" data-text="81%" data-width="6" data-fontsize="28" data-percent="81" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                        <h4><i class="far fa-lightbulb"></i> Coding</h4>
-                    </div>
-                </div>
-                <!-- skill -->
-
-            </div>
-            <!-- end row -->
         </div>
         <!-- container -->
     </section>
-    <!-- / Skills -->
-
-
+    <!-- Brands -->
+    
     <!-- Services -->
     <section class="services" id="services">
         <div class="container">
@@ -643,32 +464,225 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </section>
     <!-- /Services -->
 
-
-    <!-- Testimonials -->
-    <section class="testi-slide parallax" id="testimonials">
+    <!--  Intro-section -->
+    <section class="parallax" id="inner-section">
         <div class="container">
-
             <div class="row">
-                <div class="col-sm-3">
-                    <img src="1.png" alt="Partner 1" class="img-responsive">
-                </div>
-
-                <div class="col-sm-3">
-                    <img src="2.png" alt="Partner 1" class="img-responsive">
-                </div>
-
-                <div class="col-sm-3">
-                    <img src="3.png" alt="Partner 1" class="img-responsive">
-                </div>
-
-                <div class="col-sm-3">
-                    <img src="4.png" alt="Partner 1" class="img-responsive">
-                </div>
+                <article class="col-md-12 text-center">
+                    <div class="intermediate-container">
+                        <div class="subheading">
+                            <h4>Our designs are meant to inspire action and convert customers into buyers. We approach every project with a marketer’s mindset, focusing on what works best in your industry. Are you ready to ignite your brand?</h4>
+                        </div>
+                        <div class="heading">
+                            <h2>START YOUR FREE TRIAL!</h2>
+                        </div>
+                        <div class="">
+                            <a class="btn btn-custom" href="#pricing"><span>Plans & Pricing</span></a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
-        <!-- container -->
     </section>
-    <!-- / Testimonials -->
+    <!-- / Intro-section -->
+    
+     <!-- Portfolio -->
+    <section id="works" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title">How It Works</h3>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+
+            <div class="row row-eq">
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <center><img src="login.png" class="img-responsive" alt="login"></center>
+
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Login to Your Dashboard</a></h3>
+                        <span>Sign in to your easy-to-use client dashboard. This is where you will create new projects and can do things such as edit your profile or manage billing.</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+              
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <center><img src="create a task.png" class="img-responsive" alt="Create Task"></center>
+
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Create A Task</a></h3>
+                        <span>You can create a project directly from your dashboard. Select the design type, answer a few questions about the project, and submit your request.</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+                 <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <center><img src="sit back.png" class="img-responsive" alt="Sit Back"></center>
+
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Sit Back and Relax</a></h3>
+                        <span>We begin working on your design as soon as it gets requested! Expect to receive your finished design in your dashboard within one business day. You can then mark the project as complete, or if you need to, request a revision!</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+            </div>
+            <!-- /row -->
+
+        </div>
+        <!-- /container -->
+    </section>
+    <!-- / Portfolio -->
+
+    <!-- Team -->
+  <!-- tempraroy close this section 
+  <section class="team" id="team"> 
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h3 class="title">Creative Team</h3>
+                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                </div>
+                <!-- /col -->
+          <!--  </div>
+            <!-- /row -->
+
+           <!-- <div class="row text-center">
+                <div class="col-sm-3">
+                    <img src="team-1.jpg" alt="team-member" class="img-responsive">
+                    <h4>John Smith</h4>
+                    <h5>Founder</h5>
+                    <p>Hey, I’m Johm Smith residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+
+               <!-- <div class="col-sm-3">
+                    <img src="team-2.jpg" alt="team-member" class="img-responsive">
+                    <h4>Cristina Deo</h4>
+                    <h5>Web Designer</h5>
+                    <p>Hey, I’m Cristina Deo residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+
+              <!--  <div class="col-sm-3">
+                    <img src="team-3.jpg" alt="team-member" class="img-responsive">
+                    <h4>Jonathan Deo</h4>
+                    <h5>Manager</h5>
+                    <p>Hey, I’m Jonathan Deo residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+
+               <!-- <div class="col-sm-3">
+                    <img src="team-4.jpg" alt="team-member" class="img-responsive">
+                    <h4>Anton Kovalsky</h4>
+                    <h5>Graphic Designer</h5>
+                    <p>Hey, I’m Anton Kovalsky residing in this beautiful world. I create websites and mobile...</p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- team-member -->
+           <!-- </div>
+            <!-- end row -->
+
+          <!-- <div class="row margin-t-md">
+                <div class="col-md-12 text-center">
+                    <a href="#" class="btn btn-custom">We are Hiring</a>
+                </div>
+                <!-- /col -->
+          <!--  </div>
+            <!-- /row -->
+       <!-- </div> 
+        <!-- container -->
+  <!-- </section>  -->
+    <!-- /Team -->
+
+
+    <!-- Skills -->
+    <!--<section class="bg-dark">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row text-center">-->
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="progress" data-dimension="160" data-text="77%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                <h4><i class="fas fa-umbrella"></i>Creativity</h4>-->
+    <!--            </div>-->
+                <!-- skill -->
+
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="skill">-->
+    <!--                    <div class="progress" class="skill-chart" data-dimension="160" data-text="86%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                    <h4><i class="fas fa-cloud-download-alt"></i>Wordpress</h4>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- skill -->
+
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="skill">-->
+    <!--                    <div class="progress" class="skill-chart" data-dimension="160" data-text="93%" data-width="6" data-fontsize="28" data-percent="93" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                    <h4><i class="fas fa-desktop"></i> Design</h4>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- skill -->
+
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="skill">-->
+    <!--                    <div class="progress" class="skill-chart" data-dimension="160" data-text="81%" data-width="6" data-fontsize="28" data-percent="81" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                    <h4><i class="far fa-lightbulb"></i> Coding</h4>-->
+    <!--                </div>-->
+    <!--            </div>-->
+                <!-- skill -->
+
+    <!--        </div>-->
+            <!-- end row -->
+    <!--    </div>-->
+        <!-- container -->
+    <!--</section>-->
+    <!-- / Skills -->
 
     <!-- CONTACT -->
     <!--<section id="contact" class="">-->
@@ -772,7 +786,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     <!--    </div>-->
         <!-- container -->
     <!--</section>-->
-        <!-- Testimonials -->
+    <!-- Testimonials -->
+    
     <div class="container margin-t-md">
         <div class="row text-center">
             <div class="col-md-12">
@@ -787,19 +802,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 					<div class="jag-tst-wrapper">
 						<div class="jag-tst-color-bg"></div>
 						<div class="jag-tst-avatar">
-							<img src="images/member8.jpg" class="img-responsive" alt="">
+							<img src="/Alexander Luszczak.png" class="img-responsive" alt="">
 						</div>
 						<div class="jag-tst-details">
-							<div class="jag-name">John Doe</div>
-							<div class="jag-designation"> - Manager </div>
+							<div class="jag-name">Alexander Luszczak</div>
+							<div class="jag-designation"> - CEO, Music City Removal</div>
 							
 							<hr>
 							<div class="jag-message">
 								<i class="fa fa-quote-left"></i> 
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								LoreLorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								LoreLorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+								Every entrepreneur needs this service, Design360 has created EVERYTHING for me and my brand is a lot stronger because of it. Their designs have allowed us to appear more professional and prospects take us seriously like they would a much bigger company. 
 								
 							</div>
 						</div>
@@ -808,18 +820,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-4 jag-tst-col">
 					<div class="jag-tst-wrapper">
 						<div class="jag-tst-avatar">
-							<img src="images/member10.jpg" class="img-responsive" alt="">
+							<img src="/Gabriella Toman.png" class="img-responsive" alt="">
 						</div>
 						<div class="jag-tst-details">
-							<div class="jag-name">John Doe</div>
-							<div class="jag-designation"> - Manager </div>
+							<div class="jag-name">Gabriella Toman</div>
+							<div class="jag-designation"> - Creative Director, DOMM </div>
 						
 							<hr>
 							<div class="jag-message">
 								<i class="fa fa-quote-left"></i> 
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								
+                                They provide us with so much value. I help manage a Facebook Ad Agency and we outsource our ad images to Design360. They consistently produce good ad creatives for us, which overall helps us gain a higher conversion rate for clients. We have a number of clients, so we use their pro plan.								
 							</div>
 						</div>
 					</div>
@@ -827,19 +837,72 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-4 jag-tst-col">
 					<div class="jag-tst-wrapper">
 						<div class="jag-tst-avatar">
-							<img src="images/member2.jpg" class="img-responsive" alt="">
+							<img src="/Scott Pouyat.png" class="img-responsive" alt="">
 						</div>
 						<div class="jag-tst-details">
-							<div class="jag-name">John Doe</div>
-							<div class="jag-designation"> - Manager </div>
+							<div class="jag-name">Scott Pouyat</div>
+							<div class="jag-designation"> - Optometrist/Owner, Eyecare Associates </div>
 							
 							<hr>
 							<div class="jag-message">
 								<i class="fa fa-quote-left"></i> 
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-								
+                                I’ve worked with Design360 for the last 6 months or so. As soon as I found them, I regretted all the (unreliable) freelancers I’ve worked with in the past. Design 360 is quick, reliable, and I always know what I’m getting. They really understand my brand and consistently produce effective marketing materials for us at Eyecare Associates.								
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			
+			<div class="jag-tst-theme-2 jag-tst-theme-blue jag-equalheight">
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-color-bg"></div>
+						<div class="jag-tst-avatar">
+							<img src="Roland Najbar.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Roland Najbar</div>
+							<div class="jag-designation"> - Head of Marketing, Revolution Tires & Wheels</div>
+							
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                We love using Design360 because it allows us to have extremely professional graphic designers at our disposal for a fraction of the cost. Before them, it’s absolutely crazy that I considered hiring a graphic designer for 40-50k.								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-avatar">
+							<img src="Gabriella Toman.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Gabriella Toman</div>
+							<div class="jag-designation"> - Creative Director, DOMM </div>
+						
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                Design360 is really the only graphic design service we haven’t been disappointed by, and we’ve tried many before them. The name of the game for us is turnaround. When we need a design, it has to be done pretty quickly. Design360 usually creates what we need in under 24 hours and they always seem to get it right the first time.							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-avatar">
+							<img src="Stephen Kaidantsis.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Stephen Kaidantsis</div>
+							<div class="jag-designation"> - Co-founder, Doctor’s Recommended</div>
+							
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                As a growing company, we didn’t want to hire a full-time designer or a big to burn through our cash. Design360 was the perfect solution for our company. We get quality and consistent designs while saving a ton of money in the process… works for me!							</div>
 						</div>
 					</div>
 				</div>
@@ -849,13 +912,15 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	
 	<!-- End Testimonials -->
     <!-- FAQ -->
+    <section class="testi-slide parallax" id="testimonials">
     <div class="container margin-t-lg">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h3 class="title">FAQ</h3>
+        <article class="col-md-12 text-center">
+            <div class="intermediate-container">
+                <div class="heading">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
             </div>
-                    <!-- /col -->
-        </div>
+        </article>
 	<div class="row">
     <div class="col-md-12">
 			
@@ -863,54 +928,110 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="panel jag-faq-wrapper">
 					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_1">
 						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
-						How to set random colors?
+						Do I get all the paid features in the free trial?
 					</div>
 					<div id="collapse3_1" class="panel-collapse collapse">
 						<div class="panel-body">
-						To set random colors: <br>
-						1) Add <strong> jag-faq-random-colors </strong> class. <br>
-						2) To change color, open theme{num}.css, find "jag-faq-random-colors". <br>
-						3) You can change color from here. <br>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-						minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-						minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+						Yes, you will receive everything that’s included in our monthly plans!
 						</div>
 					</div>
 				</div>
 				<div class="panel jag-faq-wrapper">
 					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_2">
 						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
-						How to use theme colors and add new theme color?
+						How long does it take to get started and setup my account?
 					</div>
 					<div id="collapse3_2" class="panel-collapse collapse">
 						<div class="panel-body">
-						To add new theme color: <br>
-						1) Open theme{num}.css, find "jag-faq-title". <br>
-						2) Change background color or you can add your own class with new background <br>
-						3) Add class to main div. <br>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-						minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat.
+						You can get started requesting designs in no-time! We do not have a long onboarding process or make you use 3rd party apps like Trello, all communication is done through your client dashboard. You can request your first design within minutes of signing up!
 						</div>
 					</div>
 				</div>
 				<div class="panel jag-faq-wrapper">
 					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_3">
 						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
-						How to change icon?
+						Is it really unlimited?
 					</div>
 					<div id="collapse3_3" class="panel-collapse collapse">
 						<div class="panel-body">
-						1) In html find <strong> <code>"jag-faq-icon fa fa-plus" </code></strong>. <br>
-						2) Add the font awesome icon class name instead of <strong> fa-plus </strong> <br>
-						3) Open <strong> jag-faq-custom.js </strong> <br>
-						4) Find <strong> toggleIcon </strong> function from where you can add your both icon
-						classes (open & close). Now its <code>"fa-plus fa-minus" </code>.
+						Yes, it is really unlimited. You can request as many tasks as you want. We will work through them 1 at a time with our Basic plan, or 3 at a time with our Pro plan.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_4">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						What’s not included?
+					</div>
+					<div id="collapse3_4" class="panel-collapse collapse">
+						<div class="panel-body">
+						Anything that requires coding or an integration into something else – we do not do any web design or app design. If you have something particular in mind, just ask!
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_5">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Where is Design360 Based?
+					</div>
+					<div id="collapse3_5" class="panel-collapse collapse">
+						<div class="panel-body">
+						Tampa, Florida! Our project managers are all right here in the U.S. and we employ designers from all over the world. 
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_6">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						What if I don’t like a design?
+					</div>
+					<div id="collapse3_6" class="panel-collapse collapse">
+						<div class="panel-body">
+						Don’t worry, this can happen! We include unlimited revisions. When projects are delivered, you have the option to either mark it as complete or request a revision.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_7">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Can I cancel at any time?
+					</div>
+					<div id="collapse3_7" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes! All contracts are month-to-month, you are absolutely free to cancel at any time, you may do so in your dashboard.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_8">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Can I trust you with my credit card details?
+					</div>
+					<div id="collapse3_8" class="panel-collapse collapse">
+						<div class="panel-body">
+						We use Stripe, a leading payment gateway to process payments. We do not store or even see your credit card details. Stripe handles everything securely for us.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_9">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						I own multiple brands; can I submit tasks for each one?
+					</div>
+					<div id="collapse3_9" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes! As long as it comes from your client dashboard, you can submit designs for whatever you need.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_10">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Can I resell any designs that Design360 creates for me?
+					</div>
+					<div id="collapse3_10" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes. You own and control all of the intellectual property that we create for you.
 						</div>
 					</div>
 				</div>
@@ -918,8 +1039,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		</div>
 	</div>
 	</div>
+	</section>
+	<!-- End FAQ -->
 	<!-- *********  PRICING  ********* -->
-    <div class="pricing-2">
+	<section>
+    <div class="pricing-2" id="pricing">
         <div class="container margin-t-lg">
         <div class="row text-center">
             <div class="col-md-12">
@@ -932,16 +1056,18 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                         <div class="block block-pricing block-plain">
                             <div class="table">
                                 <h6 class="category">&nbsp;</h6>
-                                <h1 class="block-caption">&nbsp;</h1>
+                                <h1 class="block-caption features">Features</h1>
                                 <ul>
-                                    <li>Hardware</li>
-                                    <li>Memory</li>
-                                    <li>Channel</li>
-                                    <li>HDD</li>
-                                    <li>Email</li>
-                                    <li>Monitoring</li>
-                                    <li>Support</li>
-                                    <li>Operating System</li>
+                                    <li>Unlimited Graphic Design</li>
+                                    <li>Unlimited Requests</li>
+                                    <li>Unlimited Revisions</li>
+                                    <li>Dedicated U.S. Project Manager</li>
+                                    <li>Design Team Collaboration</li>
+                                    <li>Next Day Project Delivery</li>
+                                    <li>Projects at a time</li>
+                                    <li>Source Files Included</li>
+                                    <li>Unlimited Brands</li>
+                                    <li>No Contract or Cancellation Fee</li>
                                 </ul>
                             </div>
                         </div>
@@ -950,40 +1076,47 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                         <div class="block block-pricing block-raised">
                             <div class="table table-info">
                                 <h6 class="category">Basic</h6>
-                                <h1 class="block-caption"><small>$</small>89</h1>
+                                <h1 class="block-caption"><small>$</small>376<span>/mo</span></h1>
                                 <ul>
-                                    <li>Intel i5 2.7</li>
-                                    <li>512Mb Ram</li>
-                                    <li>10GB Storage</li>
-                                    <li>5GB Bandwidth</li>
-                                    <li>20 Email Addresses</li>
-                                    <li>24/7</li>
-                                    <li>24/7</li>
-                                    <li>Linux, Windows</li>
-                                </ul> <a href="#" class="btn btn-white btn-raise btn-round">Buy Now</a> </div>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li>1</li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                </ul> 
+                                <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="block block-pricing block-plain">
-                            <div class="table">
-                                <h6 class="category">Standart</h6>
-                                <h1 class="block-caption"><small>$</small>189</h1>
+                            <div class="table table-info">
+                                <h6 class="category">Pro</h6>
+                                <h1 class="block-caption"><small>$</small>799<span>/mo</span></h1>
                                 <ul>
-                                    <li>Intel i5 2.7</li>
-                                    <li>512Mb Ram</li>
-                                    <li>10GB Storage</li>
-                                    <li>5GB Bandwidth</li>
-                                    <li>20 Email Addresses</li>
-                                    <li>24/7</li>
-                                    <li>24/7</li>
-                                    <li>Linux, Windows</li>
-                                </ul> <a href="#" class="btn btn-info btn-round">Buy Now</a> </div>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li>3</li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="far fa-check-square"></i></li>
+                                </ul> 
+                                <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
                         </div>
                     </div>
                     
                 </div>
             </div>
     </div>
+    </section>
     <!-- *********  END PRICING  ********* -->
     <!-- End CONTACT -->
     <!-- Footer -->

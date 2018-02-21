@@ -1,0 +1,256 @@
+
+/* ======= BLOCK PRICING ======= */
+
+.block {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 0.87);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.block h1 {
+    font-size: 3.8em !important;
+}
+.block h6{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.block-caption {
+    font-weight: 700;
+    color: #3C4857;
+}
+
+.block-plain {
+    background: transparent;
+    box-shadow: none;
+}
+
+.block .category:not([class*="text-"]) {
+    color: #3C4857;
+}
+
+.block-raised {
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+[class*="pricing-"] {
+    padding: 0px 0 60px 0;
+}
+
+.block-pricing {
+    text-align: center;
+}
+
+.block-pricing .block-caption {
+    margin-top: 30px;
+}
+
+.block-pricing .table {
+    padding: 15px !important;
+    margin-bottom: 0px;
+}
+
+.block-pricing .icon {
+    padding: 10px 0 0px;
+    color: #3C4857;
+}
+
+.block-pricing .icon i {
+    font-size: 55px;
+    border: 1px solid #ececec;
+    border-radius: 50%;
+    width: 130px;
+    line-height: 130px;
+    height: 130px;
+}
+
+.block-pricing h1 small {
+    font-size: 18px;
+}
+
+.block-pricing h1 small:first-child {
+    position: relative;
+    top: -17px;
+    font-size: 26px;
+}
+
+.block-pricing ul {
+    list-style: none;
+    padding: 0;
+    max-width: 240px;
+    margin: 10px auto;
+}
+.block ul li{
+    font-size:1.5rem;
+}
+.block-pricing ul li {
+    color: #3C4857;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+}
+
+.block-pricing ul li:last-child {
+    border: 0;
+}
+
+.block-pricing ul li b {
+    color: #3C4857;
+}
+
+.block-pricing ul li i {
+    top: 0px;
+    position: relative;
+}
+
+.block-pricing.block-background ul li,
+.block-pricing [class*="table-"] ul li {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.block-pricing.block-background ul li b,
+.block-pricing [class*="table-"] ul li b {
+    color: #FFFFFF;
+}
+
+.block-pricing.block-background [class*="text-"],
+.block-pricing [class*="table-"] [class*="text-"] {
+    color: #FFFFFF;
+}
+
+.block-pricing.block-background:after {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.block-background:not(.block-pricing) .btn {
+    margin-bottom: 0;
+}
+
+.block [class*="table-"] .block-caption a,
+.block [class*="table-"] .block-caption,
+.block [class*="table-"] .icon i {
+    color: #FFFFFF;
+}
+
+.block-pricing .block-caption {
+    margin-top: 30px;
+}
+
+.block [class*="table-"] h1 small,
+.block [class*="table-"] h2 small,
+.block [class*="table-"] h3 small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ======= BLOCK TABLE COLOR ======= */
+
+.block .table-info {
+    background: #0039A2;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12);
+}
+
+
+.block [class*="table-"] .category,
+.block [class*="table-"] .block-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ======= PRICING BUTTONS  ======= */
+
+.btn,
+.navbar > li > a.btn {
+    border: none;
+    border-radius: 3px;
+    position: relative;
+    padding: 12px 30px;
+    margin: 10px 1px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    will-change: box-shadow, transform;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn.btn-round {
+    border-radius: 30px;
+}
+
+.nav-tabs {
+    margin-bottom: 30px;
+}
+
+.nav-pills:not(.nav-pills-icons) > li > a {
+    border-radius: 30px;
+    font-weight: 400;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background-color: #4771fa;
+    color: #FFFFFF;
+    box-shadow: 0 16px 26px -10px rgba(156, 39, 176, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
+    border-color: transparent;
+    border-radius: 30px;
+}
+
+/* btn-rose */
+.btn.btn-rose {
+    color: #FFFFFF;
+    background-color: #4771fa;
+    border-color: #4771fa;
+    box-shadow: 0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12);
+}
+
+/* btn-info */
+.btn-info {
+    color: #fff;
+    background-color: #4771fa;
+    border-color: #4771fa;
+    box-shadow: 0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12);
+}
+
+/* btn-white */
+.btn.btn-white {
+    color: #3C4857;
+    background-color: #fff;
+    border-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12);
+}
+
+/* Bootstrap col-md-12 class */
+.col-md-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+
+/* Bootstrap tab-space class */
+.tab-space {
+    padding: 20px 0 50px 0px;
+}
+
+.btn-info {
+    background-color: #4771fa !important;
+    border-color: #4771fa !important;
+    color: #FFFFFF !important;}
+
+.block-caption span{
+    font-size: 26px;
+}
+
+.block li .far{
+    font-size: 17px;
+}
+
+.block-caption.features{
+    padding: 15px 0;
+    font-size:25px !important;
+}

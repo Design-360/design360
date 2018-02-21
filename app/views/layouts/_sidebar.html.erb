@@ -1,10 +1,10 @@
-<script src="/datatables.min.js"></script>
-<script src="/inspinia.js"></script>
-<script src="/jasny-bootstrap.min.js"></script>
-<script src="/jquery_slim_scroll.js"></script>
-<script src="/metisMenu.js"></script>
-<script src="/pace.min.js"></script>
-<script src="/js-inspinia.js"></script>
+
+<script src="/inspinia.js" data-turbolinks-track="reload"></script>
+
+<script src="/jquery_slim_scroll.js" data-turbolinks-track="reload"></script>
+<script src="/metisMenu.js" data-turbolinks-track="reload"></script>
+<script src="/pace.min.js" data-turbolinks-track="reload"></script>
+<script src="/js-inspinia.js" data-turbolinks-track="reload"></script>
 
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
@@ -12,16 +12,12 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header text-center">
                 <div class="dropdown profile-element"> <span>
-                        <img alt="image" class="img-circle" src="/profile_small.jpg" />
+                        <img alt="image" src="/design360-logo.png" width="100%" />
                          </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_user.name %></strong>
-                         </span> <span class="text-xs block">Client<b class="caret"></b></span> </span> </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="/users/edit">Profile</a></li>
-                        <li class=""></li>
-                        <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
-                    </ul>
+                    
+                        <a style="cursor:default;"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_user.name %></strong>
+                         </span> <span class="text-xs block">Dashboard</b></span> </span> </a>
+                    
                 </div>
                 <div class="logo-element">
                     D

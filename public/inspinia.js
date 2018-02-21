@@ -4,7 +4,7 @@
  *   version 2.7
  *
  */
-$(document).on('turbolinks:load', function() {
+
 $(document).ready(function () {
 
 
@@ -290,4 +290,3 @@ function WinMove() {
 }
 
 
-});

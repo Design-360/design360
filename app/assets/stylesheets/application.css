@@ -74,3 +74,21 @@ font-family: Roboto !important;
 .form-horizontal .control-label {
     text-align: left !important;
 }
+.nav-tabs > li > a{
+    color:#4771FA !important;
+}
+.nav-tabs > li.active{
+    color:#fff !important;
+    background-color: #4771fa;
+}
+.nav-tabs > li.active a{
+    color:#fff !important;
+    border:0 !important;
+}
+.row.row-login{
+    margin-right:0 !important;
+}
+
+.modal-title{
+    float:left !important;
+}

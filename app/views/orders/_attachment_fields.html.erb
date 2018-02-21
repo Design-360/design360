@@ -1,7 +1,7 @@
 <div class="nested-fields">
     <div class="form-group">
-        <label class="col-lg-2 control-label">File</label>
         <div class="row">
+            <label class="col-lg-1 control-label">File</label>
             <div class="col-lg-4">
                 <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                     <div class="form-control" data-trigger="fileinput">
@@ -16,13 +16,15 @@
                     <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                 </div>
             </div>
+                
+            <label class="control-label col-lg-1">Type:</label>
             <div class="col-lg-4">
-                <label class="col-lg-4 control-label">Type:</label>
-                <%= f.select :avatar_type, options_for_select([["Brand Asset","brand_asset"],["Inspiration", "inspiration"]]), :required => :true %>
+                <%= f.select :avatar_type, options_for_select([["Brand Asset","brand_asset"],["Inspiration", "inspiration"]]), { include_blank: true }, class:"form-control", :required => :true %>
+            </div>    
+            <div class="col-lg-2">
+                <%= link_to_remove_association "<i class='fas fa-minus'></i> Remove".html_safe, f %>
             </div>
         </div>
     </div>
-    <div class="btn btn-default">
-        <%= link_to_remove_association "Remove", f %>
-    </div>
+    
 </div>

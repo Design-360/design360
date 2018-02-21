@@ -14,20 +14,15 @@
 //= require jquery
 //= require bootstrap.min
 //= require cocoon
-//= require turbolinks
+//= require jasny-bootstrap.min
 //= require toastr
-//= require equal-height
+//= require js-inspinia
+//= require datatables.min
 
 
 
 // $(document).on('turbolinks:load', function() {
 //     $("templates").imagepicker();
 // 
-
-jQuery(function () {
-    jQuery('.jag-equalheight .jag-tst-wrapper').matchHeight({
-        byRow: true
-    });
-});
 
     

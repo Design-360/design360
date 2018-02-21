@@ -1,0 +1,31 @@
+/********************************
+* FAQ THEME 3
+********************************/
+.jag-faq-theme3 .jag-faq-title{
+	position: relative;
+	color: #0039A2;
+	padding: 10px 15px;
+	font-size: 15px;
+	display: block;
+	line-height: 20px;
+	cursor: pointer;
+	border-radius: 50px;
+}
+.jag-faq-theme3 .jag-faq-title i{
+	margin-right: 5px;
+	font-size: 15px;
+	color: #0039A2;
+	line-height: 20px;
+}
+.jag-faq-theme3 .panel-body img,
+.jag-faq-theme3 .panel-body iframe,
+.jag-faq-theme3 .panel-body video{
+	margin: 10px;
+}
+
+.jag-faq-theme3.jag-faq-theme-pink .jag-faq-title{
+	border: 1px solid #fff;
+    background: #fff;
+}
+.panel {
+    background-color: transparent !important;}
