@@ -10,16 +10,16 @@
         
           <ul class="nav nav-tabs">
             <li class="nav-item active">
-              <a class="nav-link" href="#pending_orders" role="tab" data-toggle="tab">Pending Orders</a>
+              <a class="nav-link" href="#pending_orders" role="tab" data-toggle="tab">Pending Orders <%= @pending_orders.count %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#assigned_orders" role="tab" data-toggle="tab">Assigned Orders</a>
+              <a class="nav-link" href="#assigned_orders" role="tab" data-toggle="tab">Assigned Orders <%= @assigned_orders.count %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#delivered_orders" role="tab" data-toggle="tab">Delivered Orders</a>
+              <a class="nav-link" href="#delivered_orders" role="tab" data-toggle="tab">Delivered Orders <%= @delivered_orders.count %></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#complete_orders" role="tab" data-toggle="tab">Completed Orders</a>
+              <a class="nav-link" href="#complete_orders" role="tab" data-toggle="tab">Completed Orders <%= @complete_orders.count %></a>
             </li>
           </ul>
         <div class="tab-content">
