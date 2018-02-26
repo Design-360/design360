@@ -35,7 +35,7 @@
 }
 .landing-page a:hover,.landing-page a:focus,.landing-page a:active {
     text-decoration: none;
-    color: #4771FA;
+    color: #4771fa;
 }
 .landing-page p {
     color: #737373;
@@ -77,6 +77,7 @@
     color: #fff;
 }
 .landing-page .btn-custom-outline {
+	border: 1px solid #fff;
 	border-radius: 3px;
 	padding: 0.8em 1.8em;
 	color: #fff;
@@ -161,7 +162,7 @@
 	-webkit-transition: all 300ms;
 }
 .landing-page .email a:hover {
-	color: #4771FA;
+	color: #1dc6df;
 }
 .landing-page .top_socials {
     margin: 0 12px;
@@ -202,12 +203,13 @@
 	box-shadow: 0 2px 2px rgba(0,0,0,.1);
 }
 .landing-page .navbar-custom .navbar-brand {
+	width:230px;
 	font-size: 22px;
 	text-transform: uppercase;
 	color: #666;
 	font-weight: 800;
 	letter-spacing: 0.15em;
-	margin: 15px 0 0;
+	margin: 0px 0 0;
 }
 .landing-page .navbar-custom .navbar-brand:hover {
 	color: #888;
@@ -215,14 +217,15 @@
 .landing-page .navbar-custom .nav {
 	padding: 15px 0px;
 }
-.landing-page .navbar-custom .navbar-nav>li>a {
+.landing-page .navbar-custom .navbar-nav>li>a,.landing-page .dropdown-menu > li > a {
 	color: #666;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
 }
+
 .landing-page .navbar-custom .navbar-nav>.active>a, .landing-page .navbar-custom .navbar-nav>.active>a:hover, .landing-page .navbar-custom .navbar-nav>.active>a:focus,
-.landing-page .navbar-custom .navbar-nav>.open>a, .landing-page .navbar-custom .navbar-nav>.open>a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:focus,
+.landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .dropdown-menu > li > a,.landing-page .dropdown-menu > li > a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:focus,
 .landing-page .navbar-custom .navbar-nav>li>a:hover, .landing-page .navbar-custom .navbar-nav>li>a:focus {
 	background-color: transparent;
 }
@@ -230,7 +233,7 @@
 /* 6 Home
 ----------------------------------------------------------------------------- */
 .landing-page #home {
-	padding: 250px 0;
+	padding: 235px 0;
 	z-index: 1;
 	position: relative;
 	font-size: 13px;
@@ -239,7 +242,7 @@
 	min-height: 400px;
 }
 .landing-page .home-bg{
-	background-size: cover;
+	background-size: cover !important;
 	z-index: -1;
 	position: absolute;
 	top: 0;
@@ -248,6 +251,13 @@
 	bottom: 0;
 	left: 0;
 	background: url(../img-1.jpg) no-repeat center;
+}
+@media only screen and (min-width:992px){
+	.landing-page .home-bg{
+	background-size: contain !important;}
+}
+.landing-page .margin-b-sm {
+    margin-bottom: 5px;
 }
 .landing-page .intro-title {
 	font-weight: 900;
@@ -352,6 +362,7 @@
 ----------------------------------------------------------------------------- */
 /* image hover effect */
 .landing-page .item-img-wrap{
+	border: 1px solid lightgrey;
     position: relative;
     text-align: center;
     overflow: hidden;
@@ -475,6 +486,7 @@
 /* 12 Services
 ----------------------------------------------------------------------------- */
 .landing-page .service-item i {
+	color: #4771fa !important;
 	float: left;
 	font-size: 28px;
 	line-height: 20px;
@@ -483,6 +495,10 @@
 .landing-page .service-item .service-detail {
 	margin-left: 50px;
 }
+.landing-page .service-item .service-detail h4 {
+	color: #4771fa !important;
+}
+
 .landing-page .service-item .service-detail p {
 	color: #9aa7af;
 }
@@ -490,6 +506,13 @@
 /* 13 Testimonials
 ----------------------------------------------------------------------------- */
 .landing-page #testimonials {
+	background: url(../img-2.jpg) center;
+	 background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.landing-page #faq {
 	background: url(../img-2.jpg) center;
 	 background-attachment: fixed;
     background-position: center;
@@ -645,28 +668,49 @@
 }
 
 .landing-page .btn-custom{
-	background-color: #4771FA;
-	border-color: #8BE6F4;
+	background-color: #4771fa;
+	border-color: #fff;
 }
 .landing-page .btn-custom:hover,.btn-custom:focus{
     background-color: #0039A2;
-    border-color: #4771FA;
+    border-color: #fff;
 }
 .landing-page .form-control:focus {
-	border-color: #4771FA;
+	border-color: #1dc6df;
 }
 .landing-page .navbar-custom .navbar-nav>.active>a,.landing-page .navbar-custom .navbar-nav>.active>a:hover,.landing-page .navbar-custom .navbar-nav>.active>a:focus,
-.landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .navbar-custom .navbar-nav>.open>a:hover,.landing-page .navbar-custom .navbar-nav>.open>a:focus,
+.landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .navbar-custom .navbar-nav>.open>a:hover,.landing-page .dropdown-menu > li > a:hover,.landing-page .navbar-custom .navbar-nav>.open>a:focus,
 .landing-page .navbar-custom .navbar-nav>li>a:hover,.landing-page .navbar-custom .navbar-nav>li>a:focus,
 .landing-page .intro-title span,.landing-page .testi-slide p,.landing-page #ajaxsuccess,.landing-page #contact i,.landing-page #contact h4{
-	color: #4771FA !important;
+	color: #4771fa !important;
 }
 .landing-page .item-img-overlay span{
     background: url(../plus.png) no-repeat center center rgba(71, 113, 250, 0.7);
 }
 .landing-page .work-desc{
-    border-bottom: 2px solid rgba(71, 113, 250, 0.7);
+    border-bottom: 2px solid #4771fa;
 }
 .landing-page .back-to-top {
-    background: #4771FA;
+    background: #1dc6df;
+}
+
+
+@media only screen and (max-width:768px){
+	.landing-page .navbar-header{
+	width:105% !important;}
+	.navbar-toggle{
+		float:right;
+	}
+	.navbar-collapse.collapse.in{
+		float:left !important;
+		width: 105%;
+	}
+}
+@media only screen and (min-width:768px){
+.row.pric{
+	padding-top:50px;
+}}
+a.btn.btn-primary.btn-sm.join-btn:hover{
+    color:#fff !important;
+    background-color: #0039a2 !important;
 }

@@ -1,29 +1,30 @@
-<div class="landing-page">    
-    <div class="tagline hidden-xs"> 
-      <div class="container"> 
-        <div class="pull-left"> 
-          <div class="phone">
-            <i class="fas fa-phone-volume"></i> +1 123 456 78 90
-          </div>
-          <div class="email">
-            <a href="mailto:#">
-              <i class="far fa-envelope"></i> Support@design360.graphics
-            </a>
-          </div>
-        </div>
-        <div class="pull-right"> 
-          <ul class="top_socials"> 
-            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/"><i class="fab fa-google-plus"></i></a></li>
-            <li><a href="https://www.dribble.com/"><i class="fab fa-dribbble"></i></a></li>
-            <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a></li>
-          </ul> 
-        </div>
-        <div class="clear"></div>
-      </div>
-    </div>
 
+<!--Start of Zendesk Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://v2.zopim.com/?5UEn6e6GUFue1VXgSTLO3RNGCaEGTWuU";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zendesk Chat Script-->
+<!--Start of Zendesk Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://v2.zopim.com/?5UEn6e6GUFue1VXgSTLO3RNGCaEGTWuU";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zendesk Chat Script-->
+<link rel="stylesheet" media="all" href="/pricing.css" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/faq.css" data-turbolinks-track="reload" />
+<link rel="stylesheet" media="all" href="/testimonials.css" data-turbolinks-track="reload" />
+<script type="text/javascript" src="/landing-page.js"></script>
+<script type="text/javascript" src="/equal-height.js"></script>
+<script type="text/javascript" src="/SmoothScroll.js"></script>
+<script type="text/javascript" src="/jquery.sticky.js"></script>
+<div class="landing-page">    
     <!-- Header -->
     <nav class="navbar navbar-default navbar-custom sticky">
       <div class="container">
@@ -35,38 +36,52 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Design360</a>
+          <a class="navbar-brand" href="#"><img src="/design360-logo.png" class="img-responsive"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a href="/">Home</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#about-us">What’s Included</a></li>
+                <li><a href="#works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#Pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <% if user_signed_in? or employee_signed_in? %>
                     <% if current_user %>
-                    <li><a href="/clients/dashboard">Dashboard</a></li>
-                    <li><a>Signed in as <strong><%= current_user.name %></strong>(<%= current_user.email %>)</a>
-                    </li>
-                    <li><a href="/users/edit">Edit Profile</a></li>
-                    <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/clients/dashboard">Dashboard</a></li>
+                            <li><a href="/users/edit">Edit Profile</a></li>
+                            <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
+                        </ul>
+                    </li>    
                   <% end %>
                   <% if current_employee %>
-                    <% if current_employee.admin? %>
-                      <li><a href="/admin/dashboard">Dashboard</a></li>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <% if current_employee.admin? %>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
+                        <% else %>
+                        <li><a href="/managers/dashboard">Dashboard</a></li>
+                        <% end %>
+                        <li><a href="/employees/edit">Edit Profile</a></li>
+                        <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
+                        <% end %>
+                    </ul>
+                </li>    
                     <% else %>
-                      <li><a href="/managers/dashboard">Dashboard</a></li>
-                    <% end %>
-                    <li><a>Signed in as <strong><%= current_employee.email %></strong></a>
-                    </li>
-                    <li><a href="/employees/edit">Edit Profile</a></li>
-                    <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
-                  <% end %>
-                <% else %>
-                    <li><a style="cursor:default;">Login As:</a></li>
-                    <li><a href="/employees/sign_in">Employee</a></li>
-                    <li><a href="/users/sign_in">Client</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/employees/sign_in">Employee</a></li>
+                            <li><a href="/users/sign_in">Client</a></li>
+                        </ul>
+                    </li> 
+                    <li><a class = "btn btn-primary btn-sm join-btn" href="/users/sign_up">JOIN</a></li>
                 <% end %>
+                
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
@@ -79,12 +94,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="intro-title">We are  <span href="" class="typewrite" data-period="2000" data-type='[ "Design Agency", "Design360", "Modern"]'>
+            <h1 class="intro-title">We are  <span href="" class="typewrite" data-period="2000" data-type='[ "THE #1 GRAPHIC DESIGN AGENCY", "DESIGN 360"]'>
             <span class="wrap"></span></span></h1>
-            <p class="intro-text">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore,<br/>cum soluta nobis est eligendi optio cumque nihil impedit quo facilis</p>
+            <p class="intro-text">Unlimited Designs. Unlimited Revisions. One Low Flat-Fee.</p>
             <div class="btn-bar">
-              <a href="#" class="btn btn-custom">Get Started</a>
-              <a href="#contact" class="btn btn-custom-outline">Contact Us</a>
+              <a href="/users/sign_in" class="btn btn-custom">GET STARTED</a>
+              <a href="#pricing" class="btn btn-custom-outline">PLANS & PRICING</a>
             </div>
           </div> <!-- /col -->
         </div> <!-- /row -->
@@ -97,8 +112,8 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="title">About Us</h3>
-                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                    <h3 class="title">FUEL YOUR BRAND</h3>
+                    <p class="slog">With the top rated graphic design agency for growing business.</p>
                 </div>
                 <!-- /col -->
             </div>
@@ -107,27 +122,36 @@
             <div class="row features-box">
                 <div class="col-sm-4 text-right">
                     <div class="margin-b-md">
-                        <i class="far fa-sticky-note"></i>
-                        <h4>POWER OF FLEXIBILITY</h4>
-                        <p>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.</p>
+                        <div class="row hidden-sm hidden-xs">
+                            <div class="col-md-10 col-sm-10">
+                                
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <img class="img-responsive margin-b-sm" src="left.png">
+                            </div>
+                        </div>
+                        <center><img class="img-responsive margin-b-sm hidden-md hidden-lg" src="left.png"></center>
+                        <h4>UNLIMITED REQUESTS</h4>
+                        <p>Create as many projects as you need, we will work through them one at a time.</p>
                     </div>
                     <!-- / margin -->
                 </div>
                 <!-- /col -->
                 <div class="col-sm-4 features-line">
                     <div class="margin-b-md">
-                        <i class="far fa-gem"></i>
-                        <h4>FULLY RESPONSIVE</h4>
-                        <p>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.</p>
+                        <center><img class="img-responsive" src="center.png"></center>
+                        <h4>24 HOUR TURNAROUND</h4>
+                        <p>Enjoy our insanely fast turnaround times. Your finished design will be delivered back to you within one business day.</p>
                     </div>
                     <!-- / margin -->
                 </div>
                 <!-- /col -->
                 <div class="col-sm-4 text-left">
                     <div class="margin-b-md">
-                        <i class="far fa-lightbulb"></i>
-                        <h4>GREAT WEB IDEAS</h4>
-                        <p>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis euismod consectetur sem urdom tempus porttitor.</p>
+                        <img class="img-responsive hidden-xs" src="right.png">
+                        <center><img class="img-responsive hidden-sm hidden-md hidden-lg" src="right.png"></center>
+                        <h4>7 DAY FREE TRIAL</h4>
+                        <p>Try us out free for 7 days to make sure we are the perfect fit. We only bill you after your free trial ends.</p>
                     </div>
                     <!-- / margin -->
                 </div>
@@ -137,32 +161,32 @@
 
             <div class="row advanced-about">
                 <div class="col-sm-6 text-left">
-                    <h4><b>Responsive Web Design </b></h4>
+                    <h4><b>We Are Creative Experts </b></h4>
                     <hr/>
-                    <p>Employment respond committed meaningful fight against oppression social challenges rural legal aid governance. Meaningful work, implementation, process cooperation, campaign inspire.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>From explainer videos to Facebook ads, logos to business cards. We do it all. Design360 has helped countless brands develop a professional image and eye-catching marketing materials. We pride ourselves on making visually compelling designs that move your customers to action. We’re so confident you’ll fall in love with our work that we are offering a 7 day free trial. After singing up, login to your dashboard, get comfortable with our easy-to-use dashboard, and start receiving your designs. We will see you on the inside!</p>
                     <ul class="list-unstyled">
                         <li>
-                            <i class="fas fa-angle-right"></i>Consectetur adipisicing elit, sed do eiusmod
+                            <i class="fas fa-angle-right"></i>Our average turnaround time is under 24 hours.
                         </li>
                         <li>
-                            <i class="fas fa-angle-right"></i>Nulla vitae libero pharetra augue. Etiam porta malesuada magna mollis
+                            <i class="fas fa-angle-right"></i>All rights & source files included, you own everything we create.
                         </li>
                         <li>
-                            <i class="fas fa-angle-right"></i>Meaningful fight against oppression social challenges rural legal aid governance.
+                            <i class="fas fa-angle-right"></i>Each of our designers has 10+ years of experience in graphic design.
                         </li>
                         <li>
-                            <i class="fas fa-angle-right"></i>Consectetur adipisicing elit, sed do eiusmod
+                            <i class="fas fa-angle-right"></i>Rest easy with our 24/7 support team
                         </li>
                         <li>
-                            <i class="fas fa-angle-right"></i>CUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                            <i class="fas fa-angle-right"></i>Pay the same low monthly price (no matter how many projects you create). .
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-custom margin-t-md">Learn More</a>
+                    <a href="#pricing" class="btn btn-custom margin-t-md">Plans & Pricing</a>
                 </div>
                 <!-- /col -->
 
                 <div class="col-sm-6 text-center">
-                    <img src="about-1.png" alt="about" class="img-responsive">
+                    <img src="Client Dashboard.png" alt="Client Dashboard" class="img-responsive" width="130%">
                 </div>
                 <!-- /col -->
             </div>
@@ -172,142 +196,265 @@
     </section>
     <!-- About -->
 
-    <!-- FUN-FACTS -->
-    <section class="fun-facts bg-dark" id="fun-facts">
+    <!-- Brands -->
+    <section class="testi-slide parallax" id="testimonials">
+        <div class="container">
+            <article class="col-md-12 text-center">
+                <div class="intermediate-container">
+                    <div class="heading">
+                        <h2>Brands We’ve Worked With</h2>
+                    </div>
+                </div>
+            </article>
+            <div class="row">
+                <div class="col-sm-3">
+                    <center><img src="1.png" alt="Partner 1" class="img-responsive"></center>
+                </div>
+
+                <div class="col-sm-3">
+                    <center><img src="2.png" alt="Partner 1" class="img-responsive"></center>
+                </div>
+
+                <div class="col-sm-3">
+                    <center><img src="3.png" alt="Partner 1" class="img-responsive"></center>
+                </div>
+
+                <div class="col-sm-3">
+                    <center><img src="4.png" alt="Partner 1" class="img-responsive"></center>
+                </div>
+            </div>
+        </div>
+        <!-- container -->
+    </section>
+    <!-- Brands -->
+    
+    <!-- Services -->
+    <section class="services" id="services">
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-3 col-sm-3 facts">
-                    <i class="fas fa-pencil-alt"></i>
-                    <h1><span class="statistic-counter">6577</span> k</h1>
-                    <h4>Lines Coded</h4>
-                </div>
-                <!-- /facts-1 -->
-                <div class="col-md-3 col-sm-3 facts">
-                    <i class="fas fa-magic"></i>
-                    <h1> <span class="statistic-counter">7800 </span> +</h1>
-                    <h4>Working Hours</h4>
-                </div>
-                <!-- /facts-2 -->
-                <div class="col-md-3 col-sm-3 facts">
-                    <i class="far fa-file"></i>
-                    <h1><span class="statistic-counter">399 </span></h1>
-                    <h4>No. Of Template</h4>
-                </div>
-                <!-- /facts-3 -->
-                <div class="col-md-3 col-sm-3 facts">
-                    <i class="far fa-image"></i>
-                    <h1><span class="statistic-counter">5999</span></h1>
-                    <h4>Photos</h4>
-                </div>
-                <!-- /facts-4 -->
-            </div>
-            <!-- / row -->
-        </div>
-        <!--  /container -->
-    </section>
-    <!-- / FUN-FACTS -->
-
-    <!-- Portfolio -->
-    <section id="works" class="text-center">
-        <div class="container">
-            <div class="row">
                 <div class="col-md-12">
-                    <h3 class="title">Recent Works</h3>
-                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
+                    <h3 class="title">All Your Design Needs, We Take Care of Everything!</h3>
+                    <p class="slog">Let the experts handle your creative needs so that you can focus on the other moving parts of your business.</p>
                 </div>
                 <!-- /col -->
             </div>
             <!-- /row -->
 
             <div class="row">
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-1.jpg" class="img-responsive" alt="workimg">
-
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="logo-design.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Logos</h4>
+                            <p>Make the perfect first impression with professional and custom logo design.</p>
+                        </div>
+                        <!-- /service-detail -->
                     </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Mockup Design</a></h3>
-                        <span>Photoshop</span>
-                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
-                <!-- /portfolio-item -->
+                <!-- /col -->
 
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-2.jpg" class="img-responsive" alt="workimg">
-
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="social-media-design.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Social Media Design</h4>
+                            <p>Establishing your social media presence is crucial. Expand your reach with our custom social media design.</p>
+                        </div>
+                        <!-- /service-detail -->
                     </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Graphic Design</a></h3>
-                        <span>Illustrator</span>
-                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
-                <!-- /portfolio-item -->
+                <!-- /col -->
 
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-3.jpg" class="img-responsive" alt="workimg">
-
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                    <!--<i class="fas fa-search"></i>-->
+                    <img src="web-ad.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Web Ads</h4>
+                            <p>Attract more eyeballs and increase CTR with our high-performing web & banner ad designs.</p>
+                        </div>
+                        <!-- /service-detail -->
                     </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Web Design</a></h3>
-                        <span>Html / Css</span>
-                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
-                <!-- /portfolio-item -->
+                <!-- /col -->
             </div>
-            <!-- /row -->
+            <!-- end row -->
 
             <div class="row">
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-4.jpg" class="img-responsive" alt="workimg">
-
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="brochures.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Brochures</h4>
+                            <p>Use a brochure to capture the attention of potential and existing customers.</p>
+                        </div>
+                        <!-- /service-detail -->
                     </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Mockup Design</a></h3>
-                        <span>Photoshop</span>
-                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
-                <!-- /portfolio-item -->
+                <!-- /col -->
 
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-5.jpg" class="img-responsive" alt="workimg">
-
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="bus. cards & stationery.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Business Cards & Stationery</h4>
+                            <p>Create the perfect first impression. Custom business cards & stationery are essential to making your brand memorable.</p>
+                        </div>
+                        <!-- /service-detail -->
                     </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Graphic Design</a></h3>
-                        <span>Illustrator</span>
-                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
-                <!-- /portfolio-item -->
+                <!-- /col -->
 
-                <div class="col-sm-4 port-item margin-b-md">
-                    <div class="item-img-wrap">
-                        <img src="work-6.jpg" class="img-responsive" alt="workimg">
-
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="posters-flyers.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Posters & Flyers</h4>
+                            <p>Be bold when promoting your business. Our poster & flyer design will get your brand the attention it deserves.</p>
+                        </div>
+                        <!-- /service-detail -->
                     </div>
-                    <div class="work-desc">
-                        <h3><a href="#">Web Design</a></h3>
-                        <span>Html / Css</span>
-                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
-                <!-- /portfolio-item -->
+                <!-- /col -->
             </div>
-            <!-- /row -->
+            <!-- end row -->
 
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <a href="#" class="btn btn-custom">Load More</a>
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="explainer videos.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Explainer Videos</h4>
+                            <p>Clearly define your message or advertise your rand in a unique way with our 2D/3D animated videos.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
                 </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="infographic.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Infographics</h4>
+                            <p>Communicate data in an easy-to-understand way with our visually compelling infographics.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                       <img src="packaging labeling.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Packaging & Labels</h4>
+                            <p>Get noticed before your competitors. Create a lasting impression and showcase your brand with our packaging & label design.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
             </div>
-            <!-- /row -->
+            <!-- end row -->
+            
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                       <img src="cartoon.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Cartoons & Illustrations</h4>
+                            <p>Our designers are not only experts in digital design, we can draw with our hands too!</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                         <img src="3D-modeling.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>3D Modeling</h4>
+                            <p>The experience of a 3D image can be more compelling and satisfying to a prospect than 2D. Make your brand pop with our 3D design.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="T-shirt.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>T-shirts</h4>
+                            <p>Whether it’s a new apparel design for your Shopify store or a professional tee for your business, we will create it in our design lab.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- end row -->
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="email presentation.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Email & Presentation Design</h4>
+                            <p>Every detail matters. Our email template design and presentation design will make sure your business maintains a professional image.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="vector-training.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>Vector Tracing</h4>
+                            <p>Need better artwork? We will convert your design into a stunning & symmetrical vector file, for a higher quality logo or artwork.</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+
+                <div class="col-sm-4">
+                    <div class="service-item margin-b-md">
+                        <img src="and much more.png" class="our_icon">
+                        <div class="service-detail">
+                            <h4>And Much More…</h4>
+                            <p>We are experienced in all types of graphic design. Give us a description of what you need and watch your idea come to life!</p>
+                        </div>
+                        <!-- /service-detail -->
+                    </div>
+                    <!-- /service-item margin-b-md -->
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- end row -->
 
         </div>
-        <!-- /container -->
+        <!-- container -->
     </section>
-    <!-- / Portfolio -->
+    <!-- /Services -->
 
     <!--  Intro-section -->
     <section class="parallax" id="inner-section">
@@ -316,13 +463,13 @@
                 <article class="col-md-12 text-center">
                     <div class="intermediate-container">
                         <div class="subheading">
-                            <h4>Are You Ready To Enjoy?</h4>
+                            <h4>Our designs are meant to inspire action and convert customers into buyers. We approach every project with a marketer’s mindset, focusing on what works best in your industry. Are you ready to ignite your brand?</h4>
                         </div>
                         <div class="heading">
-                            <h2>inspire your customer here!</h2>
+                            <h2>START YOUR FREE TRIAL!</h2>
                         </div>
                         <div class="">
-                            <a class="btn btn-custom-outline" href="#"><span>get started</span></a>
+                            <a class="btn btn-custom" href="#pricing"><span>Plans & Pricing</span></a>
                         </div>
                     </div>
                 </article>
@@ -330,9 +477,66 @@
         </div>
     </section>
     <!-- / Intro-section -->
+    
+     <!-- Portfolio -->
+    <section class="text-center" id="works">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title">How It Works</h3>
+                </div>
+                <!-- /col -->
+            </div>
+            <!-- /row -->
+
+            <div class="row row-eq">
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <center><img src="login.png" class="img-responsive" alt="login"></center>
+
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Login to Your Dashboard</a></h3>
+                        <span>Sign in to your easy-to-use client dashboard. This is where you will create new projects and can do things such as edit your profile or manage billing.<br><br></span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+              
+                <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <center><img src="create a task.png" class="img-responsive" alt="Create Task"></center>
+
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Create A Task</a></h3>
+                        <span>You can create a project directly from your dashboard. Select the design type, answer a few questions about the project, and submit your request.<br><br></span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+
+                 <div class="col-sm-4 port-item margin-b-md">
+                    <div class="item-img-wrap">
+                        <center><img src="sit back.png" class="img-responsive" alt="Sit Back"></center>
+
+                    </div>
+                    <div class="work-desc">
+                        <h3><a href="#">Sit Back and Relax</a></h3>
+                        <span>We begin working on your design as soon as it gets requested! Expect to receive your finished design in your dashboard within one business day. You can then mark the project as complete, or if you need to, request a revision!</span>
+                    </div>
+                </div>
+                <!-- /portfolio-item -->
+            </div>
+            <!-- /row -->
+
+        </div>
+        <!-- /container -->
+    </section>
+    <!-- / Portfolio -->
 
     <!-- Team -->
-    <section class="team" id="team">
+  <!-- tempraroy close this section 
+  <section class="team" id="team"> 
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-12">
@@ -340,10 +544,10 @@
                     <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
                 </div>
                 <!-- /col -->
-            </div>
+          <!--  </div>
             <!-- /row -->
 
-            <div class="row text-center">
+           <!-- <div class="row text-center">
                 <div class="col-sm-3">
                     <img src="team-1.jpg" alt="team-member" class="img-responsive">
                     <h4>John Smith</h4>
@@ -362,7 +566,7 @@
                 </div>
                 <!-- team-member -->
 
-                <div class="col-sm-3">
+               <!-- <div class="col-sm-3">
                     <img src="team-2.jpg" alt="team-member" class="img-responsive">
                     <h4>Cristina Deo</h4>
                     <h5>Web Designer</h5>
@@ -380,7 +584,7 @@
                 </div>
                 <!-- team-member -->
 
-                <div class="col-sm-3">
+              <!--  <div class="col-sm-3">
                     <img src="team-3.jpg" alt="team-member" class="img-responsive">
                     <h4>Jonathan Deo</h4>
                     <h5>Manager</h5>
@@ -398,7 +602,7 @@
                 </div>
                 <!-- team-member -->
 
-                <div class="col-sm-3">
+               <!-- <div class="col-sm-3">
                     <img src="team-4.jpg" alt="team-member" class="img-responsive">
                     <h4>Anton Kovalsky</h4>
                     <h5>Graphic Designer</h5>
@@ -415,278 +619,398 @@
                     </ul>
                 </div>
                 <!-- team-member -->
-            </div>
+           <!-- </div>
             <!-- end row -->
 
-            <div class="row margin-t-md">
+          <!-- <div class="row margin-t-md">
                 <div class="col-md-12 text-center">
                     <a href="#" class="btn btn-custom">We are Hiring</a>
                 </div>
                 <!-- /col -->
-            </div>
+          <!--  </div>
             <!-- /row -->
-        </div>
+       <!-- </div> 
         <!-- container -->
-    </section>
+  <!-- </section>  -->
     <!-- /Team -->
 
 
     <!-- Skills -->
-    <section class="bg-dark">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-sm-3">
-                    <div class="progress" data-dimension="160" data-text="77%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                    <h4><i class="fas fa-umbrella"></i>Creativity</h4>
-                </div>
+    <!--<section class="bg-dark">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row text-center">-->
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="progress" data-dimension="160" data-text="77%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                <h4><i class="fas fa-umbrella"></i>Creativity</h4>-->
+    <!--            </div>-->
                 <!-- skill -->
 
-                <div class="col-sm-3">
-                    <div class="skill">
-                        <div class="progress" class="skill-chart" data-dimension="160" data-text="86%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                        <h4><i class="fas fa-cloud-download-alt"></i>Wordpress</h4>
-                    </div>
-                </div>
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="skill">-->
+    <!--                    <div class="progress" class="skill-chart" data-dimension="160" data-text="86%" data-width="6" data-fontsize="28" data-percent="86" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                    <h4><i class="fas fa-cloud-download-alt"></i>Wordpress</h4>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!-- skill -->
 
-                <div class="col-sm-3">
-                    <div class="skill">
-                        <div class="progress" class="skill-chart" data-dimension="160" data-text="93%" data-width="6" data-fontsize="28" data-percent="93" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                        <h4><i class="fas fa-desktop"></i> Design</h4>
-                    </div>
-                </div>
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="skill">-->
+    <!--                    <div class="progress" class="skill-chart" data-dimension="160" data-text="93%" data-width="6" data-fontsize="28" data-percent="93" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                    <h4><i class="fas fa-desktop"></i> Design</h4>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!-- skill -->
 
-                <div class="col-sm-3">
-                    <div class="skill">
-                        <div class="progress" class="skill-chart" data-dimension="160" data-text="81%" data-width="6" data-fontsize="28" data-percent="81" data-fgcolor="#666" data-bgcolor="#eee"></div>
-                        <h4><i class="far fa-lightbulb"></i> Coding</h4>
-                    </div>
-                </div>
+    <!--            <div class="col-sm-3">-->
+    <!--                <div class="skill">-->
+    <!--                    <div class="progress" class="skill-chart" data-dimension="160" data-text="81%" data-width="6" data-fontsize="28" data-percent="81" data-fgcolor="#666" data-bgcolor="#eee"></div>-->
+    <!--                    <h4><i class="far fa-lightbulb"></i> Coding</h4>-->
+    <!--                </div>-->
+    <!--            </div>-->
                 <!-- skill -->
 
-            </div>
+    <!--        </div>-->
             <!-- end row -->
-        </div>
+    <!--    </div>-->
         <!-- container -->
-    </section>
+    <!--</section>-->
     <!-- / Skills -->
 
-
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <h3 class="title">We Are Good In</h3>
-                    <p class="slog">Lorem ipsum dolor sit amet ne onsectetuer adipiscing elit. Aenean commodo ligula eget dolor in tashin ty</p>
-                </div>
-                <!-- /col -->
-            </div>
-            <!-- /row -->
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="far fa-gem"></i>
-                        <div class="service-detail">
-                            <h4>Strategy Solutions</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-tablet-alt"></i>
-                        <div class="service-detail">
-                            <h4>Digital Design</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-search"></i>
-                        <div class="service-detail">
-                            <h4>SEO</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-            </div>
-            <!-- end row -->
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-rocket"></i>
-                        <div class="service-detail">
-                            <h4>Graphic Design</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="service-detail">
-                            <h4>Analystics</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-headphones"></i>
-                        <div class="service-detail">
-                            <h4>Dedicated Support</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-            </div>
-            <!-- end row -->
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-shopping-cart"></i>
-                        <div class="service-detail">
-                            <h4>Truly Multipurpose</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="far fa-dot-circle"></i>
-                        <div class="service-detail">
-                            <h4>Unlimited Colors</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-
-                <div class="col-sm-4">
-                    <div class="service-item margin-b-md">
-                        <i class="fas fa-bars"></i>
-                        <div class="service-detail">
-                            <h4>Easy to customize</h4>
-                            <p>We put a lot of effort in design, as it’s the most important ingredient of successful website.Sed ut perspiciatis unde omnis iste natus error sit.</p>
-                        </div>
-                        <!-- /service-detail -->
-                    </div>
-                    <!-- /service-item margin-b-md -->
-                </div>
-                <!-- /col -->
-            </div>
-            <!-- end row -->
-
-        </div>
-        <!-- container -->
-    </section>
-    <!-- /Services -->
-
+     <!--CONTACT -->
 
     <!-- Testimonials -->
-    <section class="testi-slide parallax" id="testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
-                        <div class="carousel-inner">
-				        <div class="active item">
-                            <center><img src="test-1.jpg" alt="test-1" class="img-circle img-user"></center>
-                            <h5>
-                              <span><i class=""></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat, eligendi magni quibusdam iure cupiditate ex voluptas unde Lorem ipsum dolor sit amet..
-                            </h5>
-                            <p>- Jonathan Deo</p>
-                        </div>
-                        
-                        <!--testimonials item like paragraph-->
-                        
-				        <div class="item">
-                            <center><img src="test-2.jpg" alt="test-1" class="img-circle img-user"></center>
-                            <h5>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat, eligendi magni quibusdam iure cupiditate ex voluptas unde Lorem ipsum dolor sit amet..
-                            </h5>
-                            <p>- Jonathan Deo</p>
-                        </div>
-                        
-                        <!--testimonials item like paragraph-->
-                        
-				        <div class="item">
-                            <center><img src="test-3.jpg" alt="test-1" class="img-circle img-user"></center>
-                            <h5>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat, eligendi magni quibusdam iure cupiditate ex voluptas unde Lorem ipsum dolor sit amet..
-                            </h5>
-                            <p>- Jonathan Deo</p>
-                        </div>
-                        </div>
-                        <!--testimonials item like paragraph-->
-                    </div>
+    
+    <div class="container margin-t-md">
+        <div class="row text-center">
+            <div class="col-md-12">
+                    <h3 class="title">Testimonials</h3>
                 </div>
-                <!-- end col-md-8 -->
+                <!-- /col -->
             </div>
-            <!-- end row -->
-
-            <div class="row">
-                <div class="col-sm-3">
-                    <img src="1.png" alt="Partner 1" class="img-responsive">
-                </div>
-
-                <div class="col-sm-3">
-                    <img src="2.png" alt="Partner 1" class="img-responsive">
-                </div>
-
-                <div class="col-sm-3">
-                    <img src="3.png" alt="Partner 1" class="img-responsive">
-                </div>
-
-                <div class="col-sm-3">
-                    <img src="4.png" alt="Partner 1" class="img-responsive">
+		<div class="row">
+			
+			<div class="jag-tst-theme-2 jag-tst-theme-blue jag-equalheight">
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-color-bg"></div>
+						<div class="jag-tst-avatar">
+							<img src="/Alexander Luszczak.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Alexander Luszczak</div>
+							<div class="jag-designation"> - CEO, Music City Removal</div>
+							
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+								Every entrepreneur needs this service, Design360 has created EVERYTHING for me and my brand is a lot stronger because of it. Their designs have allowed us to appear more professional and prospects take us seriously like they would a much bigger company. 
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-avatar">
+							<img src="/Gabriella Toman.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Gabriella Toman</div>
+							<div class="jag-designation"> - Creative Director, DOMM </div>
+						
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                They provide us with so much value. I help manage a Facebook Ad Agency and we outsource our ad images to Design360. They consistently produce good ad creatives for us, which overall helps us gain a higher conversion rate for clients. We have a number of clients, so we use their pro plan.								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-avatar">
+							<img src="/Scott Pouyat.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Scott Pouyat</div>
+							<div class="jag-designation"> - Optometrist/Owner, Eyecare Associates </div>
+							
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                I’ve worked with Design360 for the last 6 months or so. As soon as I found them, I regretted all the (unreliable) freelancers I’ve worked with in the past. Design 360 is quick, reliable, and I always know what I’m getting. They really understand my brand and consistently produce effective marketing materials for us at Eyecare Associates.								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			
+			<div class="jag-tst-theme-2 jag-tst-theme-blue jag-equalheight">
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-color-bg"></div>
+						<div class="jag-tst-avatar">
+							<img src="Roland Najbar.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Roland Najbar</div>
+							<div class="jag-designation"> - Head of Marketing, Revolution Tires & Wheels</div>
+							
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                We love using Design360 because it allows us to have extremely professional graphic designers at our disposal for a fraction of the cost. Before them, it’s absolutely crazy that I considered hiring a graphic designer for 40-50k.								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-avatar">
+							<img src="Gabriella Toman.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Gabriella Toman</div>
+							<div class="jag-designation"> - Creative Director, DOMM </div>
+						
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                Design360 is really the only graphic design service we haven’t been disappointed by, and we’ve tried many before them. The name of the game for us is turnaround. When we need a design, it has to be done pretty quickly. Design360 usually creates what we need in under 24 hours and they always seem to get it right the first time.							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 jag-tst-col">
+					<div class="jag-tst-wrapper">
+						<div class="jag-tst-avatar">
+							<img src="Stephen Kaidantsis.png" class="img-responsive" alt="">
+						</div>
+						<div class="jag-tst-details">
+							<div class="jag-name">Stephen Kaidantsis</div>
+							<div class="jag-designation"> - Co-founder, Doctor’s Recommended</div>
+							
+							<hr>
+							<div class="jag-message">
+								<i class="fa fa-quote-left"></i> 
+                                As a growing company, we didn’t want to hire a full-time designer or a big to burn through our cash. Design360 was the perfect solution for our company. We get quality and consistent designs while saving a ton of money in the process… works for me!							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- End Testimonials -->
+    <!-- FAQ -->
+    <section class="testi-slide parallax" id="faq">
+    <div class="container margin-t-lg" >
+        <article class="col-md-12 text-center">
+            <div class="intermediate-container">
+                <div class="heading">
+                    <h2>Frequently Asked Questions</h2>
                 </div>
             </div>
+        </article>
+	<div class="row">
+    <div class="col-md-12">
+			
+			<div class="panel-group jag-faq-theme3 jag-faq-theme-pink" id="jag-theme-3">
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_1">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Do I get all the paid features in the free trial?
+					</div>
+					<div id="collapse3_1" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes, you will receive everything that’s included in our monthly plans!
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_2">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						How long does it take to get started and setup my account?
+					</div>
+					<div id="collapse3_2" class="panel-collapse collapse">
+						<div class="panel-body">
+						You can get started requesting designs in no-time! We do not have a long onboarding process or make you use 3rd party apps like Trello, all communication is done through your client dashboard. You can request your first design within minutes of signing up!
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_3">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Is it really unlimited?
+					</div>
+					<div id="collapse3_3" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes, it is really unlimited. You can request as many tasks as you want. We will work through them 1 at a time with our Basic plan, or 3 at a time with our Pro plan.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_4">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						What’s not included?
+					</div>
+					<div id="collapse3_4" class="panel-collapse collapse">
+						<div class="panel-body">
+						Anything that requires coding or an integration into something else – we do not do any web design or app design. If you have something particular in mind, just ask!
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_5">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Where is Design360 Based?
+					</div>
+					<div id="collapse3_5" class="panel-collapse collapse">
+						<div class="panel-body">
+						Tampa, Florida! Our project managers are all right here in the U.S. and we employ designers from all over the world. 
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_6">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						What if I don’t like a design?
+					</div>
+					<div id="collapse3_6" class="panel-collapse collapse">
+						<div class="panel-body">
+						Don’t worry, this can happen! We include unlimited revisions. When projects are delivered, you have the option to either mark it as complete or request a revision.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_7">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Can I cancel at any time?
+					</div>
+					<div id="collapse3_7" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes! All contracts are month-to-month, you are absolutely free to cancel at any time, you may do so in your dashboard.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_8">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Can I trust you with my credit card details?
+					</div>
+					<div id="collapse3_8" class="panel-collapse collapse">
+						<div class="panel-body">
+						We use Stripe, a leading payment gateway to process payments. We do not store or even see your credit card details. Stripe handles everything securely for us.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_9">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						I own multiple brands; can I submit tasks for each one?
+					</div>
+					<div id="collapse3_9" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes! As long as it comes from your client dashboard, you can submit designs for whatever you need.
+						</div>
+					</div>
+				</div>
+				<div class="panel jag-faq-wrapper">
+					<div class="jag-faq-title" data-toggle="collapse" data-parent="#jag-theme-3" href="#collapse3_10">
+						<i class="jag-faq-icon-3 fa fa-coffee pull-right"></i>
+						Can I resell any designs that Design360 creates for me?
+					</div>
+					<div id="collapse3_10" class="panel-collapse collapse">
+						<div class="panel-body">
+						Yes. You own and control all of the intellectual property that we create for you.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</section>
+	<!-- End FAQ -->
+	<!-- *********  PRICING  ********* -->
+	<section style="padding-bottom:0px; padding-top:80px;" id="pricing">
+    <div class="pricing-2" >
+        <div class="container margin-t-lg" id="Pricing">
+        <div class="row text-center">
+            <div class="col-md-12 pric">
+                <h3 class="title">Pricing</h3>
+            </div>
+                <!-- /col -->
         </div>
-        <!-- container -->
+                <div class="row pric">
+                    <div class="col-md-4">
+                        <div class="block block-pricing block-plain">
+                            <div class="table">
+                                <h6 class="category">&nbsp;</h6>
+                                <h1 class="block-caption features">Features</h1>
+                                <ul>
+                                    <li>Unlimited Graphic Design</li>
+                                    <li>Unlimited Requests</li>
+                                    <li>Unlimited Revisions</li>
+                                    <li>Dedicated U.S. Project Manager</li>
+                                    <li>Design Team Collaboration</li>
+                                    <li>Next Day Project Delivery</li>
+                                    <li>Projects at a time</li>
+                                    <li>Source Files Included</li>
+                                    <li>Unlimited Brands</li>
+                                    <li>No Contract or Cancellation Fee</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block block-pricing block-raised">
+                            <div class="table table-info">
+                                <h6 class="category">Basic</h6>
+                                <h1 class="block-caption"><small>$</small>376<span>/mo</span></h1>
+                                <ul>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li>1</li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                </ul> 
+                                <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block block-pricing block-plain">
+                            <div class="table table-info">
+                                <h6 class="category">Pro</h6>
+                                <h1 class="block-caption"><small>$</small>799<span>/mo</span></h1>
+                                <ul>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li>3</li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                </ul> 
+                                <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    </div>
     </section>
-    <!-- / Testimonials -->
-
-
-
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="">
+    <!-- *********  END PRICING  ********* -->
+        <section id="contact" class="">
         <div class="container">
             <div class="row text-center info-contact">
                 <div class="col-sm-4 margin-b-md">
@@ -695,27 +1019,26 @@
                     <ul class="list-unstyled">
                         <li><a href="mailto:support@design360.graphics">E: support@design360.graphics</a>
                         </li>
-                        <li><a href="tel:0123456789">P: 0123 456 789</a>
-                        </li>
-                        <li><a href="#">W: www.Cubana.com</a>
+                        
+                        <li><a href="http://design360.graphics/">W: www.design360.graphics</a>
                         </li>
                     </ul>
                 </div>
-                <!-- end Get in touch -->
+                 <!--end Get in touch -->
 
                 <div class="col-sm-4 margin-b-md">
                     <i class="fas fa-map-marker-alt"></i>
                     <h4>Our Location</h4>
-                    <address>Cubana<br> 123 street <br>Saint Peter, MN 12345<br> 059 – 12345678</address>
+                    <address>Design 360<br> 15 Somerset St <br>Tampa, FL 33767</address>
                 </div>
-                <!-- end Our Location -->
+                 <!--end Our Location -->
 
                 <div class="col-sm-4 margin-b-md">
                     <i class="far fa-life-ring"></i>
-                    <h4>Free Support</h4> Call Now
-                    <a class="support" href="tel:0123456789">12345 67890</a>
+                    <h4>Free Support</h4> Chat us now!
+                    
                 </div>
-                <!-- end Support -->
+                 <!--end Support -->
             </div>
             <!-- /row -->
 
@@ -727,65 +1050,61 @@
                                 <div class="form-group col-sm-4">
                                     <label for="name2">Name</label>
                                     <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
-                                    <div class="error" id="err-name" style="display: none;">Please enter name</div>
+                                    
                                 </div>
-                                <!-- /Form-name -->
+                                 <!--/Form-name -->
 
                                 <div class="form-group col-sm-4">
                                     <label for="email2">Email</label>
                                     <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
-                                    <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>
+                                    
                                 </div>
-                                <!-- /Form-email -->
+<!--/Form-email -->
 
                                 <div class="form-group col-sm-4">
                                     <label for="subject1">Subject</label>
                                     <input class="form-control" id="subject1" name="name" onblur="if(this.value == '') this.value='Subject'" onfocus="if(this.value == 'Subject') this.value=''" type="text" value="Subject">
                                 </div>
-                                <!-- /Form-Subject -->
+                                 <!--/Form-Subject -->
                             </div>
-                            <!-- /row -->
+                             <!--/row -->
 
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <label for="message2">Message</label>
                                     <textarea class="form-control" id="message2" name="message" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
-                                    <div class="error" id="err-message" style="display: none;">Please enter message</div>
+                                    
                                 </div>
-                                <!-- /col -->
+                                 <!--/col -->
                             </div>
-                            <!-- /row -->
+                             <!--/row -->
 
                             <div class="row">
                                 <div class="col-md-8 col-md-offset-2">
-                                    <p class="text-center con_sub_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren.</p>
+                                    <!--<p class="text-center con_sub_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren.</p>--->
                                 </div>
-                                <!-- /col -->
+                                 <!--/col -->
                             </div>
-                            <!-- /row -->
+                             <!--/row -->
 
                             <div class="row">
                                 <div class="col-xs-12 text-center">
-                                    <div id="ajaxsuccess">E-mail was successfully sent.</div>
-                                    <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>
-                                    <div class="error" id="err-timedout">The connection to the server timed out!</div>
-                                    <div class="error" id="err-state"></div>
                                     <button type="submit" class="btn btn-custom" id="send">Submit</button>
                                 </div>
-                                <!-- /col -->
+                                 <!--/col -->
                             </div>
-                            <!-- /row -->
+                             <!--/row -->
 
                         </div>
-                        <!-- /row -->
+                         <!--/row -->
                     </form>
-                    <!-- /form -->
+                     <!--/form -->
                 </div>
-                <!-- end col-md-12 -->
+                 <!--end col-md-12 -->
             </div>
-            <!-- end row -->
+             <!--end row -->
         </div>
-        <!-- container -->
+         <!--container -->
     </section>
     <!-- End CONTACT -->
     <!-- Footer -->
@@ -799,6 +1118,4 @@
 <script type="text/javascript"> <!-- cross browser -->
     window.requestAnimationFrame||(window.requestAnimationFrame=function(){return window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}());
 </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    
+

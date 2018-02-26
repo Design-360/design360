@@ -7939,7 +7939,7 @@ table.shoping-cart-table tr td:last-child {
 background-color: #4771FA;
 }
 .back-future{
-    height: 97.5vh;
+    height: 100vh;
     background: url(../../back-future.jpg) no-repeat right;
-    background-size: contain;
+    background-size: cover;
 }

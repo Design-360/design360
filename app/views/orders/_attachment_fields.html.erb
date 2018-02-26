@@ -1,28 +1,32 @@
 <div class="nested-fields">
     <div class="form-group">
         <label class="col-lg-2 control-label">File</label>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                    <div class="form-control" data-trigger="fileinput">
-                        <i class="fa fa-image fileinput-exists"></i>
-                    <span class="fileinput-filename"></span>
-                    </div>
-                    <span class="input-group-addon btn btn-default btn-file">
-                        <span class="fileinput-new">Select file</span>
-                        <span class="fileinput-exists">Change</span>
-                        <%= f.file_field :avatar, :required => :true %>
-                    </span>
-                    <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+        <div class="col-lg-4">
+            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                <div class="form-control" data-trigger="fileinput">
+                    <i class="fa fa-image fileinput-exists"></i>
+                <span class="fileinput-filename"></span>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <label class="col-lg-4 control-label">Type:</label>
-                <%= f.select :avatar_type, options_for_select([["Brand Asset","brand_asset"],["Inspiration", "inspiration"]]), :required => :true %>
+                <span class="input-group-addon btn btn-default btn-file">
+                    <span class="fileinput-new">Select file</span>
+                    <span class="fileinput-exists">Change</span>
+                    <%= f.file_field :avatar, :required => :true %>
+                </span>
+                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
             </div>
         </div>
+            
+        <label class="control-label col-lg-1">Type:</label>
+        <div class="col-lg-3">
+            <%= f.select :avatar_type, options_for_select([["Brand Asset","brand_asset"],["Inspiration", "inspiration"]]), { include_blank: true }, class:"form-control", :required => :true %>
+        </div>    
+        <div class="col-lg-1">
+            <div class="btn btn-default">
+                <%= link_to_remove_association "<i class='fas fa-minus'></i>  Remove".html_safe, f %>
+            </div>
+        </div>    
+            
+        
     </div>
-    <div class="btn btn-default">
-        <%= link_to_remove_association "Remove", f %>
-    </div>
+    
 </div>

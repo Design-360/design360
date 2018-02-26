@@ -4,8 +4,9 @@
  *   version 2.7
  *
  */
-$(document).on('turbolinks:load', function() {
+
 $(document).ready(function () {
+    
 
 
     // Add body-small class if window less than 768px
@@ -290,4 +291,3 @@ function WinMove() {
 }
 
 
-});

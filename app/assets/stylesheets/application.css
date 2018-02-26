@@ -17,8 +17,15 @@
  */
 
 body, p, span, h1, h2, h3, h4, h5, h6, div, button, input, li, ul, ol, table, td, tr, th, fieldset, font, strong, b{
+
 font-family: Roboto !important;
+
 }
+.join-btn{
+    padding: 7px 15px !important;
+    color: #fff !important;
+}
+
 
 .form-control, .single-line {
     background-color: transparent !important;
@@ -74,3 +81,24 @@ font-family: Roboto !important;
 .form-horizontal .control-label {
     text-align: left !important;
 }
+.nav-tabs > li > a{
+    color:#4771FA !important;
+}
+.nav-tabs > li.active{
+    color:#fff !important;
+    background-color: #4771fa;
+}
+.nav-tabs > li.active a{
+    color:#fff !important;
+    border:0 !important;
+}
+.row.row-login{
+    margin-right:0 !important;
+}
+
+.modal-title{
+    float:left !important;
+}
+.our_icon{
+    width: 9%;
+    float: left;}

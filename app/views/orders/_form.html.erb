@@ -1,17 +1,17 @@
-
-
                 <div class="ibox-content">
                     <%= form_for @order, :html => {:class => "form-horizontal"} do |f| %>
                         
-                        <div class="form-group"><label class="col-lg-2 control-label">Design Type:</label>
-        
-                            <%= f.select :design_type, options_for_select(["Logo","Poster/flyer","Book/magazine cover","Web ad","Social media graphic","Podcast cover","T-shirt","Business card","Blog image","PowerPoint template","Infographic","Email signature","Background removal","Brochure","Billboard","Label","Restaurant Menu","Other…"]), { include_blank: true }, :required => :true %>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Design Type:</label>
+                            <div class="col-lg-10">
+                            <%= f.select :design_type, options_for_select(["Logo","Poster/flyer","Book/magazine cover","Web ad","Social media graphic","Podcast cover","T-shirt","Business card","Blog image","PowerPoint template","Infographic","Email signature","Background removal","Brochure","Billboard","Label","Restaurant Menu","Other…"]), { include_blank: true },:class => "form-control", :required => :true %>
+                            </div>
                         </div>
                         
                         <%= f.fields_for :attachments do |att| %>
                             <%= render 'attachment_fields', f: att %>
                             <div class="btn btn-default">
-                                <%= link_to_add_association 'Add Another File', f, :attachments %>
+                                <%= link_to_add_association "<i class='fas fa-plus'></i>  Add Another File".html_safe, f, :attachments %>
                             </div>
                         <% end %>
                         <div class="form-group">
