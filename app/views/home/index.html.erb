@@ -73,13 +73,15 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     </ul>
                 </li>    
                     <% else %>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login As:<span class="caret"></span></a>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/employees/sign_in">Employee</a></li>
                             <li><a href="/users/sign_in">Client</a></li>
                         </ul>
-                    </li>    
+                    </li> 
+                    <li><a class = "btn btn-primary btn-sm join-btn" href="/users/sign_up">JOIN</a></li>
                 <% end %>
+                
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->

@@ -21,6 +21,11 @@ body, p, span, h1, h2, h3, h4, h5, h6, div, button, input, li, ul, ol, table, td
 font-family: Roboto !important;
 
 }
+.join-btn{
+    padding: 7px 15px !important;
+    color: #fff !important;
+}
+
 
 .form-control, .single-line {
     background-color: transparent !important;

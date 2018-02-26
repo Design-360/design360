@@ -710,3 +710,7 @@
 .row.pric{
 	padding-top:50px;
 }}
+a.btn.btn-primary.btn-sm.join-btn:hover{
+    color:#fff !important;
+    background-color: #0039a2 !important;
+}
