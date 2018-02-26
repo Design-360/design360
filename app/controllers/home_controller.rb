@@ -27,6 +27,7 @@ class HomeController < ApplicationController
     
     def admin_dashboard
         @pending_orders = Order.where(:status => "pending")
+        # @delivered_orders = []
     end
     
     def manager_dashboard

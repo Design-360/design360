@@ -225,7 +225,7 @@
 }
 
 /* Bootstrap col-md-12 class */
-.col-md-12 {
+.col-md-12.pric {
     padding-right: 0px;
     padding-left: 0px;
 }

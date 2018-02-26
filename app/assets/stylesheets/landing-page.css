@@ -217,14 +217,15 @@
 .landing-page .navbar-custom .nav {
 	padding: 15px 0px;
 }
-.landing-page .navbar-custom .navbar-nav>li>a {
+.landing-page .navbar-custom .navbar-nav>li>a,.landing-page .dropdown-menu > li > a {
 	color: #666;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
 }
+
 .landing-page .navbar-custom .navbar-nav>.active>a, .landing-page .navbar-custom .navbar-nav>.active>a:hover, .landing-page .navbar-custom .navbar-nav>.active>a:focus,
-.landing-page .navbar-custom .navbar-nav>.open>a, .landing-page .navbar-custom .navbar-nav>.open>a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:focus,
+.landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .dropdown-menu > li > a,.landing-page .dropdown-menu > li > a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:focus,
 .landing-page .navbar-custom .navbar-nav>li>a:hover, .landing-page .navbar-custom .navbar-nav>li>a:focus {
 	background-color: transparent;
 }
@@ -511,6 +512,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.landing-page #faq {
+	background: url(../img-2.jpg) center;
+	 background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .landing-page .testi-slide {
 	color: #f1f2f3;
 }
@@ -671,7 +679,7 @@
 	border-color: #1dc6df;
 }
 .landing-page .navbar-custom .navbar-nav>.active>a,.landing-page .navbar-custom .navbar-nav>.active>a:hover,.landing-page .navbar-custom .navbar-nav>.active>a:focus,
-.landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .navbar-custom .navbar-nav>.open>a:hover,.landing-page .navbar-custom .navbar-nav>.open>a:focus,
+.landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .navbar-custom .navbar-nav>.open>a:hover,.landing-page .dropdown-menu > li > a:hover,.landing-page .navbar-custom .navbar-nav>.open>a:focus,
 .landing-page .navbar-custom .navbar-nav>li>a:hover,.landing-page .navbar-custom .navbar-nav>li>a:focus,
 .landing-page .intro-title span,.landing-page .testi-slide p,.landing-page #ajaxsuccess,.landing-page #contact i,.landing-page #contact h4{
 	color: #4771fa !important;
@@ -686,13 +694,19 @@
     background: #1dc6df;
 }
 
-.row-eq {
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display:         flex !important;
+
+@media only screen and (max-width:768px){
+	.landing-page .navbar-header{
+	width:105% !important;}
+	.navbar-toggle{
+		float:right;
+	}
+	.navbar-collapse.collapse.in{
+		float:left !important;
+		width: 105%;
+	}
 }
-.row-eq > [class*='col-'] {
-	 display: flex !important;
-	 flex-direction: column !important;
-}
+@media only screen and (min-width:768px){
+.row.pric{
+	padding-top:50px;
+}}

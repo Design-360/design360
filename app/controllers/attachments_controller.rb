@@ -6,10 +6,6 @@ class AttachmentsController < ApplicationController
         if current_employee
             @attachment.employee_id = current_employee.id
         end
-        # if params[:avatar_type] == "complete"
-        #     @attachment.avatar_type = "complete"
-        #     @order.update(:status => "complete")
-        # end
         if @attachment.avatar_type == "complete"
             @order.update(:status => "delivered")
         end

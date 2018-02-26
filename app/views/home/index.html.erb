@@ -22,32 +22,9 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <link rel="stylesheet" media="all" href="/testimonials.css" data-turbolinks-track="reload" />
 <script type="text/javascript" src="/landing-page.js"></script>
 <script type="text/javascript" src="/equal-height.js"></script>
+<script type="text/javascript" src="/SmoothScroll.js"></script>
+<script type="text/javascript" src="/jquery.sticky.js"></script>
 <div class="landing-page">    
-    <div class="tagline hidden-xs"> 
-      <div class="container"> 
-        <div class="pull-left"> 
-          <div class="phone">
-            <i class="fas fa-phone-volume"></i> +1 123 456 78 90
-          </div>
-          <div class="email">
-            <a href="mailto:support@design360.graphics">
-              <i class="far fa-envelope"></i> Support@design360.graphics
-            </a>
-          </div>
-        </div>
-        <div class="pull-right"> 
-          <ul class="top_socials"> 
-            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/"><i class="fab fa-google-plus"></i></a></li>
-            <li><a href="https://www.dribble.com/"><i class="fab fa-dribbble"></i></a></li>
-            <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a></li>
-          </ul> 
-        </div>
-        <div class="clear"></div>
-      </div>
-    </div>
-
     <!-- Header -->
     <nav class="navbar navbar-default navbar-custom sticky">
       <div class="container">
@@ -66,30 +43,42 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a href="/">Home</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#about-us">What’s Included</a></li>
+                <li><a href="#works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#Pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <% if user_signed_in? or employee_signed_in? %>
                     <% if current_user %>
-                    <li><a href="/clients/dashboard">Dashboard</a></li>
-                    <li><a>Signed in as <strong><%= current_user.name %></strong>(<%= current_user.email %>)</a>
-                    </li>
-                    <li><a href="/users/edit">Edit Profile</a></li>
-                    <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/clients/dashboard">Dashboard</a></li>
+                            <li><a href="/users/edit">Edit Profile</a></li>
+                            <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
+                        </ul>
+                    </li>    
                   <% end %>
                   <% if current_employee %>
-                    <% if current_employee.admin? %>
-                      <li><a href="/admin/dashboard">Dashboard</a></li>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <% if current_employee.admin? %>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
+                        <% else %>
+                        <li><a href="/managers/dashboard">Dashboard</a></li>
+                        <% end %>
+                        <li><a href="/employees/edit">Edit Profile</a></li>
+                        <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
+                        <% end %>
+                    </ul>
+                </li>    
                     <% else %>
-                      <li><a href="/managers/dashboard">Dashboard</a></li>
-                    <% end %>
-                    <li><a>Signed in as <strong><%= current_employee.email %></strong></a>
-                    </li>
-                    <li><a href="/employees/edit">Edit Profile</a></li>
-                    <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
-                  <% end %>
-                <% else %>
-                    <li><a style="cursor:default;">Login As:</a></li>
-                    <li><a href="/employees/sign_in">Employee</a></li>
-                    <li><a href="/users/sign_in">Client</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login As:<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/employees/sign_in">Employee</a></li>
+                            <li><a href="/users/sign_in">Client</a></li>
+                        </ul>
+                    </li>    
                 <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -217,19 +206,19 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             </article>
             <div class="row">
                 <div class="col-sm-3">
-                    <img src="1.png" alt="Partner 1" class="img-responsive">
+                    <center><img src="1.png" alt="Partner 1" class="img-responsive"></center>
                 </div>
 
                 <div class="col-sm-3">
-                    <img src="2.png" alt="Partner 1" class="img-responsive">
+                    <center><img src="2.png" alt="Partner 1" class="img-responsive"></center>
                 </div>
 
                 <div class="col-sm-3">
-                    <img src="3.png" alt="Partner 1" class="img-responsive">
+                    <center><img src="3.png" alt="Partner 1" class="img-responsive"></center>
                 </div>
 
                 <div class="col-sm-3">
-                    <img src="4.png" alt="Partner 1" class="img-responsive">
+                    <center><img src="4.png" alt="Partner 1" class="img-responsive"></center>
                 </div>
             </div>
         </div>
@@ -252,7 +241,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <div class="row">
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="far fa-gem"></i>
+                        <img src="logo-design.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Logos</h4>
                             <p>Make the perfect first impression with professional and custom logo design.</p>
@@ -265,7 +254,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-tablet-alt"></i>
+                        <img src="social-media-design.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Social Media Design</h4>
                             <p>Establishing your social media presence is crucial. Expand your reach with our custom social media design.</p>
@@ -278,7 +267,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-search"></i>
+                    <!--<i class="fas fa-search"></i>-->
+                    <img src="web-ad.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Web Ads</h4>
                             <p>Attract more eyeballs and increase CTR with our high-performing web & banner ad designs.</p>
@@ -294,7 +284,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <div class="row">
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-rocket"></i>
+                        <img src="brochures.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Brochures</h4>
                             <p>Use a brochure to capture the attention of potential and existing customers.</p>
@@ -307,7 +297,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-chart-line"></i>
+                        <img src="bus. cards & stationery.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Business Cards & Stationery</h4>
                             <p>Create the perfect first impression. Custom business cards & stationery are essential to making your brand memorable.</p>
@@ -320,7 +310,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-headphones"></i>
+                        <img src="posters-flyers.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Posters & Flyers</h4>
                             <p>Be bold when promoting your business. Our poster & flyer design will get your brand the attention it deserves.</p>
@@ -336,7 +326,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <div class="row">
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-shopping-cart"></i>
+                        <img src="explainer videos.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Explainer Videos</h4>
                             <p>Clearly define your message or advertise your rand in a unique way with our 2D/3D animated videos.</p>
@@ -349,7 +339,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="far fa-dot-circle"></i>
+                        <img src="infographic.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Infographics</h4>
                             <p>Communicate data in an easy-to-understand way with our visually compelling infographics.</p>
@@ -362,7 +352,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-bars"></i>
+                       <img src="packaging labeling.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Packaging & Labels</h4>
                             <p>Get noticed before your competitors. Create a lasting impression and showcase your brand with our packaging & label design.</p>
@@ -378,7 +368,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <div class="row">
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-rocket"></i>
+                       <img src="cartoon.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Cartoons & Illustrations</h4>
                             <p>Our designers are not only experts in digital design, we can draw with our hands too!</p>
@@ -391,7 +381,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-chart-line"></i>
+                         <img src="3D-modeling.png" class="our_icon">
                         <div class="service-detail">
                             <h4>3D Modeling</h4>
                             <p>The experience of a 3D image can be more compelling and satisfying to a prospect than 2D. Make your brand pop with our 3D design.</p>
@@ -404,7 +394,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-headphones"></i>
+                        <img src="T-shirt.png" class="our_icon">
                         <div class="service-detail">
                             <h4>T-shirts</h4>
                             <p>Whether it’s a new apparel design for your Shopify store or a professional tee for your business, we will create it in our design lab.</p>
@@ -420,7 +410,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <div class="row">
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-shopping-cart"></i>
+                        <img src="email presentation.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Email & Presentation Design</h4>
                             <p>Every detail matters. Our email template design and presentation design will make sure your business maintains a professional image.</p>
@@ -433,7 +423,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="far fa-dot-circle"></i>
+                        <img src="vector-training.png" class="our_icon">
                         <div class="service-detail">
                             <h4>Vector Tracing</h4>
                             <p>Need better artwork? We will convert your design into a stunning & symmetrical vector file, for a higher quality logo or artwork.</p>
@@ -446,7 +436,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 
                 <div class="col-sm-4">
                     <div class="service-item margin-b-md">
-                        <i class="fas fa-bars"></i>
+                        <img src="and much more.png" class="our_icon">
                         <div class="service-detail">
                             <h4>And Much More…</h4>
                             <p>We are experienced in all types of graphic design. Give us a description of what you need and watch your idea come to life!</p>
@@ -487,7 +477,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     <!-- / Intro-section -->
     
      <!-- Portfolio -->
-    <section id="works" class="text-center">
+    <section class="text-center" id="works">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -505,7 +495,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     </div>
                     <div class="work-desc">
                         <h3><a href="#">Login to Your Dashboard</a></h3>
-                        <span>Sign in to your easy-to-use client dashboard. This is where you will create new projects and can do things such as edit your profile or manage billing.</span>
+                        <span>Sign in to your easy-to-use client dashboard. This is where you will create new projects and can do things such as edit your profile or manage billing.<br><br></span>
                     </div>
                 </div>
                 <!-- /portfolio-item -->
@@ -518,7 +508,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     </div>
                     <div class="work-desc">
                         <h3><a href="#">Create A Task</a></h3>
-                        <span>You can create a project directly from your dashboard. Select the design type, answer a few questions about the project, and submit your request.</span>
+                        <span>You can create a project directly from your dashboard. Select the design type, answer a few questions about the project, and submit your request.<br><br></span>
                     </div>
                 </div>
                 <!-- /portfolio-item -->
@@ -684,108 +674,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     <!--</section>-->
     <!-- / Skills -->
 
-    <!-- CONTACT -->
-    <!--<section id="contact" class="">-->
-    <!--    <div class="container">-->
-    <!--        <div class="row text-center info-contact">-->
-    <!--            <div class="col-sm-4 margin-b-md">-->
-    <!--                <i class="far fa-envelope"></i>-->
-    <!--                <h4>Get in touch</h4>-->
-    <!--                <ul class="list-unstyled">-->
-    <!--                    <li><a href="mailto:support@design360.graphics">E: support@design360.graphics</a>-->
-    <!--                    </li>-->
-    <!--                    <li><a href="tel:0123456789">P: 0123 456 789</a>-->
-    <!--                    </li>-->
-    <!--                    <li><a href="#">W: www.Cubana.com</a>-->
-    <!--                    </li>-->
-    <!--                </ul>-->
-    <!--            </div>-->
-                <!-- end Get in touch -->
+     <!--CONTACT -->
 
-    <!--            <div class="col-sm-4 margin-b-md">-->
-    <!--                <i class="fas fa-map-marker-alt"></i>-->
-    <!--                <h4>Our Location</h4>-->
-    <!--                <address>Cubana<br> 123 street <br>Saint Peter, MN 12345<br> 059 – 12345678</address>-->
-    <!--            </div>-->
-                <!-- end Our Location -->
-
-    <!--            <div class="col-sm-4 margin-b-md">-->
-    <!--                <i class="far fa-life-ring"></i>-->
-    <!--                <h4>Free Support</h4> Call Now-->
-    <!--                <a class="support" href="tel:0123456789">12345 67890</a>-->
-    <!--            </div>-->
-                <!-- end Support -->
-    <!--        </div>-->
-            <!-- /row -->
-
-            <!--<div class="row">-->
-            <!--    <div class="col-md-12">-->
-            <!--        <form role="form" name="ajax-form" id="ajax-form" action="" method="post" class="form-main">-->
-            <!--            <div class="col-xs-12">-->
-            <!--                <div class="row">-->
-            <!--                    <div class="form-group col-sm-4">-->
-            <!--                        <label for="name2">Name</label>-->
-            <!--                        <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">-->
-            <!--                        <div class="error" id="err-name" style="display: none;">Please enter name</div>-->
-            <!--                    </div>-->
-                                <!-- /Form-name -->
-
-            <!--                    <div class="form-group col-sm-4">-->
-            <!--                        <label for="email2">Email</label>-->
-            <!--                        <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">-->
-            <!--                        <div class="error" id="err-emailvld" style="display: none;">E-mail is not a valid format</div>-->
-            <!--                    </div>-->
-                                <!-- /Form-email -->
-
-            <!--                    <div class="form-group col-sm-4">-->
-            <!--                        <label for="subject1">Subject</label>-->
-            <!--                        <input class="form-control" id="subject1" name="name" onblur="if(this.value == '') this.value='Subject'" onfocus="if(this.value == 'Subject') this.value=''" type="text" value="Subject">-->
-            <!--                    </div>-->
-                                <!-- /Form-Subject -->
-            <!--                </div>-->
-                            <!-- /row -->
-
-            <!--                <div class="row">-->
-            <!--                    <div class="form-group col-xs-12">-->
-            <!--                        <label for="message2">Message</label>-->
-            <!--                        <textarea class="form-control" id="message2" name="message" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>-->
-            <!--                        <div class="error" id="err-message" style="display: none;">Please enter message</div>-->
-            <!--                    </div>-->
-                                <!-- /col -->
-            <!--                </div>-->
-                            <!-- /row -->
-
-            <!--                <div class="row">-->
-            <!--                    <div class="col-md-8 col-md-offset-2">-->
-            <!--                        <p class="text-center con_sub_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren.</p>-->
-            <!--                    </div>-->
-                                <!-- /col -->
-            <!--                </div>-->
-                            <!-- /row -->
-
-            <!--                <div class="row">-->
-            <!--                    <div class="col-xs-12 text-center">-->
-            <!--                        <div id="ajaxsuccess">E-mail was successfully sent.</div>-->
-            <!--                        <div class="error" id="err-form" style="display: none;">There was a problem validating the form please check!</div>-->
-            <!--                        <div class="error" id="err-timedout">The connection to the server timed out!</div>-->
-            <!--                        <div class="error" id="err-state"></div>-->
-            <!--                        <button type="submit" class="btn btn-custom" id="send">Submit</button>-->
-            <!--                    </div>-->
-                                <!-- /col -->
-            <!--                </div>-->
-                            <!-- /row -->
-
-            <!--            </div>-->
-                        <!-- /row -->
-            <!--        </form>-->
-                    <!-- /form -->
-            <!--    </div>-->
-                <!-- end col-md-12 -->
-            <!--</div>-->
-            <!-- end row -->
-    <!--    </div>-->
-        <!-- container -->
-    <!--</section>-->
     <!-- Testimonials -->
     
     <div class="container margin-t-md">
@@ -912,8 +802,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	
 	<!-- End Testimonials -->
     <!-- FAQ -->
-    <section class="testi-slide parallax" id="testimonials">
-    <div class="container margin-t-lg">
+    <section class="testi-slide parallax" id="faq">
+    <div class="container margin-t-lg" >
         <article class="col-md-12 text-center">
             <div class="intermediate-container">
                 <div class="heading">
@@ -1042,16 +932,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 	</section>
 	<!-- End FAQ -->
 	<!-- *********  PRICING  ********* -->
-	<section>
-    <div class="pricing-2" id="pricing">
-        <div class="container margin-t-lg">
+	<section style="padding-bottom:0px; padding-top:80px;" id="pricing">
+    <div class="pricing-2" >
+        <div class="container margin-t-lg" id="Pricing">
         <div class="row text-center">
-            <div class="col-md-12">
+            <div class="col-md-12 pric">
                 <h3 class="title">Pricing</h3>
             </div>
                 <!-- /col -->
         </div>
-                <div class="row">
+                <div class="row pric">
                     <div class="col-md-4">
                         <div class="block block-pricing block-plain">
                             <div class="table">
@@ -1078,16 +968,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <h6 class="category">Basic</h6>
                                 <h1 class="block-caption"><small>$</small>376<span>/mo</span></h1>
                                 <ul>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
                                     <li>1</li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
                                 </ul> 
                                 <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
                         </div>
@@ -1098,16 +988,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                 <h6 class="category">Pro</h6>
                                 <h1 class="block-caption"><small>$</small>799<span>/mo</span></h1>
                                 <ul>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
                                     <li>3</li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
-                                    <li><i class="far fa-check-square"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
+                                    <li><i class="fas fa-check"></i></li>
                                 </ul> 
                                 <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
                         </div>
@@ -1118,6 +1008,102 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </div>
     </section>
     <!-- *********  END PRICING  ********* -->
+        <section id="contact" class="">
+        <div class="container">
+            <div class="row text-center info-contact">
+                <div class="col-sm-4 margin-b-md">
+                    <i class="far fa-envelope"></i>
+                    <h4>Get in touch</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:support@design360.graphics">E: support@design360.graphics</a>
+                        </li>
+                        
+                        <li><a href="http://design360.graphics/">W: www.design360.graphics</a>
+                        </li>
+                    </ul>
+                </div>
+                 <!--end Get in touch -->
+
+                <div class="col-sm-4 margin-b-md">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Our Location</h4>
+                    <address>Design 360<br> 15 Somerset St <br>Tampa, FL 33767</address>
+                </div>
+                 <!--end Our Location -->
+
+                <div class="col-sm-4 margin-b-md">
+                    <i class="far fa-life-ring"></i>
+                    <h4>Free Support</h4> Chat us now!
+                    
+                </div>
+                 <!--end Support -->
+            </div>
+            <!-- /row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form role="form" name="ajax-form" id="ajax-form" action="" method="post" class="form-main">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <label for="name2">Name</label>
+                                    <input class="form-control" id="name2" name="name" onblur="if(this.value == '') this.value='Name'" onfocus="if(this.value == 'Name') this.value=''" type="text" value="Name">
+                                    
+                                </div>
+                                 <!--/Form-name -->
+
+                                <div class="form-group col-sm-4">
+                                    <label for="email2">Email</label>
+                                    <input class="form-control" id="email2" name="email" type="text" onfocus="if(this.value == 'E-mail') this.value='';" onblur="if(this.value == '') this.value='E-mail';" value="E-mail">
+                                    
+                                </div>
+<!--/Form-email -->
+
+                                <div class="form-group col-sm-4">
+                                    <label for="subject1">Subject</label>
+                                    <input class="form-control" id="subject1" name="name" onblur="if(this.value == '') this.value='Subject'" onfocus="if(this.value == 'Subject') this.value=''" type="text" value="Subject">
+                                </div>
+                                 <!--/Form-Subject -->
+                            </div>
+                             <!--/row -->
+
+                            <div class="row">
+                                <div class="form-group col-xs-12">
+                                    <label for="message2">Message</label>
+                                    <textarea class="form-control" id="message2" name="message" onblur="if(this.value == '') this.value='Message'" onfocus="if(this.value == 'Message') this.value=''">Message</textarea>
+                                    
+                                </div>
+                                 <!--/col -->
+                            </div>
+                             <!--/row -->
+
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <!--<p class="text-center con_sub_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren.</p>--->
+                                </div>
+                                 <!--/col -->
+                            </div>
+                             <!--/row -->
+
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <button type="submit" class="btn btn-custom" id="send">Submit</button>
+                                </div>
+                                 <!--/col -->
+                            </div>
+                             <!--/row -->
+
+                        </div>
+                         <!--/row -->
+                    </form>
+                     <!--/form -->
+                </div>
+                 <!--end col-md-12 -->
+            </div>
+             <!--end row -->
+        </div>
+         <!--container -->
+    </section>
     <!-- End CONTACT -->
     <!-- Footer -->
     <footer class="footer-a text-center">
@@ -1131,4 +1117,3 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     window.requestAnimationFrame||(window.requestAnimationFrame=function(){return window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}());
 </script>
 
-    
