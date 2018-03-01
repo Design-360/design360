@@ -642,20 +642,20 @@
 ----------------------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
 	.landing-page .navbar-custom {
-		background-color: #fff;
+		background-color: #22262d;
 	}
 	.landing-page .navbar-custom .navbar-brand {
-		color: #333 !important;
+		color: #fff !important;
 		padding: 13px 15px 20px 15px;
 		margin-top: 10px;
 		height: auto;
 	}
 
 	.landing-page .navbar-nav>li>a {
-		color: #666 !important;
+		color: #fff !important;
 	}
 	.landing-page .navbar-custom .navbar-toggle {
-		margin-top: 15px;
+		margin-top: 30px;
 	}
 	.landing-page .intro-title,.landing-page .intermediate-container .heading h2{
 		font-size: 30px;
@@ -717,3 +717,6 @@
 .row.pric{
 	padding-top:50px;
 }}
+.landing-page .navbar-toggle{
+	background-color: transparent !important;
+}
