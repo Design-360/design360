@@ -9,7 +9,7 @@
                         </div>
                         
                         <%= f.fields_for :attachments do |att| %>
-                            <%= render 'attachment_fields', f: att %>
+                            <%#= render 'attachment_fields', f: att %>
                             <div class="btn btn-default">
                                 <%= link_to_add_association "<i class='fas fa-plus'></i>  Add Another File".html_safe, f, :attachments %>
                             </div>

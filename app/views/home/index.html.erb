@@ -73,13 +73,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     </ul>
                 </li>    
                     <% else %>
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/employees/sign_in">Employee</a></li>
-                            <li><a href="/users/sign_in">Client</a></li>
-                        </ul>
-                    </li> 
-                    <li><a class = "btn btn-primary btn-sm join-btn" href="/users/sign_up">JOIN</a></li>
+                    <li><a class="btn btn-custom-outline" style="margin: 0;" href="/users/sign_in">Login</span></a>
+                        
                 <% end %>
                 
           </ul>
@@ -98,8 +93,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
             <span class="wrap"></span></span></h1>
             <p class="intro-text">Unlimited Designs. Unlimited Revisions. One Low Flat-Fee.</p>
             <div class="btn-bar">
-              <a href="/users/sign_in" class="btn btn-custom">GET STARTED</a>
-              <a href="#pricing" class="btn btn-custom-outline">PLANS & PRICING</a>
+              <a href="#pricing" class="btn btn-custom">Plans & Pricing</a>
+              <a href="#contact" class="btn btn-custom-outline">Contact Us</a>
             </div>
           </div> <!-- /col -->
         </div> <!-- /row -->
@@ -683,7 +678,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     <div class="container margin-t-md">
         <div class="row text-center">
             <div class="col-md-12">
-                    <h3 class="title">Testimonials</h3>
+                    <h3 class="title">Hear from our Clients</h3>
                 </div>
                 <!-- /col -->
             </div>
@@ -769,11 +764,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<div class="col-md-4 jag-tst-col">
 					<div class="jag-tst-wrapper">
 						<div class="jag-tst-avatar">
-							<img src="Gabriella Toman.png" class="img-responsive" alt="">
+							<img src="Rakesh Patel.png" class="img-responsive" alt="">
 						</div>
 						<div class="jag-tst-details">
-							<div class="jag-name">Gabriella Toman</div>
-							<div class="jag-designation"> - Creative Director, DOMM </div>
+							<div class="jag-name">Rakesh Patel</div>
+							<div class="jag-designation"> - CEO, Labs of America </div>
 						
 							<hr>
 							<div class="jag-message">
@@ -939,7 +934,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
         <div class="container margin-t-lg" id="Pricing">
         <div class="row text-center">
             <div class="col-md-12 pric">
-                <h3 class="title">Pricing</h3>
+                <h3 class="title">Creative Domination Starts Here</h3>
             </div>
                 <!-- /col -->
         </div>
@@ -961,6 +956,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     <li>Unlimited Brands</li>
                                     <li>No Contract or Cancellation Fee</li>
                                 </ul>
+                                <a href="#" class="btn btn-rose" style="opacity:0; pointer-events:none; margin-top:30px; cursor:default;"></a>
                             </div>
                         </div>
                     </div>
@@ -986,7 +982,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     </div>
                     <div class="col-md-4">
                         <div class="block block-pricing block-plain">
-                            <div class="table table-info">
+                            <div class="table tablepro">
                                 <h6 class="category">Pro</h6>
                                 <h1 class="block-caption"><small>$</small>799<span>/mo</span></h1>
                                 <ul>
@@ -1001,7 +997,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     <li><i class="fas fa-check"></i></li>
                                     <li><i class="fas fa-check"></i></li>
                                 </ul> 
-                                <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
+                                <a href="#" class="btn btn-rose btn-round">GET STARTED</a> </div>
                         </div>
                     </div>
                     
@@ -1108,11 +1104,29 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
     </section>
     <!-- End CONTACT -->
     <!-- Footer -->
-    <footer class="footer-a text-center">
-        <!-- Footer-copyright -->
-        <p>©2018 Design360. Developed by <a href="http://www.systemplus.com.pk/">System Plus</a></p>
-    </footer>
-    <!-- /Footer -->
+    
+<footer class="footer-a">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<p style="color:white;">©2018 Design360. Developed by <a href="http://www.systemplus.com.pk/">System Plus</a></p>
+			</div>
+			<div class="col-md-2 text-center">
+				<a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+				<a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
+			</ul>
+			</div>
+			<div class="col-md-5 text-right">
+				
+						<p><a href="#">Terms & Conditions</a> |
+						<a href="#">Privacy Policy</a> |
+						<a href="/employees/sign_in">Employee Login</a></p> 
+
+			</div>
+		</div>
+	</div>
+</footer>
 
 </div>
 <script type="text/javascript"> <!-- cross browser -->
