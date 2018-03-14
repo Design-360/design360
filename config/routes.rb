@@ -1,8 +1,11 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
   devise_for :employees
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
+  mount ActionCable.server => '/cable'
   resources :employees, :except => [:index]
   get '/assign/employees', to: "employees#listing"
   resources :templates, :except => [:show, :index]
@@ -17,5 +20,12 @@ Rails.application.routes.draw do
   get '/clients/dashboard', to: 'home#client_dashboard'
   get '/admin/dashboard', to: 'home#admin_dashboard'
   root 'home#index'
+  
+  get '/notifications', to: 'home#notifications'
+  
+  # scope '/admin' do
+    resources :chats, except: [:edit,:new]
+    resources :messages
+  # end
   match "*path", to: "home#error", via: :all
 end

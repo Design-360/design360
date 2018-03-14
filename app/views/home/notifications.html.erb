@@ -1,0 +1,14 @@
+<div class="main-div">
+   <div id="wrapper">
+      <%= render partial: 'layouts/sidebar'%>
+      <div class="container">
+      <ul>
+         <% @notifications.each do |noti| %>
+             <%= render partial: 'notifications/notification', locals:{notification: noti} %>
+         <% end  %>
+      </ul>
+      </div>
+      
+      <%= render partial: 'layouts/footer'%>
+    </div>
+</div>

@@ -6,7 +6,13 @@ class User < ApplicationRecord
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
   
   has_many :orders, dependent: :destroy
-  
+  has_many :messages, :as => :message_sender
+  has_many :subscriptions, as: :subscriber
+  has_many :chats,  through: :subscriptions, as: :subscriber
+  has_many :chatted_users ,through: :chats, source: :subscriptions
+  has_many :order_employee_orders,through: :orders, source: :employee_order
+  has_many :order_managers,through: :order_employee_orders, source: :employee
+  has_many :notifications, as: :recipient
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
   		user.provider = auth.provider
@@ -20,5 +26,31 @@ class User < ApplicationRecord
   		return user.save,user
   	end
   end
+  
+  def chatted_with?(user)
+    chats = self.chats.includes(subscriptions: [:subscriber])
+    chats.each do |chat|
+      chatted = chat.subscriptions.pluck(:subscriber_type,:subscriber_id)
+      return [true,chat] if chatted.include?([user.class.to_s, user.id])
+    end
+    a = [false,nil]
+    
+    return a
+  end
+  
+  def chat_with(user)
+    if self.chatted_with?(user)
+      chats = self.chats.includes(subscriptions: [:subscriber])
+      chats.each do |chat|
+        chatted = chat.subscriptions.pluck(:subscriber_type,:subscriber_id)
+        # logger.info chatted
+        return chat if chatted.include?([user.class.to_s, user.id])
+      end
+    else
+      return nil
+    end
+    
+  end
+  
   
 end

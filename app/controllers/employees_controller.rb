@@ -11,9 +11,13 @@ class EmployeesController < ApplicationController
     
     def show
         @order = Order.find(params[:format])
+        # byebug
         assign = EmployeeOrder.new(:employee_id => params[:id], :order_id => @order.id)
         if assign.save
+            assigned_employee = Employee.find(params[:id])
+            user = current_employee || current_user
             @order.update!(:status => "assigned", :template_id => @order.template_id)
+            Notification.create!(notify: @order,recipient: assigned_employee,actor: user,status:"assign_order")
             redirect_to admin_dashboard_path, notice: 'Order was successfully assigned'
         else
             redirect_to admin_dashboard_path, alert: 'error'
@@ -23,7 +27,7 @@ class EmployeesController < ApplicationController
     def create
         @manager = Employee.new(manager_params)
         if @manager.save
-            EmployeeMailer.welcome_email(@manager,params[:employee][:password]).deliver
+            EmployeeMailer.welcome_email(@manager,params[:employee][:password]).deliver_later
             redirect_to admin_managers_path, notice: 'Manager was successfully created.'
         else
             redirect_to admin_managers_path, alert: "Error"

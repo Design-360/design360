@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     
     def create
         @order = current_user.orders.new(order_params)
-        if @order.save
+        if @order.save!
             redirect_to clients_dashboard_path, notice: 'Order was successfully created.'
         else
             redirect_to dashboard_path, notice: 'error'
@@ -18,6 +18,13 @@ class OrdersController < ApplicationController
     end
     
     def show
+        @user = current_user || current_employee
+        # if not current_employee and not current_employee.admin?
+            @other_user = @order.user if @user!=@order.user
+            @other_user = @order.employee if @user!=@order.employee
+            @chat = @user.chats.select{|p| p.subscriptions.exists?(subscriber: @other_user) }.first
+        # end
+        # byebug
         
     end
     def edit

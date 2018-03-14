@@ -52,7 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   
-  config.action_mailer.default_url_options = { :host => "https://design360-tayyab841.c9users.io" }
+  config.action_mailer.default_url_options = { :host => "https://design360-a17100262.c9users.io" }
   # Paperclip.options[:command_path] = "/usr/local/bin/"
   
   config.action_mailer.raise_delivery_errors = true
@@ -64,6 +64,8 @@ Rails.application.configure do
     :password => ENV["MAILER_PASSWORD"],
     :authentication => :plain
     }
+    
+  config.action_cable.url = 'wss://design360-a17100262.c9users.io/cable'
 
 
 end

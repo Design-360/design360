@@ -3,8 +3,10 @@
 
 <script src="/jquery_slim_scroll.js" data-turbolinks-track="reload"></script>
 <script src="/metisMenu.js" data-turbolinks-track="reload"></script>
-<script src="/pace.min.js" data-turbolinks-track="reload"></script>
+<!--<script src="/pace.min.js" data-turbolinks-track="reload"></script>--> <!--causing issues in turbolinks-->
 <script src="/js_inspinia.js" data-turbolinks-track="reload"></script>
+<% user = current_employee || current_user %>
+<% notifications = user.notifications %>
 
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
@@ -28,6 +30,14 @@
             </li>
             <li class="<%= active_class('/users/edit') %>">
                 <a href="/users/edit"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
+            </li>
+            
+            <li class="#">
+                <a href="<%= notifications_path %>"><i class="fa fa-user"></i> <span class="nav-label">Notifications</span></a>
+            </li>
+            
+            <li class="#">
+                <a href="<%= chats_path %>"><i class="fa fa-user"></i> <span class="nav-label">Inbox</span></a>
             </li>
         </ul>
     <% end %>
@@ -70,6 +80,14 @@
                 <li class="<%= active_class(edit_employee_path(current_employee)) %>">
                     <a href="<%= edit_employee_path(current_employee) %>"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
                 </li>
+                
+                <li class="#">
+                    <a href="<%= notifications_path %>"><i class="fa fa-user"></i> <span class="nav-label">Notifications</span></a>
+                </li>
+                
+                <li class="#">
+                    <a href="<%= chats_path %>"><i class="fa fa-user"></i> <span class="nav-label">Inbox</span></a>
+                </li>
             </ul>
         <% else %>
             <ul class="nav metismenu" id="side-menu">
@@ -97,9 +115,18 @@
                 <li class="<%= active_class(edit_employee_path(current_employee)) %>">
                     <a href="<%= edit_employee_path(current_employee) %>"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
                 </li>
+                
+                <li class="#">
+                    <a href="<%= notifications_path %>"><i class="fa fa-user"></i> <span class="nav-label">Notifications</span></a>
+                </li>
+                
+                <li class="#">
+                    <a href="<%= chats_path %>"><i class="fa fa-user"></i> <span class="nav-label">Inbox</span></a>
+                </li>
             </ul>
         <% end %>
     <% end %>
+    
     </div>
 </nav>
 
@@ -118,34 +145,33 @@
             <li>
                 <span class="m-r-sm text-muted welcome-message"><a href="/">Design360</a></span>
             </li>
-            <li class="dropdown">
-                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                    <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
-                </a>
-                <ul class="dropdown-menu dropdown-messages">
+            <!--<li class="dropdown">-->
+            <!--    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">-->
+            <!--        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>-->
+            <!--    </a>-->
+            <!--    <ul class="dropdown-menu dropdown-messages">-->
                     
-                </ul>
-            </li>
+            <!--    </ul>-->
+            <!--</li>-->
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    <i class="fa fa-bell"></i>  <span class="label label-primary"><%= notifications.count %></span>
                 </a>
-                <ul class="dropdown-menu dropdown-alerts">
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-envelope fa-fw"></i> Order is completed by ABC
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-twitter fa-fw"></i> You have 3 Orders Pending
-                            </div>
-                        </a>
-                    </li>
+                <ul class="dropdown-menu dropdown-alerts" id="notification_dropdown">
+                    
+                    <% if not notifications.blank? %>
+                        <% notifications.limit(5).order('created_at DESC').each do |notification| %>
+                            <%= render partial: 'notifications/notification', locals: {notification: notification} %>
+                            <li class="divider"></li>
+                        <% end %>
+                    <% end %>
+                    <!--<li>-->
+                    <!--    <a href="#">-->
+                    <!--        <div>-->
+                    <!--            <i class="fa fa-twitter fa-fw"></i> You have 3 Orders Pending-->
+                    <!--        </div>-->
+                    <!--    </a>-->
+                    <!--</li>-->
                 </ul>
             </li>
             <!--<#% if current_user %>-->

@@ -1,0 +1,29 @@
+<% text = nil %>
+<% if notification.notify_type=='Order' and notification.created? %>
+    <% text = "#{notification.notify_type} is created by #{notification.actor.name}" %>
+<% elsif notification.notify_type=='Order' and notification.assign_order? %>
+    <% text = "#{notification.actor.name} has assigned you order" %>
+<% elsif notification.notify_type=='Order' and notification.delivered? %>
+    <% text = "#{notification.actor.name} has delivered a order" %>
+<% elsif notification.notify_type=='Order' and notification.ready_for_review? %>
+    <% text = "#{notification.actor.name} has delivered your order and ready for review" %>
+<% elsif notification.notify_type=='Order' and notification.completed? and notification.recipient.admin? %>
+    <% text = "The delivered order by #{notification.notify.employee.name} has accepted by #{notification.actor.name}" %>
+<% elsif notification.notify_type=='Order' and notification.completed? and notification.recipient.manager? %>
+    <% text = "#{notification.actor.name} has accepted and rated the delivered order" %>
+<% elsif notification.notify_type=='Order' and notification.modification? and notification.recipient.admin? %>
+    <% text = "#{notification.actor.name} has requested modification from #{notification.notify.employee.name} for the order" %>
+<% elsif notification.notify_type=='Order' and notification.modification? and notification.recipient.manager? %>
+    <% text = "#{notification.actor.name} has requested modification for the order" %>
+<% elsif notification.notify_type=='Message' and notification.created? %>
+    <% text = "You have recieved a new message from #{notification.actor.name}" %>
+<% end %>
+<% pathh = order_path(notification.notify) if notification.notify_type == 'Order'  %>
+<% pathh = chat_path(notification.notify.chat) if notification.notify_type == 'Message'  %>
+<li>
+    <a href="<%= pathh %>">
+        <div>
+            <i class="fa fa-envelope fa-fw"></i> <%= text %>
+        </div>
+    </a>
+</li>

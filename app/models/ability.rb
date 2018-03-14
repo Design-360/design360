@@ -17,12 +17,23 @@ class Ability
         can :manager_dashboard, :home
         can :index, :home
         can :error, :home
+        can :show, Chat do |chat|
+          subscribers = chat.subscriptions.pluck(:subscriber_type,:subscriber_id)
+          subscribers.include?([user.class.to_s, user.id])
+        end
       end
     elsif user.is_a?(User)
         can :client_dashboard, :home
         can :index, :home
         can :manage, Order, user_id: user.id
         can :error, :home
+        
+        can :show, Chat do |chat|
+          subscribers = chat.subscriptions.pluck(:subscriber_type,:subscriber_id)
+          subscribers.include?([user.class.to_s, user.id])
+        end
+        
+        
     else
       can :index, :home
       can :error, :home

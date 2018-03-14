@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -63,3 +63,7 @@ gem 'cancancan'
 gem 'figaro'
 gem 'cocoon'
 gem 'aws-sdk', '~> 2.3'
+gem 'awesome_print'
+gem "bootstrap_form",git: "https://github.com/bootstrap-ruby/bootstrap_form.git",branch: "master"
+# gem 'redis', '4.0'
+gem 'sidekiq'
