@@ -120,13 +120,15 @@
 	margin-bottom: 30px;
 }
 .landing-page .title {
+    font-size: 32px;
 	font-weight: 700;
 	letter-spacing: 0.02em;
 	text-transform: uppercase;
 	margin-bottom: 20px;
 }
 .landing-page .slog {
-	max-width: 420px;
+	font-size: 18px;
+    max-width: 450px;
 	margin: 0 auto;
 	margin-bottom: 80px;
 }
@@ -186,7 +188,7 @@
 }
 /* -- Navbar -- */
 .landing-page .navbar-custom {
-	background-color: #ffffff;
+	background-color: #22262d;
 	margin-bottom: 0px;
 	width: 100%;
 	z-index: 1000;
@@ -203,6 +205,7 @@
 	box-shadow: 0 2px 2px rgba(0,0,0,.1);
 }
 .landing-page .navbar-custom .navbar-brand {
+    padding-top:22px !important;
 	width:230px;
 	font-size: 22px;
 	text-transform: uppercase;
@@ -218,12 +221,16 @@
 	padding: 15px 0px;
 }
 .landing-page .navbar-custom .navbar-nav>li>a,.landing-page .dropdown-menu > li > a {
-	color: #666;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
 }
-
+.landing-page .navbar-custom .navbar-nav>li>a{
+    color:#fff;
+}
+.landing-page .dropdown-menu > li > a {
+    color: #666;
+}
 .landing-page .navbar-custom .navbar-nav>.active>a, .landing-page .navbar-custom .navbar-nav>.active>a:hover, .landing-page .navbar-custom .navbar-nav>.active>a:focus,
 .landing-page .navbar-custom .navbar-nav>.open>a,.landing-page .dropdown-menu > li > a,.landing-page .dropdown-menu > li > a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:hover, .landing-page .navbar-custom .navbar-nav>.open>a:focus,
 .landing-page .navbar-custom .navbar-nav>li>a:hover, .landing-page .navbar-custom .navbar-nav>li>a:focus {
@@ -296,12 +303,7 @@
     50.01% { opacity: 0; }
     100% { opacity: 0; }
 }
-@-ms-keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 1; }
-    50.01% { opacity: 0; }
-    100% { opacity: 0; }
-}
+
 @-o-keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 1; }
@@ -449,7 +451,7 @@
 	font-style: italic;
 }
 .landing-page .intermediate-container .heading h2 {
-	font-size: 40px;
+	font-size: 32px;
 	line-height: 47px;
 	text-transform: uppercase;
 	margin-top: 30px;
@@ -602,6 +604,11 @@
 .landing-page .footer-a {
 	background: #383838;
 }
+.landing-page .footer-a .fab{
+    margin-top:15px;
+    margin-right:5px;
+    color:#fff;
+}
 .landing-page .footer-a p{
 	color:#fff;
 	margin-bottom: 0px;
@@ -635,20 +642,20 @@
 ----------------------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
 	.landing-page .navbar-custom {
-		background-color: #fff;
+		background-color: #22262d;
 	}
 	.landing-page .navbar-custom .navbar-brand {
-		color: #333 !important;
+		color: #fff !important;
 		padding: 13px 15px 20px 15px;
 		margin-top: 10px;
 		height: auto;
 	}
 
 	.landing-page .navbar-nav>li>a {
-		color: #666 !important;
+		color: #fff !important;
 	}
 	.landing-page .navbar-custom .navbar-toggle {
-		margin-top: 15px;
+		margin-top: 30px;
 	}
 	.landing-page .intro-title,.landing-page .intermediate-container .heading h2{
 		font-size: 30px;
@@ -710,7 +717,6 @@
 .row.pric{
 	padding-top:50px;
 }}
-a.btn.btn-primary.btn-sm.join-btn:hover{
-    color:#fff !important;
-    background-color: #0039a2 !important;
+.landing-page .navbar-toggle{
+	background-color: transparent !important;
 }
