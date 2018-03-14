@@ -11,4 +11,11 @@ class EmployeeMailer < ApplicationMailer
          @user = user
          mail(to: @user.email, subject: 'Assignment')
      end
+     
+     def notification_email(notification)
+          @notification = notification
+          email_subject = 'Update in Order Status' if notification.notify_type=='Order'
+          email_subject = 'You have Recieved a new Message' if notification.notify_type=='Message'
+          mail(to: @notification.recipient.email, subject: email_subject)
+     end
 end

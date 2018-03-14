@@ -1,6 +1,7 @@
 <div class="main-div">
  <div id="wrapper">
-<%= render 'layouts/sidebar' %>
+<% user = current_employee || current_user %>
+<%= render partial: 'layouts/sidebar', locals:{notifications: user.notifications} %>
 
 <% if @orders.present? %>
 <div class="row wrapper border-bottom white-bg page-heading">

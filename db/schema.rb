@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126144511) do
+ActiveRecord::Schema.define(version: 20180313135304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20180126144511) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "chats", force: :cascade do |t|
+    t.string "identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "employee_orders", force: :cascade do |t|
@@ -53,6 +59,36 @@ ActiveRecord::Schema.define(version: 20180126144511) do
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.string "message_sender_type"
+    t.bigint "message_sender_id"
+    t.bigint "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "document_file_name"
+    t.string "document_content_type"
+    t.integer "document_file_size"
+    t.datetime "document_updated_at"
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["message_sender_type", "message_sender_id"], name: "index_messages_on_message_sender_type_and_message_sender_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.string "notify_type"
+    t.bigint "notify_id"
+    t.string "recipient_type"
+    t.bigint "recipient_id"
+    t.string "actor_type"
+    t.bigint "actor_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_type", "actor_id"], name: "index_notifications_on_actor_type_and_actor_id"
+    t.index ["notify_type", "notify_id"], name: "index_notifications_on_notify_type_and_notify_id"
+    t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient_type_and_recipient_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "duration"
@@ -68,6 +104,16 @@ ActiveRecord::Schema.define(version: 20180126144511) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "chat_id"
+    t.string "subscriber_type"
+    t.bigint "subscriber_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_subscriptions_on_chat_id"
+    t.index ["subscriber_type", "subscriber_id"], name: "index_subscriptions_on_subscriber_type_and_subscriber_id"
   end
 
   create_table "templates", force: :cascade do |t|

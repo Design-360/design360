@@ -1,0 +1,184 @@
+<div class="container-fluid" style="padding:0; background:#f5f5f5; min-height:70vh">
+    <div class="container mt-lg mb-lg">
+        <div class="row">
+            
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12 jumbotron" style="background: white;">
+                        <h3 style="margin: 0">Users</h3>
+                    </div>
+                </div>
+                <section class="blocks">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Clients</p>
+                                        <h3><%= User.count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Managers</p>
+                                        <h3><%= Employee.where(role:1).count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                   </div>
+                </section>
+                <div class="row">
+                    <div class="col-md-12 jumbotron" style="background: white;">
+                        <h3 style="margin: 0">Orders</h3>
+                    </div>
+                </div>
+                <section class="blocks">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Pending</p>
+                                        <h3><%= Order.where(status: "pending").count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Assigned</p>
+                                        <h3><%= Order.where(status: "assigned").count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Delivered</p>
+                                        <h3><%= Order.where(status: "delivered").count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>In Revision</p>
+                                        <h3><%= Order.where(status: "in_revision").count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Completed</p>
+                                        <h3><%= Order.where(status: "complete").count %></h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                   </div>
+                </section>
+                <div class="row">
+                    <div class="col-md-12 jumbotron" style="background: white;">
+                        <h3 style="margin: 0">Subscriptions</h3>
+                    </div>
+                </div>
+                <section class="blocks">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Basic Trial</p>
+                                        <h3>10</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Basic Active</p>
+                                        <h3>10</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Basic Cancelled</p>
+                                        <h3>10</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Premium Trial</p>
+                                        <h3>10</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Premium Active</p>
+                                        <h3>10</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="panel panel-success">
+                                <div class="panel-body">
+                                    <center>
+                                        <p>Premium Cancelled</p>
+                                        <h3>10</h3>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        
+                   </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,30 @@
+<div class="main-div">
+   <div id="wrapper">
+      <%= render partial: 'layouts/sidebar'%>
+      <div class="container">
+         <!--<h2>Basic Table</h2>-->
+         <!--<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>-->
+         <table class="table">
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  
+               </tr>
+            </thead>
+            <tbody>
+               <%# if employee_signed_in? %>
+               <% @chatable_users.each do |user| %>
+               <tr>
+                  <td> <%= user.name %></td>
+                  <td> <%= user.email %></td>
+                  <td> <%= link_to 'Start Chat' ,chats_path(chat_with: {type: user.class.to_s, id: user.id}),:method => :post %></td>
+               </tr>
+               <% end %>
+               <%# end %>
+            </tbody>
+         </table>
+      </div>
+      <%= render 'layouts/footer' %>
+   </div>
+</div>

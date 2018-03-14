@@ -1,0 +1,89 @@
+<%= link_to (chat.nil? ?  "Start Chat":"Resume Chat") ,chats_path(chat_with: {type: other_user.class.to_s, id: other_user.id}),:method => :post %>
+<%= other_user.name %>
+<div class="row m-t-sm">
+   <div class="col-lg-12">
+      <div class="panel blank-panel">
+         <div class="panel-heading">
+            <div class="panel-options">
+               <ul class="nav nav-tabs">
+                  <li class="active"><a href="#tab-1" data-toggle="tab">Recent Conversation</a></li>
+                  <li class=""><a href="#tab-2" data-toggle="tab">Activity</a></li>
+               </ul>
+            </div>
+         </div>
+         <div class="panel-body">
+            <div class="tab-content">
+               <div class="tab-pane active" id="tab-1">
+                  <div class="feed-activity-list">
+                     <% if chat %>
+                     <% chat.messages.order('created_at DESC').limit(10).each do |msg| %>
+                        <div class="feed-element">
+                           <div class="media-body ">
+                              <small class="pull-right"><%= time_ago_in_words(msg.created_at)%> ago</small>
+                              <strong><%= msg.message_sender.name %></strong> <br>
+                              <div class="well">
+                                 <!--Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.-->
+                                 <!--Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).-->
+                                 <%= msg.content %>
+                              </div>
+                           </div>
+                        </div>
+                     <% end %>
+                     <% end %>
+                     
+                     <!--<div class="feed-element">-->
+                     <!--   <div class="media-body ">-->
+                     <!--      <small class="pull-right">2h ago</small>-->
+                     <!--      <strong>Mark Johnson</strong> <br>-->
+                     <!--      <div class="well">-->
+                     <!--         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.-->
+                     <!--         Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).-->
+                     <!--      </div>-->
+                     <!--   </div>-->
+                     <!--</div>-->
+                  </div>
+               </div>
+               <div class="tab-pane" id="tab-2">
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                           <th>Title</th>
+                           <th>Time</th>
+                           <th>Comments</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>
+                              Revision of logo
+                           </td>
+                           <td>
+                              12.02.2018
+                           </td>
+                           <td>
+                              <p class="small">
+                                 Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              Revision of logo
+                           </td>
+                           <td>
+                              12.02.2018
+                           </td>
+                           <td>
+                              <p class="small">
+                                 Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable.
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

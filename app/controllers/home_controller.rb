@@ -36,6 +36,10 @@ class HomeController < ApplicationController
         @delivered_orders = @orders.delivered
         @complete_orders = @orders.complete
     end
+    def notifications
+        user = current_employee || current_user
+        @notifications = user.notifications.order('created_at DESC')
+    end
     
     def client_dashboard
         @orders = current_user.orders

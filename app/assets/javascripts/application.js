@@ -17,6 +17,7 @@
 //= require jasny-bootstrap.min
 //= require toastr
 //= require js-inspinia
+//= require cable
 //= require datatables.min
 
 
@@ -26,6 +27,13 @@
 // 
 $( document ).ready(function() {
     console.log( "ready!" );
+    
+    $("#message_content").keydown(function(event) {
+        if (event.keyCode === 13) {
+        $("#submit_message").click();
+        }
+    });
+    
     $('.dataTables-example').DataTable({
         pageLength: 25,
         responsive: true,

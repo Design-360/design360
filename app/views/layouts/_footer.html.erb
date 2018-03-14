@@ -7,4 +7,5 @@
     </div>
 </div>
 </div>
-
+<% user = current_employee || current_user %>
+<div id="iduser" data-user="<%= user.class.to_s+"_"+ user.id.to_s %>"></div>
