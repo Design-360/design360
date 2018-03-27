@@ -9,7 +9,7 @@ $(document).ready(function(){
         App.notification = App.cable.subscriptions.create({channel: "NotificationChannel", user: data},{
          
             connected: function(){
-                toastr.info('NotificationChannel connected');
+                // toastr.info('NotificationChannel connected');
                 // alert("Connected");
                 
                 

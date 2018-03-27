@@ -53,8 +53,10 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     <% if current_user %>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/clients/dashboard">Dashboard</a></li>
-                            <li><a href="/users/edit">Edit Profile</a></li>
+                            <% if current_user.subscribe? %>
+                                <li><a href="/clients/dashboard">Dashboard</a></li>
+                                <li><a href="/users/edit">Edit Profile</a></li>
+                            <% end %>
                             <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
                         </ul>
                     </li>    
@@ -976,8 +978,17 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     <li><i class="fas fa-check"></i></li>
                                     <li><i class="fas fa-check"></i></li>
                                     <li><i class="fas fa-check"></i></li>
-                                </ul> 
-                                <a href="#" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> </div>
+                                </ul>
+                                <% if user_signed_in? %>
+                                    <button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                                    
+                                <% else %>
+                                    <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> 
+                                
+                                <% end %>
+                            </div>
+
+                                
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -997,7 +1008,13 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     <li><i class="fas fa-check"></i></li>
                                     <li><i class="fas fa-check"></i></li>
                                 </ul> 
-                                <a href="#" class="btn btn-rose btn-round">GET STARTED</a> </div>
+                                <% if user_signed_in? %>
+                                    <button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal_2">Get Started</button>
+                                    
+                                <% else %>
+                                    <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">Get Started</a> 
+                                
+                                <% end %> </div>
                         </div>
                     </div>
                     
@@ -1132,4 +1149,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 <script type="text/javascript"> <!-- cross browser -->
     window.requestAnimationFrame||(window.requestAnimationFrame=function(){return window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/60)}}());
 </script>
+<%= render 'plans/modal' %>
+<%= render 'plans/modal_2' %>
+
+
 

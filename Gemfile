@@ -67,3 +67,4 @@ gem 'awesome_print'
 gem "bootstrap_form",git: "https://github.com/bootstrap-ruby/bootstrap_form.git",branch: "master"
 # gem 'redis', '4.0'
 gem 'sidekiq'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

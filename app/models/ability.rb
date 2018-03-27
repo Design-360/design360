@@ -23,9 +23,10 @@ class Ability
         end
       end
     elsif user.is_a?(User)
-        can :client_dashboard, :home
+        can :client_dashboard, :home if user.subscribe?
         can :index, :home
-        can :manage, Order, user_id: user.id
+        can [:read,:update,:destroy], Order,user_id: user.id
+        can :create, Order if user.plan and user.orders and user.orders.where.not(status:"complete").count < user.plan.order_count
         can :error, :home
         
         can :show, Chat do |chat|

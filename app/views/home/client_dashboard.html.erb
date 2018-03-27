@@ -6,7 +6,9 @@
 <% if @orders.present? %>
 <div class="row wrapper border-bottom white-bg page-heading">
         
-    <% if not (@orders.pending.present? or @orders.assigned.present? or @orders.delivered.present? or @orders.in_revision.present?) %>
+    <% if can? :create, Order %>
+    <%#= current_user.orders.where.not(status:"complete").count < current_user.plan.order_count%>
+    <!--not (@orders.pending.present? or @orders.assigned.present? or @orders.delivered.present? or @orders.in_revision.present?) %>-->
         <div class="col-lg-10">
             <h2>Orders</h2>
         </div>

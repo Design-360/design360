@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180313135304) do
+ActiveRecord::Schema.define(version: 20180326083553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20180313135304) do
     t.string "document_content_type"
     t.integer "document_file_size"
     t.datetime "document_updated_at"
+    t.boolean "read", default: false
     t.index ["chat_id"], name: "index_messages_on_chat_id"
     t.index ["message_sender_type", "message_sender_id"], name: "index_messages_on_message_sender_type_and_message_sender_id"
   end
@@ -104,6 +105,27 @@ ActiveRecord::Schema.define(version: 20180313135304) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "plan_subscribers", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "stripe_response"
+    t.bigint "plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_plan_subscribers_on_plan_id"
+    t.index ["user_id"], name: "index_plan_subscribers_on_user_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.integer "amount"
+    t.string "name"
+    t.string "interval"
+    t.integer "trial_period"
+    t.text "stripe_response"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order_count", default: 0
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -143,8 +165,12 @@ ActiveRecord::Schema.define(version: 20180313135304) do
     t.string "company"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "subscribed", default: 0
+    t.text "stripe_response"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "plan_subscribers", "plans"
+  add_foreign_key "plan_subscribers", "users"
 end

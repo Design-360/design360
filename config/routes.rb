@@ -1,5 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
+  resources :plans
   mount Sidekiq::Web => '/sidekiq'
   devise_for :employees
   devise_for :users, :controllers => {
@@ -22,7 +23,12 @@ Rails.application.routes.draw do
   root 'home#index'
   
   get '/notifications', to: 'home#notifications'
+  post 'subscription_checkout' => 'plans#subscription_checkout'
+  get 'invoices' => 'plans#invoices'
+  put 'cancel_subscription' => 'plans#cancel_subscription'
+  get 'show_invoice' => 'plans#show_invoice'
   
+  post 'stripe_payment_succeeded' => 'plans#webhook_payment_succeeded'
   # scope '/admin' do
     resources :chats, except: [:edit,:new]
     resources :messages

@@ -17,6 +17,7 @@
  *= require rails_bootstrap_forms
  */
 
+
 body, p, span, h1, h2, h3, h4, h5, h6, div, button, input, li, ul, ol, table, td, tr, th, fieldset, font, strong, b{
 
 font-family: Roboto !important;

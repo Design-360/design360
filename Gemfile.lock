@@ -17,6 +17,13 @@ GIT
     bootstrap_form (4.0.0.dev)
       rails (>= 5.0)
 
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 3bc4256e2532d75e93ca744edc3dc7913aa79a86
+  specs:
+    stripe (3.11.0)
+      faraday (~> 0.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -290,6 +297,7 @@ DEPENDENCIES
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe!
   toastr-rails
   tzinfo-data
   uglifier (>= 1.3.0)

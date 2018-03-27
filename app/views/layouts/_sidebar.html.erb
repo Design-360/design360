@@ -37,7 +37,14 @@
             </li>
             
             <li class="#">
-                <a href="<%= chats_path %>"><i class="fa fa-user"></i> <span class="nav-label">Inbox</span></a>
+                <a href="<%= chats_path %>"><i class="fa fa-user"></i> <span class="nav-label">Inbox(<div id="notification_count" data-count="<%= @unread_message_count %>"><%=@unread_message_count%>)</div></span></a>
+            </li>
+            
+            <li class="#">
+                <a href="<%= cancel_subscription_path %>" data-method="put"><i class="fa fa-user"></i> <span class="nav-label"> Cancel Subscription </span></a>
+            </li>
+            <li class="#">
+                <a href="<%= invoices_path %>"><i class="fa fa-user"></i> <span class="nav-label"> Invoices </span></a>
             </li>
         </ul>
     <% end %>

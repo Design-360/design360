@@ -4,6 +4,8 @@ class HomeController < ApplicationController
     authorize_resource :class => false
     
     def index
+        @stripe_list = Stripe::Plan.all
+        @plans = @stripe_list[:data]
     end
     
     def admin_orders

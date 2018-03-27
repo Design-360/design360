@@ -24,6 +24,7 @@ class ChatsController < ApplicationController
         
         @message = Message.new
         @chat_messages  = @chat.messages
+        @chat_messages.where.not(message_sender: @signed_in_user,read: true).update_all(read:true)
         # authorize! :show, @chat
     end
     

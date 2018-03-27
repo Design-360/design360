@@ -4,8 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
+  enum subscribed: [:not_subscribe,:subscribe,:cancelled]
   
   has_many :orders, dependent: :destroy
+  has_one :plan_subscriber
+  has_one :plan, through: :plan_subscriber
+  
   has_many :messages, :as => :message_sender
   has_many :subscriptions, as: :subscriber
   has_many :chats,  through: :subscriptions, as: :subscriber
@@ -13,6 +17,7 @@ class User < ApplicationRecord
   has_many :order_employee_orders,through: :orders, source: :employee_order
   has_many :order_managers,through: :order_employee_orders, source: :employee
   has_many :notifications, as: :recipient
+  serialize :stripe_response, JSON
   def self.from_omniauth(auth)
   	where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
   		user.provider = auth.provider
@@ -50,6 +55,17 @@ class User < ApplicationRecord
       return nil
     end
     
+  end
+  
+  def invoice
+    Stripe::Invoice.list(customer:self.stripe_response["id"])   
+  end
+  
+  def delete_stripe_customer
+    Stripe::Customer.retrieve(self.stripe_response["id"]).delete
+    self.plan_subscriber.update!(stripe_response:nil)
+    self.update!(stripe_response:nil)
+    self.not_subscribe!
   end
   
   

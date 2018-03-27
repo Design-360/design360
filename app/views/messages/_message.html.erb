@@ -5,6 +5,7 @@
   <div class="panel-body">
     <%= time_ago_in_words(message.created_at) %> ago<br>
     <%= message.content %> <br>
+    <%= "Seen" if message.read %> <br>
     <%= link_to message.document_file_name,message.document.url if message.document.exists? %>
   </div>
 </div>

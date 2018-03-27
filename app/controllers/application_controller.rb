@@ -1,10 +1,24 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :user
+  before_action :unread_message_count
+  
+  def unread_message_count
+    if @signed_in_user
+      @unread_message_count = @signed_in_user.chats.map{|c| c.messages.where.not(message_sender: @signed_in_user,read: true).count }.compact.sum
+    end
+    
+  end
+  
+  def user
+    @signed_in_user = current_user || current_employee
+  end
   
   def after_sign_in_path_for(resource)
     if current_user
-      clients_dashboard_path
+      current_user.subscribe? ? clients_dashboard_path: root_path
+      # root_path
     elsif current_employee and current_employee.admin?
       admin_dashboard_path
     else
