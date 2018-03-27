@@ -65,7 +65,7 @@ Rails.application.configure do
     :authentication => :plain
     }
     
-  config.action_cable.url = 'wss://design360-a17100262.c9users.io/cable'
+  config.action_cable.url = 'wss://design360-tayyab841.c9users.io/cable'
 
 
 end

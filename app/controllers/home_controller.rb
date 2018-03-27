@@ -51,4 +51,9 @@ class HomeController < ApplicationController
     
     def error
     end
+    def privacy_policy
+    end
+    def terms
+    end
+    
 end

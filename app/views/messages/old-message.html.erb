@@ -8,21 +8,14 @@
 <!--    <%#= link_to message.document_file_name,message.document.url if message.document.exists? %>-->
 <!--  </div>-->
 <!--</div>-->
-<% user = current_employee|| current_user%>
-<div class="each-message <%= (user.id == message.message_sender.id and user.class.to_s == message.message_sender.class.to_s) ? "right":"left"  %>">
+
+<div class="each-message">
   <div class="row">
-    
     <div class="col-md-12">
-      
-      <h3 class="left-text"> <%= message.message_sender.name %></h3>
-      <div class="avatar">
-        <img src="/avatar_generic.jpg" class="avatar-icon">
-      </div>
-      <div class="left-text">
-      <p class="text"><%= message.content %></p>
+      <h3> <%= message.message_sender.name %></h3>
+      <p><%= message.content %></p>
       <%= link_to message.document_file_name,message.document.url if message.document.exists? %>
       <small class="text-muted"><%= time_ago_in_words(message.created_at) %> ago</small>
-      </div>
     </div>
-    </div>
+  </div>
 </div>

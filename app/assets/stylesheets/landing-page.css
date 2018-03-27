@@ -720,3 +720,7 @@
 .landing-page .navbar-toggle{
 	background-color: transparent !important;
 }
+.privacy_policy h3{
+	font-size: 20px;
+	margin:20px 0;
+}

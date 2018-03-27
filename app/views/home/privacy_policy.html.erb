@@ -1,0 +1,190 @@
+<script type="text/javascript" src="/landing-page.js"></script>
+<script type="text/javascript" src="/jquery.sticky.js"></script>
+<div class="landing-page">    
+    <!-- Header -->
+    <nav class="navbar navbar-default navbar-custom sticky">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/design360-logo.png" class="img-responsive"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="/">Home</a></li>
+                <li><a href="#about-us">What’s Included</a></li>
+                <li><a href="#works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#Pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <% if user_signed_in? or employee_signed_in? %>
+                    <% if current_user %>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/clients/dashboard">Dashboard</a></li>
+                            <li><a href="/users/edit">Edit Profile</a></li>
+                            <li><a href="/users/sign_out" data-method="delete">Log Out</a></li>
+                        </ul>
+                    </li>    
+                  <% end %>
+                  <% if current_employee %>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <% if current_employee.admin? %>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
+                        <% else %>
+                        <li><a href="/managers/dashboard">Dashboard</a></li>
+                        <% end %>
+                        <li><a href="/employees/edit">Edit Profile</a></li>
+                        <li><a href="/employees/sign_out" data-method="delete">Log Out</a></li>
+                        <% end %>
+                    </ul>
+                </li>    
+                    <% else %>
+                    <li><a class="btn btn-custom-outline" style="margin: 0;" href="/users/sign_in">Login</span></a>
+                        
+                <% end %>
+                
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    <!-- /Header -->
+
+<section class="privacy_policy" style="padding-top:30px;">
+
+    <div class="row text-center" style="margin:0px;">
+        <div class="col-md-12">
+            <h3 class="title">PRIVACY POLICY</h3>
+        </div>
+        <!-- /col -->
+    </div>
+    
+    <div id="terms" class="container">
+    
+      <div class="row">
+        <div class="col-xs-12">
+    
+          <h3>What do we do with your information?</h3>
+    
+          <p>When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.</p>
+    
+          <p>When you browse our store, we also automatically receive your computer’s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.</p>
+    
+          <p>Email marketing (if applicable): With your permission, we may send you emails about our store, new products and other updates.</p>
+    
+          <h3>Consent</h3>
+    
+          <p>How do you get my consent?</p>
+    
+          <p>When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.</p>
+    
+          <p>If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.</p>
+    
+          <h3>How do I withdraw my consent?</h3>
+    
+          <p>If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at any time, by contacting us at support@design360.graphics.</p>
+    
+          <h3>Disclosure</h3>
+    
+          <p>We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p>
+    
+          <h3>Stripe Payment</h3>
+    
+          <p>If you choose a direct payment gateway to complete your purchase, then Stripe stores your credit card data. It is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction data is stored for as long as your subscription to our services is current. After subscriptions have been cancelled, the purchase transaction information is deleted.</p>
+    
+          <p>All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.</p>
+          
+          <p>PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.</p>
+          
+          <p>For more insight, you may also want to read Stripe’s Terms of Service or Privacy Statement.</p>
+          
+    
+          <h3>Third-party services</h3>
+    
+          <p>In general, the third-party providers used by us will only collect, use and disclose your information to the extent necessary to allow them to perform the services they provide to us.</p>
+          
+          <p>However, certain third-party service providers, such as payment gateways and other payment transaction processors, have their own privacy policies in respect to the information we are required to provide to them for your purchase-related transactions.</p>
+          
+          <p>For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.</p>
+          
+          <p>In particular, remember that certain providers may be located in or have facilities that are located in a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.</p>
+          
+          <p>As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.</p>
+          
+          <p>Once you leave our store’s website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our website’s Terms of Service.</p>
+    
+          <h3>Links</h3>
+    
+          <p>When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.</p>
+    
+          <h3>Security</h3>
+    
+          <p>To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p>
+          
+          <p>If you provide us with your credit card information, the information is encrypted using secure socket layer technology (SSL) and stored with a AES-256 encryption. Although no method of transmission over the Internet or electronic storage is 100% secure, we follow all PCI-DSS requirements and implement additional generally accepted industry standards.</p>
+    
+          <h3>Do we use cookies?</h3>
+    
+          <p>Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.</p>
+    
+          <p>We use cookies to keep track of advertisements.</p>
+          
+          <p>You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since browser is a little different, look at your browser's Help Menu to learn the correct way to modify your cookies.</p>
+    
+          <p>If you turn cookies off, some of the features that make your site experience more efficient may not function properly. It won't affect the user's experience that make your site experience more efficient and may not function properly.</p>
+          
+          <h3>Age of consent</h3>
+    
+          <p>By using this site, you represent that you are at least the age of majority in your state or province of residence, or that you are the age of majority in your state or province of residence and you have given us your consent to allow any of your minor dependents to use this site.</p>
+          
+          <h3>Changes to the privacy policy</h3>
+    
+          <p>We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.</p>
+          
+          <p>If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p>
+          
+          <h3>Questions & contact information</h3>
+    
+          <p>If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at support@design360.graphics or through live chat with our customer support.</p>
+          
+        </div>
+      </div>
+    
+    </div>
+
+</section>
+    <!-- Footer -->
+    
+<footer class="footer-a">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<p style="color:white;">©2018 Design360. Developed by <a href="http://www.systemplus.com.pk/">System Plus</a></p>
+			</div>
+			<div class="col-md-2 text-center">
+				<a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+				<a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
+			</ul>
+			</div>
+			<div class="col-md-5 text-right">
+				
+						<p><a href="/privacy_policy">Terms & Conditions</a> |
+						<a href="/terms">Privacy Policy</a> |
+						<a href="/employees/sign_in">Employee Login</a></p>
+
+			</div>
+		</div>
+	</div>
+</footer>
+
+</div>

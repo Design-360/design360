@@ -103,3 +103,155 @@ font-family: Roboto !important;
 .our_icon{
     width: 9%;
     float: left;}
+
+.each-message{
+   padding: 0 15px;
+}
+.each-message.right{
+    text-align: right;    
+}
+.each-message.right{
+    text-align: right;    
+}
+.each-message.left .left-text{
+    margin-left: 50px;    
+}
+.each-message.left .avatar{
+    float:left;    
+}
+.each-message.left .row{
+    min-width: 250px;
+  display: inline-block;
+}
+.each-message.left .left-text .text {
+    border-radius: 8px 8px 8px 0px;
+    background: #ededed;
+    color:#000;
+}
+
+.each-message .row{
+    min-width: 200px;
+  display: inline-block;
+}
+
+form.new_message{
+    padding:20px 15px 80px 15px !important;
+}
+
+
+.new_message .form-control{
+    background:#fff !important;
+}
+
+.table-inbx td{
+    vertical-align: middle !important;
+}
+.user-set {
+    padding: 30px 20px !important;
+    color: #255aa8 !important;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.chat-form-c {
+    background: #fff;
+    overflow-y: scroll !important;
+    height: 60vh;
+   padding-right: 30px;
+}
+
+.text {
+    margin-right:5px;
+    background: #4771FA;
+    color: #ffffff;
+    border-radius: 8px 8px 0px 8px;
+   padding: 6px;
+    font-size: 16px;
+    line-height: 22px;
+    position: relative;
+}
+.text:before {
+    right: -30px;
+    border-left-color: #0084ff;
+    border-left-width: 12px;
+}
+.avatar {
+   float: right;
+    
+}
+.avatar-icon {
+    top: 30px;
+    width: 40px;
+    height: 40px;
+    bottom: 2px;
+    position: absolute;
+    border-radius: 20px;
+}
+.answer-btn-1 {
+    background: url("/icon-40.png") 50% 50% no-repeat;
+    right: 56px;
+}
+.answer-btn {
+    display: block;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+}
+.answer-btn-2 {
+    background: url("/icon-41.png") 50% 50% no-repeat !important;
+    right: 20px;
+}
+.answer-add {
+    border: 1px solid #4771fa;
+    clear: both;
+    margin: 5px 0px;
+    padding: 20px;
+    background: #fff;
+    bottom: 0px;
+    width: 100%;
+    position: relative;
+}
+.answer-add textarea {
+    width:90%;
+    overflow: hidden;
+    border: none;
+    background: none;
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0;
+    color: #4771fa;
+}
+.answer-add textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+@media (max-width: 768px){
+    .answer-add textarea {
+        width: 70%;
+    }
+}
+.notifications.alert-info {
+    cursor: pointer;
+    background-color: #fff !important;
+    border-color: #4771fa !important;
+    padding: 10px !important; 
+    margin-bottom: 15px !important;
+    
+}
+
+.chat-main {
+    padding: 15px 30px;
+    border-bottom: 1px solid #ababab;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}

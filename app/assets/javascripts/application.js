@@ -69,4 +69,22 @@ $( document ).ready(function() {
     });
 });
 
-    
+$( document ).ready(function() {
+var height = 10000000;
+    $('.chat-form-c').animate({scrollTop: height});
+$(".answer-btn-1").click(function() {
+    $("#doc").click();
+});
+$("#doc").change(function() {
+    $(".answer-btn-2").click();
+});
+$(".notifications").click(function(){
+   window.location=$(this).find("a").attr("href"); 
+   return false;
+  });
+  
+});
+
+
+
+   

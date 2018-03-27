@@ -33,6 +33,9 @@ $(document).ready(function(){
                 // $('#message_content').val('');
                 $('#messages').append(data);
                 // toastr.info('Are you the 6 fingered man?');
+                var height = 10000000;
+                $('.chat-form-c').animate({scrollTop: height});
+                
             },
             send_message: function(message) {
                 // @perform 'send_message', {message: message};

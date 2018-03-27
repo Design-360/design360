@@ -1,30 +1,39 @@
 <div class="main-div">
    <div id="wrapper">
       <%= render partial: 'layouts/sidebar'%>
-      <div class="container">
+         <div class="row wrapper border-bottom white-bg page-heading">
+           <div class="col-lg-10">
+               <h2>Inbox</h2>
+           </div>
+         </div>
          <!--<h2>Basic Table</h2>-->
          <!--<p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>-->
-         <table class="table">
-            <thead>
-               <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  
-               </tr>
-            </thead>
-            <tbody>
-               <%# if employee_signed_in? %>
-               <% @chatable_users.each do |user| %>
-               <tr>
-                  <td> <%= user.name %></td>
-                  <td> <%= user.email %></td>
-                  <td> <%= link_to 'Start Chat' ,chats_path(chat_with: {type: user.class.to_s, id: user.id}),:method => :post %></td>
-               </tr>
-               <% end %>
-               <%# end %>
-            </tbody>
-         </table>
-      </div>
+         <% @chatable_users.each do |user| %>
+            <div class="row white-bg chat-main">
+            
+            <div class="col-md-9">
+               <div class="name">
+                  <h3>
+                   <%= user.name %>
+                  <% crnt_usr = current_employee || current_user %>
+                  <% chat = crnt_usr.chatted_with?(user) %></h3>
+               </div>
+               <div class="last-message">
+                  <%= chat[1].messages.order('created_at DESC').first.content.truncate(100) if chat[0] and chat[1].messages.present? %>
+               </div>
+               <small clss="text-muted time">
+                  <%= time_ago_in_words(chat[1].messages.order('created_at DESC').first.created_at).to_s+" ago" if chat[0] and chat[1].messages.present? %>
+               </small>
+            </div>
+            <div class="col-md-3">
+               <div class="chat-link" style="margin-top:20px;">
+               <%= link_to 'Start Chat' ,chats_path(chat_with: {type: user.class.to_s, id: user.id}),:method => :post, class: "btn btn-primary btn-sm" %>
+               </div>
+            </div>
+            
+            </div>
+            <% end %>
+         
       <%= render 'layouts/footer' %>
    </div>
 </div>

@@ -7,6 +7,7 @@ class Ability
     if user.is_a?(Employee)
       if user.admin?
         can :manage, :all
+        can :notifications, :home
       else
         can :update, Employee, id: user.id
         can [:show,:update], Order do |ord|
@@ -21,6 +22,7 @@ class Ability
           subscribers = chat.subscriptions.pluck(:subscriber_type,:subscriber_id)
           subscribers.include?([user.class.to_s, user.id])
         end
+        can :notifications, :home
       end
     elsif user.is_a?(User)
         can :client_dashboard, :home
@@ -32,7 +34,7 @@ class Ability
           subscribers = chat.subscriptions.pluck(:subscriber_type,:subscriber_id)
           subscribers.include?([user.class.to_s, user.id])
         end
-        
+        can :notifications, :home
         
     else
       can :index, :home
