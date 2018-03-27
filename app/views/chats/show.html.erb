@@ -1,9 +1,14 @@
 <div class="main-div">
-<div id="wrapper">
+<div id="wrapper chatty">
     <%= render 'layouts/sidebar' %>
+    <div class="row wrapper border-bottom white-bg page-heading">
+       <div class="col-lg-10">
+           <h2>Sender Name</h2>
+       </div>
+    </div>
     
-<div class="container" style="margin-top:  100px;">
     <!--<h2>Chat between @chat.subscriptions.</h2>-->
+    <div class="chat-form-c" style="margin-top:30px;">
     <div id="messages" data-chat_id="<%= @chat.id %>">
       <% if not @chat_messages.blank? %>
       
@@ -14,16 +19,35 @@
           <%# end %>
     <% end %>
     </div>
+    </div>
     <% user = current_employee || current_user %>
-    <%= bootstrap_form_for(@message, :remote => true) do |f| %>
-        <%= f.text_area :content, :required => true %>
-        <%#= f.hidden_field :message_sender, :value => current_employee %>
-        <%= f.hidden_field :chat_id, :value => @chat.id %>
-        <%= f.hidden_field :message_sender_id, :value => user.id %>
-        <%= f.hidden_field :message_sender_type, :value => user.class.to_s %>
-        <%= f.file_field :document, label: "Attatch File" %>
-        <%= f.submit "Send Message", id: "submit_message" %>
+    <%= form_for(@message, :remote => true) do |f| %>
+
+            <div class="answer-add">
+                <%= f.text_area :content, :required => true, class:"form-control input-lg", placeholder:"Write Message" %>
+                <%#= f.hidden_field :message_sender, :value => current_employee %>
+                <%= f.hidden_field :chat_id, :value => @chat.id %>
+                <%= f.hidden_field :message_sender_id, :value => user.id %>
+                <%= f.hidden_field :message_sender_type, :value => user.class.to_s %>
+
+           
+            <!--<div class="col-md-1">-->
+            <!--    <div class="fileinput fileinput-new" data-provides="fileinput">-->
+            <!--        <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span>-->
+            <!--        <span class="fileinput-exists">Change</span></span>-->
+            <!--        <span class="fileinput-filename"></span>-->
+            <!--        <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>-->
+            <!--    </div>-->
+            <!--</div>-->
+            
+                <%= f.file_field :document, id: "doc", style: "display:none;" %>
+                <div class="answer-btn answer-btn-1">
+                    
+                </div>
+                <%= f.submit "", id: "submit_message", class:"answer-btn answer-btn-2 btn btn-link" %>
+            </div>
+
     <% end %>
-</div>
+<%= render 'layouts/footer' %>
 </div>
 </div>

@@ -1,3 +1,8 @@
+<style>
+    .navbar-right{
+        margin-right:0 !important;
+    }
+</style>
 
 <script src="/inspinia.js" data-turbolinks-track="reload"></script>
 
@@ -13,12 +18,13 @@
     <% if current_user %>
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header text-center">
-                <div class="dropdown profile-element"> <span>
+                <div class="dropdown profile-element"> 
+                    <span>
                         <img alt="image" src="/design360-logo.png" width="100%" />
-                         </span>
+                    </span>
                     
-                        <a style="cursor:default;"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_user.name %></strong>
-                         </span> <span class="text-xs block">Dashboard</b></span> </span> </a>
+                    <a style="cursor:default;"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_user.name %></strong>
+                     </span> <span class="text-xs block">Dashboard</b></span> </span> </a>
                     
                 </div>
                 <div class="logo-element">
@@ -52,19 +58,15 @@
         <% if current_employee.role == "admin" %>
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header text-center">
-                <div class="dropdown profile-element"> 
-                    <span>
-                    <img alt="image" class="img-circle" src="/profile_small.jpg" />
-                    </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_employee.name %></strong>
-                         </span> <span class="text-xs block">Admin<b class="caret"></b></span> </span> </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href=<%= edit_employee_path(current_employee) %>>Profile</a></li>
-                        <li class=""></li>
-                        <li><a href="/employees/sign_out" data-method="delete">Logout</a></li>
-                    </ul>
-                </div>
+                    <div class="dropdown profile-element"> 
+                        <span>
+                            <img alt="image" src="/design360-logo.png" width="100%" />
+                        </span>
+                        
+                        <a style="cursor:default;"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_employee.name %></strong>
+                         </span> <span class="text-xs block">Dashboard</b></span> </span> </a>
+                        
+                    </div>
                     <div class="logo-element">
                         D
                     </div>
@@ -100,18 +102,14 @@
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header text-center">
                     <div class="dropdown profile-element"> 
-                    <span>
-                    <img alt="image" class="img-circle" src="/profile_small.jpg" />
-                    </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_employee.name %></strong>
-                         </span> <span class="text-xs block">Manager<b class="caret"></b></span> </span> </a>
-                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href=<%= edit_employee_path(current_employee) %>>Profile</a></li>
-                        <li class=""></li>
-                        <li><a href="/employees/sign_out" data-method="delete">Logout</a></li>
-                    </ul>
-                </div>
+                        <span>
+                            <img alt="image" src="/design360-logo.png" width="100%" />
+                        </span>
+                        
+                        <a style="cursor:default;"><span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><%= current_employee.name %></strong>
+                         </span> <span class="text-xs block">Dashboard</b></span> </span> </a>
+                        
+                    </div>
                     <div class="logo-element">
                         D
                     </div>

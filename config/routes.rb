@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get '/clients/dashboard', to: 'home#client_dashboard'
   get '/admin/dashboard', to: 'home#admin_dashboard'
   root 'home#index'
-  
+  get '/terms', to: 'home#terms'
+  get '/privacy_policy', to: 'home#privacy_policy'
   get '/notifications', to: 'home#notifications'
   post 'subscription_checkout' => 'plans#subscription_checkout'
   get 'invoices' => 'plans#invoices'

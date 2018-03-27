@@ -1,14 +1,13 @@
 <div class="main-div">
    <div id="wrapper">
       <%= render partial: 'layouts/sidebar'%>
-      <div class="container">
-      <ul>
+      <h1 class="text-center" style="margin-top:30px;">All Notifications</h1>
+      <div class="col-md-2 hidden-sm hidden-xs"></div>
+         <div class="col-md-8">
          <% @notifications.each do |noti| %>
              <%= render partial: 'notifications/notification', locals:{notification: noti} %>
          <% end  %>
-      </ul>
-      </div>
-      
+         </div>
       <%= render partial: 'layouts/footer'%>
     </div>
 </div>

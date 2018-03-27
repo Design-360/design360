@@ -20,10 +20,6 @@
 <% end %>
 <% pathh = order_path(notification.notify) if notification.notify_type == 'Order'  %>
 <% pathh = chat_path(notification.notify.chat) if notification.notify_type == 'Message'  %>
-<li>
-    <a href="<%= pathh %>">
-        <div>
-            <i class="fa fa-envelope fa-fw"></i> <%= text %>
-        </div>
-    </a>
-</li>
+<div class="notifications alert alert-info">
+      <a href="<%= pathh %>"><%= text %></a>
+</div>
