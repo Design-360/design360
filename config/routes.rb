@@ -29,7 +29,9 @@ Rails.application.routes.draw do
   put 'cancel_subscription' => 'plans#cancel_subscription'
   get 'show_invoice' => 'plans#show_invoice'
   
+  get 'unsub_user',to: 'home#unsub_user'
   post 'stripe_payment_succeeded' => 'plans#webhook_payment_succeeded'
+  post 'stripe_payment_failure' => 'plans#webhook_payment_failure'
   # scope '/admin' do
     resources :chats, except: [:edit,:new]
     resources :messages

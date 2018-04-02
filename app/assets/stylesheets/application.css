@@ -256,3 +256,23 @@ form.new_message{
     vertical-align: middle;
     float: none;
 }
+.mb-lg{
+    margin-bottom:20px !important;
+    
+}
+.mt-lg{
+    margin-top:20px !important;
+    
+}
+
+.table > tbody > tr > .emptyrow {
+    border-top: none;
+}
+
+.table > thead > tr > .emptyrow {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .highrow {
+    border-top: 3px solid;
+}

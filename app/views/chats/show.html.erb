@@ -1,9 +1,10 @@
+<% user = current_employee || current_user %>
 <div class="main-div">
 <div id="wrapper chatty">
     <%= render 'layouts/sidebar' %>
     <div class="row wrapper border-bottom white-bg page-heading">
        <div class="col-lg-10">
-           <h2>Sender Name</h2>
+           <h2></h2>
        </div>
     </div>
     
@@ -12,15 +13,17 @@
     <div id="messages" data-chat_id="<%= @chat.id %>">
       <% if not @chat_messages.blank? %>
       
-          <%# @chat_messages.each do |message| %>
+          <% @chat_messages.each do |message| %>
+            <div class = "each-message <%= (user.id == message.message_sender.id and user.class.to_s == message.message_sender.class.to_s) ? "right":"left"  %>">
           
-              <%= render @chat_messages %>
+              <%= render partial: 'messages/message',locals: {message: message} %>
+            </div>
           
-          <%# end %>
+          <% end %>
     <% end %>
     </div>
     </div>
-    <% user = current_employee || current_user %>
+    
     <%= form_for(@message, :remote => true) do |f| %>
 
             <div class="answer-add">

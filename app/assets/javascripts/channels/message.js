@@ -31,7 +31,22 @@ $(document).ready(function(){
                 // body...
                 // alert(data);
                 // $('#message_content').val('');
-                $('#messages').append(data);
+                var current_user = $('#iduser').data('user');
+                var message_sender_type = data["sender_type"]
+                var message_sender_id = data["sender_id"]
+                // alert(current_user);
+                if (message_sender_type+"_"+message_sender_id == current_user){
+                    var message = "<div class='each-message right'>" + data["message"] + "</div>"
+                    // alert("right");
+                    $('#messages').append(message);
+                }
+                else {
+                    var message = "<div class='each-message left'>" + data["message"] + "</div>"
+                    $('#messages').append(message);
+                    // alert("left");
+                }
+                    
+                
                 // toastr.info('Are you the 6 fingered man?');
                 var height = 10000000;
                 $('.chat-form-c').animate({scrollTop: height});

@@ -1,12 +1,70 @@
-Invoice Number: <%= invoice.number %> <br>
-Amount: $<%= invoice.amount_due/100 %> <br>
-Date: <%= Time.at(invoice.date).to_date%> <br>
-Items: <br>
-<% invoice.lines["data"].each do |item| %>
-Item Description: <%= item.description %> <br>
-Item Amount: <%= item.amount/100 %> <br>
-Period: <%= Time.at(item.period["start"]).to_date %> to <%= Time.at(item.period["end"]).to_date %> <br> 
-<% end %>
-Paid: <%= invoice.paid %> <br>
-Subtotal: <%= invoice.subtotal/100 %> <br>
-Total: <%= invoice.total/100 %> <br>
+
+
+
+<!-- Simple Invoice - START -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="text-center">
+                <h2>Invoice for Purchase #<%= invoice.number %></h2>
+            </div>
+            <hr>
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class=""><strong>Amount:</strong> $<%= invoice.amount_due/100 %> </h3>
+                            
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <h3 class=""><strong>Date:</strong> <%= Time.at(invoice.date).to_date%></h3>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <% invoice.lines["data"].each do |item| %>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <td><strong>Item Description</strong></td>
+                                    <td><strong>Period</strong></td>
+                                    <td><strong>Item Price</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%= item.description %></td>
+                                    <td class=""><%= Time.at(item.period["start"]).to_date %> to <%= Time.at(item.period["end"]).to_date %></td>
+                                    <td class=""><%= item.amount/100 %></td>
+                                </tr>
+                                <tr>
+                                    <td class="highrow"></td>
+                                    <td class="highrow"></td>
+                                    <td class="highrow"><strong>Paid</strong></td>
+                                    <td class="highrow text-right"><%= invoice.paid %></td>
+                                </tr>
+                                <tr>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow"><strong>Subtotal</strong></td>
+                                    <td class="emptyrow text-right"><%= invoice.subtotal/100 %></td>
+                                </tr>
+                                <tr>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow"><strong>Total</strong></td>
+                                    <td class="emptyrow text-right"><%= invoice.total/100 %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

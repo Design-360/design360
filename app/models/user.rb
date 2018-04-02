@@ -62,8 +62,8 @@ class User < ApplicationRecord
   end
   
   def delete_stripe_customer
-    Stripe::Customer.retrieve(self.stripe_response["id"]).delete
-    self.plan_subscriber.update!(stripe_response:nil)
+    Stripe::Customer.retrieve(self.stripe_response["id"]).delete if stripe_response
+    self.plan_subscriber.update!(stripe_response:nil) if self.plan_subscriber
     self.update!(stripe_response:nil)
     self.not_subscribe!
   end

@@ -8,8 +8,7 @@
 <!--    <%#= link_to message.document_file_name,message.document.url if message.document.exists? %>-->
 <!--  </div>-->
 <!--</div>-->
-<% user = current_employee|| current_user%>
-<div class="each-message <%= (user.id == message.message_sender.id and user.class.to_s == message.message_sender.class.to_s) ? "right":"left"  %>">
+<!--<div class="each-message">-->
   <div class="row">
     
     <div class="col-md-12">
@@ -25,4 +24,4 @@
       </div>
     </div>
     </div>
-</div>
+<!--</div>-->

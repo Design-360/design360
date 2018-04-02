@@ -1,0 +1,61 @@
+<link rel="stylesheet" media="all" href="/pricing.css" data-turbolinks-track="reload" />
+
+<div class="pricing-2 unsub-pricing" >
+    <div class="container margin-t-lg" id="Pricing">
+            <div class="row pric">
+                <div class="col-md-6">
+                    <div class="block block-pricing block-raised">
+                        <div class="table table-info">
+                            <h6 class="category">Basic</h6>
+                            <h1 class="block-caption"><small>$</small>376<span>/mo</span></h1>
+                            <ul>
+                                <li><i class="fas fa-check"></i><span>Unlimited Graphic Design</span></li>
+                                <li><i class="fas fa-check"></i><span>Unlimited Requests</span></li>
+                                <li><i class="fas fa-check"></i><span>Unlimited Revisions</span></li>
+                                <li><i class="fas fa-check"></i><span>Dedicated U.S. Project Manager</span></li>
+                                <li><i class="fas fa-check"></i><span>Design Team Collaboration</span></li>
+                                <li><i class="fas fa-check"></i><span>Next Day Project Delivery</li>
+                                <li><span>1 Project at a time</span></li>
+                                <li><i class="fas fa-check"></i><span>Source Files Included</span></li>
+                                <li><i class="fas fa-check"></i><span>Unlimited Brands</span></li>
+                                <li><i class="fas fa-check"></i><span>No Contract or Cancellation Fee</span></li>
+                            </ul>
+                            <% if user_signed_in? %>
+                                <button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                                
+                            <% else %>
+                                <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> 
+                            
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="block block-pricing block-plain">
+                        <div class="table tablepro">
+                            <h6 class="category">Pro</h6>
+                            <h1 class="block-caption"><small>$</small>799<span>/mo</span></h1>
+                            <ul>
+                                <li><i class="fas fa-check"></i><span>Unlimited Graphic Design</span></li>
+                                <li><i class="fas fa-check"></i><span>Unlimited Requests</span></li>
+                                <li><i class="fas fa-check"></i><span>Unlimited Revisions</span></li>
+                                <li><i class="fas fa-check"></i><span>Dedicated U.S. Project Manager</span></li>
+                                <li><i class="fas fa-check"></i><span>Design Team Collaboration</span></li>
+                                <li><i class="fas fa-check"></i><span>Next Day Project Delivery</span></li>
+                                <li><span>3 Projects at a time</span></li>
+                                <li><i class="fas fa-check"></i><span>Source Files Included</span></li>
+                                <li><i class="fas fa-check"></i><span>Unlimited Brands</span></li>
+                                <li><i class="fas fa-check"></i><span>No Contract or Cancellation Fee</span></li>
+                            </ul> 
+                            <% if user_signed_in? %>
+                                <button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal_2">Get Started</button>
+                                
+                            <% else %>
+                                <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">Get Started</a> 
+                            
+                            <% end %> </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

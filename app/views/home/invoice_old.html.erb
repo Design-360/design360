@@ -1,0 +1,12 @@
+Invoice Number: <%= invoice.number %> <br>
+Amount: $<%= invoice.amount_due/100 %> <br>
+Date: <%= Time.at(invoice.date).to_date%> <br>
+Items: <br>
+<% invoice.lines["data"].each do |item| %>
+Item Description: <%= item.description %> <br>
+Item Amount: <%= item.amount/100 %> <br>
+Period: <%= Time.at(item.period["start"]).to_date %> to <%= Time.at(item.period["end"]).to_date %> <br> 
+<% end %>
+Paid: <%= invoice.paid %> <br>
+Subtotal: <%= invoice.subtotal/100 %> <br>
+Total: <%= invoice.total/100 %> <br>

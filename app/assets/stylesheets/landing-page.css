@@ -62,7 +62,7 @@
 }
 .landing-page .btn:focus,.landing-page .btn:active {
     outline: none;
-    color: #ffffff;
+    color: inherit;
 }
 .landing-page .btn-custom{
 	border-radius: 3px;

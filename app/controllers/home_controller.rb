@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
     before_action :authenticate_user!, only:[:client_dashboard]
     before_action :authenticate_employee!, only:[:manager_dashboard, :admin_dashboard]
-    authorize_resource :class => false
+    authorize_resource :class => false, except: [:privacy_policy,:terms,:unsub_user]
     
     def index
         @stripe_list = Stripe::Plan.all
@@ -44,12 +44,21 @@ class HomeController < ApplicationController
     end
     
     def client_dashboard
-        @orders = current_user.orders
-        @pending_orders = current_user.orders.pending + current_user.orders.in_revision
-        @assigned_orders = current_user.orders.assigned
-        @delivered_orders = current_user.orders.delivered
-        @complete_orders = current_user.orders.complete
+        if @signed_in_user.subscribe?
+            @orders = current_user.orders
+            @pending_orders = current_user.orders.pending + current_user.orders.in_revision
+            @assigned_orders = current_user.orders.assigned
+            @delivered_orders = current_user.orders.delivered
+            @complete_orders = current_user.orders.complete
+        else
+            render 'unsub_user'
+        end
     end
+    
+    def unsub_user
+    end
+    
+    def 
     
     def error
     end

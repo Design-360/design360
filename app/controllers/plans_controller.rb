@@ -1,7 +1,8 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only:[:subscription_checkout,:cancel_subscription,:invoices]
-  skip_before_action  :verify_authenticity_token,only: [:webhook_payment_succeeded]
+  skip_before_action  :verify_authenticity_token,only: [:webhook_payment_succeeded,:webhook_payment_failure]
+  # after_action :redirect_func,only: [:webhook_payment_succeeded,:webhook_payment_failure]
 
   require 'stripe'
   
@@ -25,8 +26,9 @@ class PlansController < ApplicationController
     # Save this in your DB and associate with the user;s email
     stripe_subscription = customer.subscriptions.create(:plan => plan.id)
     PlanSubscriber.first_or_create(plan_id: @plan.id, user_id: @signed_in_user.id).update!(stripe_response: stripe_subscription)
-    @signed_in_user.subscribe!
-    redirect_to clients_dashboard_path,notice: "You have successfully subscribed to Design360 #{@plan.name} Plan"
+    byebug
+    # @signed_in_user.subscribe!
+    # redirect_to clients_dashboard_path,notice: "You have successfully subscribed to Design360 #{@plan.name} Plan"
   end
   
   def cancel_subscription
@@ -34,6 +36,7 @@ class PlansController < ApplicationController
     Stripe::Subscription.retrieve(stripe_sub_id).delete
     @signed_in_user.plan_subscriber.update(stripe_response: Stripe::Subscription.retrieve(stripe_sub_id))
     @signed_in_user.cancelled!
+    @signed_in_user.delete_stripe_customer
     redirect_to clients_dashboard_path, notice: "Subscription cancelled"
   end
   
@@ -51,8 +54,17 @@ class PlansController < ApplicationController
   end
   
   def webhook_payment_succeeded
-    byebug
-    # status :ok
+    # byebug
+    @signed_in_user = User.select{ |user| user.stripe_response and user.stripe_response["id"] == params[:data][:object][:customer] }.first
+    @signed_in_user.subscribe!
+
+  end
+  def redirect_func
+     redirect_to clients_dashboard_path,notice: "You have successfully subscribed to Design360 #{@signed_in_user.plan.name} Plan"
+  end
+  
+  def webhook_payment_failure
+    
   end
 
   # GET /plans

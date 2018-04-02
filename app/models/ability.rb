@@ -25,7 +25,8 @@ class Ability
         can :notifications, :home
       end
     elsif user.is_a?(User)
-        can :client_dashboard, :home if user.subscribe?
+        can :client_dashboard, :home
+        # if user.subscribe?
         can :index, :home
         can [:read,:update,:destroy], Order,user_id: user.id
         can :create, Order if user.plan and user.orders and user.orders.where.not(status:"complete").count < user.plan.order_count

@@ -59,6 +59,11 @@
            
           
           <p>Unhappy?</p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-primary btn-md" %>
+          <%= button_to "Cancel my Subscription", cancel_subscription_path, data: { confirm: "Are you sure?" }, method: :put, class:"btn btn-primary btn-md" %>
+          <!--<li class="#">-->
+          <!--      <a href="<%#= cancel_subscription_path %>" data-method="put"><i class="fa fa-user"></i> <span class="nav-label"> Cancel Subscription </span></a>-->
+          <!--  </li>-->
+          
           </div>       
           </div>
         </div>

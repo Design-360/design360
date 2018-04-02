@@ -81,7 +81,7 @@
 .block-pricing ul {
     list-style: none;
     padding: 0;
-    max-width: 240px;
+    max-width: 310px;
     margin: 10px auto;
 }
 .block ul li{
@@ -92,6 +92,9 @@
     text-align: center;
     padding: 12px 0;
     border-bottom: 1px solid rgba(153, 153, 153, 0.3);
+}
+.block-pricing ul li i{
+    padding-right:10px;
 }
 
 .block-pricing ul li:last-child {
@@ -280,4 +283,8 @@
 .block-caption.features{
     padding: 15px 0;
     font-size:25px !important;
+}
+.unsub-pricing{
+    padding:0 !important;
+    background:;
 }

@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     
   end
   
+  
   def user
     @signed_in_user = current_user || current_employee
   end
