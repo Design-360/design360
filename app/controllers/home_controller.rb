@@ -51,6 +51,8 @@ class HomeController < ApplicationController
             @delivered_orders = current_user.orders.delivered
             @complete_orders = current_user.orders.complete
         else
+            @stripe_list = Stripe::Plan.all
+            @plans = @stripe_list[:data]
             render 'unsub_user'
         end
     end

@@ -27,8 +27,8 @@ class PlansController < ApplicationController
     stripe_subscription = customer.subscriptions.create(:plan => plan.id)
     PlanSubscriber.first_or_create(plan_id: @plan.id, user_id: @signed_in_user.id).update!(stripe_response: stripe_subscription)
     
-    # @signed_in_user.subscribe!
-    # redirect_to clients_dashboard_path,notice: "You have successfully subscribed to Design360 #{@plan.name} Plan"
+    @signed_in_user.subscribe!
+    redirect_to clients_dashboard_path,notice: "You have successfully subscribed to Design360 #{@plan.name} Plan"
   end
   
   def cancel_subscription
@@ -58,9 +58,6 @@ class PlansController < ApplicationController
     @signed_in_user = User.select{ |user| user.stripe_response and user.stripe_response["id"] == params[:data][:object][:customer] }.first
     @signed_in_user.subscribe!
 
-  end
-  def redirect_func
-     redirect_to clients_dashboard_path,notice: "You have successfully subscribed to Design360 #{@signed_in_user.plan.name} Plan"
   end
   
   def webhook_payment_failure

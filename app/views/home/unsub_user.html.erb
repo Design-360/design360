@@ -21,7 +21,13 @@
                                 <li><i class="fas fa-check"></i><span>No Contract or Cancellation Fee</span></li>
                             </ul>
                             <% if user_signed_in? %>
-                                <button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                                <!--<button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+                                <%= form_tag('/subscription_checkout', {method: :post}) do %>
+                                          
+                                    <input name="stripe_plan_id" type="hidden" value="<%= @plans[1][:id] %>"></input>
+                                    <!--<input name="plan_id" type="hidden" value="<%#= plan[:id] %>"></input>-->
+                                    <script class="stripe-button" data-amount="<%= (@plans[1][:amount]) %>" data-currency="<%= @plans[1][:currency] %>" data-email="<%= @signed_in_user.email %>" data-image="/design360-logo.png" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" src="https://checkout.stripe.com/checkout.js"></script>
+                                <% end %>
                                 
                             <% else %>
                                 <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> 
@@ -48,7 +54,14 @@
                                 <li><i class="fas fa-check"></i><span>No Contract or Cancellation Fee</span></li>
                             </ul> 
                             <% if user_signed_in? %>
-                                <button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal_2">Get Started</button>
+                                <!--<button type="button" class="btn btn-white btn-raise btn-round" data-toggle="modal" data-target="#myModal_2">Get Started</button>-->
+                                <%= form_tag('/subscription_checkout', {method: :post}) do %>
+                                          
+                                    <input name="stripe_plan_id" type="hidden" value="<%= @plans[1][:id] %>"></input>
+                                    <!--<input name="plan_id" type="hidden" value="<%#= plan[:id] %>"></input>-->
+                                    <script class="stripe-button" data-amount="<%= (@plans[1][:amount]) %>" data-currency="<%= @plans[1][:currency] %>" data-email="<%= @signed_in_user.email %>" data-image="/design360-logo.png" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" src="https://checkout.stripe.com/checkout.js"></script>
+                                <% end %>
+                                
                                 
                             <% else %>
                                 <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">Get Started</a> 
