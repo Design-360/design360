@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resource)
     if current_user
-      current_user.subscribe? ? clients_dashboard_path: root_path
+      clients_dashboard_path
       # root_path
     elsif current_employee and current_employee.admin?
       admin_dashboard_path
