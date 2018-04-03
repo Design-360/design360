@@ -10,5 +10,5 @@ test:
 
 production:
   adapter: redis
-  url: ENV['REDISTOGO_URL']
+  url: redis://redistogo:d097b325de1cc6de3f2ec9f12f2fab6a@angelfish.redistogo.com:9197/
   channel_prefix: app_production
