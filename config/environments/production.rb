@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = { host: 'https://floating-spire-35994.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'https://design360graphics.herokuapp.com/'}
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -103,7 +103,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  config.action_mailer.default_url_options = { :host => "floating-spire-35994.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "https://design360graphics.herokuapp.com" }
   # Paperclip.options[:command_path] = "/usr/local/bin/"
   
   config.action_mailer.raise_delivery_errors = true
