@@ -10,5 +10,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://h:p2b716e99244e12eb0cda807b5fcd23934e91a007225a4bee9920c660ec847d21@ec2-35-173-148-122.compute-1.amazonaws.com:12459
+  url: ENV['REDISTOGO_URL']
   channel_prefix: app_production
