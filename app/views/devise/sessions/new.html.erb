@@ -24,11 +24,11 @@
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), :class => "m-t") do |f| %>
                 <div class="form-group">
                     <label class="log-label label-email">Email</label>
-                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true %>
+                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true, placeholder: "Email", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Email'" %>
                 </div>
                 <div class="form-group">
                     <label class="log-label label-pass">Password</label>
-                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true %>
+                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true, placeholder: "Password", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Password'" %>
                 </div>
                 <%= f.submit "Login", class:"btn btn-primary block full-width m-b btn-lg" %>
                 
@@ -58,3 +58,27 @@
 </div>
 </div>   
 
+<script>
+	    $(document).click(function() {
+	    <% for id in 0..7 do %>
+        $('.form-control').eq(<%=id%>).on('focus', function() {
+            $('.log-label').eq(<%=id%>).addClass('label-after');
+            $('.form-control').eq(<%=id%>).css('border-color', '#4771FA');
+        });
+        
+        $('.form-control').on('focusout', function() {
+            if ($('.form-control').eq(<%=id%>).val() == '') {
+                $('.log-label').eq(<%=id%>).removeClass('label-after');
+                $('.form-control').eq(<%=id%>).css('border-color', '#e5e6e7');
+
+            } else if ($('.form-control').eq(<%=id%>).val() != '') {
+                $('.log-label').eq(<%=id%>).addClass('label-after');
+                $('.form-control').eq(<%=id%>).css('border-color', '#4771FA');
+            }
+
+        });
+      <% end %>  
+    });
+        
+	
+</script>

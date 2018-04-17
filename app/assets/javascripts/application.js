@@ -85,6 +85,13 @@ $(".notifications").click(function(){
   
 });
 
+$(document).mouseover(function() {
+$('.modal.fade.log').on('click',function(){
+      $('body').removeClass('modal-open');
+      
+});
+});
+
 
 
    

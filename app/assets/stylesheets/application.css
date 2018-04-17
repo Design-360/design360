@@ -38,6 +38,7 @@ font-family: Roboto !important;
     -webkit-transition-timing-function: linear !important; /* Safari */
     transition: 0.1s !important;
     transition-timing-function: linear !important;
+    opacity:0;
     z-index:-1;
     cursor:text;
     color: #ababab;
@@ -49,6 +50,7 @@ font-family: Roboto !important;
     font-size: 17px;}
     
     .label-after{
+    opacity:1;
     -webkit-transition: 0.1s !important; /* Safari */
     -webkit-transition-timing-function: linear !important; /* Safari */
     transition: 0.1s !important;
@@ -64,7 +66,7 @@ font-family: Roboto !important;
 .btn-fb {
     margin-bottom: 20px;
     width:100%;
-  color: #fff;
+  color: #fff !important;
   background-color: #3B5998;
 }
 .btn-fb:hover{
@@ -74,7 +76,7 @@ font-family: Roboto !important;
 .btn-google {
     width:100%;
     background-color: #db3236;
-    color: #fff;
+    color: #fff !important;
 }
 .btn-google:hover, .btn-google:focus{
     background-color: #db3236;
@@ -273,4 +275,34 @@ form.new_message{
 
 .table > tbody > tr > .highrow {
     border-top: 3px solid;
+}
+@media only screen and (min-width:768px){
+.unsub-pricing .row.pric{
+	padding-top:0px !important;}
+	.unsub-pricing .block{
+	margin-bottom: 0px !important;
+}}
+.Header-logoImage{
+        background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+.top-image {
+    background: #000000;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 2px solid #2558a8;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 42%;
+        top: -43px;
+}
+.model-set {
+    margin-top: 116px !important;
+}
+.inner-image {
+    margin-top: 28px;
+    margin-left: 4px;
 }

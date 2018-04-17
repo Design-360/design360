@@ -1,0 +1,230 @@
+<script src="/devise.js"></script>
+<script src="/inspinia.js"></script>
+<div class="modal fade log"  id="social-modal-join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       
+    <div class="modal-dialog">
+    	<div class="loginmodal-container model-set">
+    	    <div class="top-image">
+    	        <img src="/model-logo.png" class="inner-image">
+    	    </div>
+  		<div class="loginmodal-container-2">
+  			<h1>Start your free trial</h1>
+        	<%= link_to 'Continue with Facebook',  "/users/auth/facebook" ,:class => "btn btn-lg btn-primary btn-fb" %>
+			<%= link_to 'Continue with Google',  "/users/auth/google_oauth2" ,:class => "btn btn-lg btn-primary btn-google" %>
+			<div class="row">
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<p class="or">or</p>
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+			</div>
+			 <a class="btn btn-primary full-width m-b" id="modal-link-join" data-toggle="modal" data-target="#email-modal-join" data-dismiss="modal">Sign up with Email </a>
+      
+  			
+  				<p style="text-align: center;">By signing up you agree to Design 360's</p>
+  				<p style="text-align: center;"><a href="/terms">Terms and Conditions</a> and <a href="/privacy_policy">Privacy Policy</p>
+  		</div>
+  			<hr class="hr-or">
+  			<p style="text-align: center;">Already have an account? <a href="#"  class="modal-link" data-toggle="modal" data-target="#social-modal-login" data-dismiss="modal"> Login </a></p>
+  	</div> 
+  </div>
+</div>
+
+
+<div class="modal fade log"  id="email-modal-join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    	<div class="loginmodal-container model-set">
+    	    <div class="top-image">
+    	        <img src="/model-logo.png" class="inner-image">
+    	    </div>
+  		<div class="loginmodal-container-2">
+  			<h1>Start your free trial</h1>
+			 
+            <%= form_for(:user, url: registration_path(:user), :class => "m-t") do |f| %>
+                <div class="form-group">
+                    <label class="log-label label-name">Name</label>
+                    <%= f.text_field :name, autocomplete:"new-password", class:"form-control input-lg", id:"input-name", required: true, placeholder: "Name", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Name'" %>
+                </div>
+                <div class="form-group">
+                    <label class="log-label label-email">Email</label>
+                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true, placeholder: "Email", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Email'" %>
+                </div>
+                <div class="form-group">
+                    <label class="log-label label-pass">Password</label>
+                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true, placeholder: "Password", onfocus:"this.placeholder = ''",  onfocusout:"this.placeholder = 'Password'"%>
+                </div>
+                <div class="form-group">
+                    <label class="log-label label-pass-c">Password Confirmation</label>
+                    <%= f.password_field :password_confirmation, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass-c",  required: true, placeholder: "Password Confirmation", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Password Confirmation'" %>
+                </div>
+                <%= f.submit "Submit", class:"btn full-width m-b btn-primary" %>
+  			<% end %>
+  			<div class="row">
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<p class="or">or</p>
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+			</div>
+			 <a class="btn btn-primary full-width m-b" data-toggle="modal" data-target="#social-modal-join" data-dismiss="modal">Sign up with Social Media</a>
+  				<p style="text-align: center;">By signing up you agree to Design 360's</p>
+  				<p style="text-align: center;"><a href="/terms">Terms and Conditions</a> and <a href="/privacy_policy">Privacy Policy</p>
+  		</div>
+  			<hr class="hr-or">
+  			<p style="text-align: center;">Already have an account? <a href="#"  class="modal-link" data-toggle="modal" data-target="#social-modal-login" data-dismiss="modal"> Login </a></p>
+  	</div> 
+  </div>
+</div>
+
+
+<div class="modal fade log"  id="social-modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    	<div class="loginmodal-container model-set">
+    	    <div class="top-image">
+    	        <img src="/model-logo.png" class="inner-image">
+    	    </div>
+  		<div class="loginmodal-container-2">
+  			<h1>Login to Design360</h1>
+        	
+	            <%= link_to 'Continue with Facebook',  "/users/auth/facebook" ,:class => "btn btn-lg btn-primary btn-fb" %>
+	            <%= link_to 'Continue with Google',  "/users/auth/google_oauth2" ,:class => "btn btn-lg btn-primary btn-google" %>
+
+			<div class="row">
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<p class="or">or</p>
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+			</div>
+			 <a class="btn btn-primary full-width m-b" data-toggle="modal" data-target="#email-modal-login" data-dismiss="modal">Login with Email </a>
+				
+  		</div>
+  			<hr class="hr-or">
+  			<p style="text-align: center;">Don't have an account? <a href="#"  class="modal-link" data-toggle="modal" data-target="#social-modal-join" data-dismiss="modal"> SignUp </a></p>
+  	</div> 
+  </div>
+</div>
+
+
+<div class="modal fade log"  id="email-modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    	<div class="loginmodal-container model-set">
+    	    <div class="top-image">
+    	        <img src="/model-logo.png" class="inner-image">
+    	    </div>
+  		<div class="loginmodal-container-2">
+  			<h1>Login to Design360</h1>
+			 
+            <%= form_for(:user, url: session_path(:user), :class => "m-t") do |f| %>
+                <div class="form-group">
+                    <label class="log-label label-email">Email</label>
+                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true, placeholder: "Email", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Email'" %>
+                </div>
+                <div class="form-group">
+                    <label class="log-label label-pass">Password</label>
+                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true, placeholder: "Password", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Password'" %>
+                </div>
+                <%= f.submit "Login", class:"btn full-width m-b btn-primary" %>
+                
+                <center>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              </a>
+                <a href="/users/password/new"> Forgot Your Password?</a>
+              </center>
+  			<div class="row">
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<p class="or">or</p>
+				</div>
+				<div class="col-md-5 col-sm-5 col-xs-5">
+					<hr class="hr-or">
+				</div>
+			</div>
+			 <a class="btn btn-primary full-width m-b" data-toggle="modal" data-target="#social-modal-login" data-dismiss="modal">Login with Social Media</a>
+  		</div>
+  			<hr class="hr-or">
+  			<p style="text-align: center;">Don't have an account? <a href="#"  class="modal-link" data-toggle="modal" data-target="#social-modal-join" data-dismiss="modal"> Join </a></p>
+  			<% end %>
+  	</div> 
+  </div>
+</div>
+
+
+
+<div class="modal fade log"  id="email-modal-employ" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    	<div class="loginmodal-container model-set">
+    	    <div class="top-image">
+    	        <img src="/model-logo.png" class="inner-image">
+    	    </div>
+  		<div class="loginmodal-container-2">
+  			<h1>Login to Design360</h1>
+			 
+            <%= form_for(:employee, url: session_path(:employee), :class => "m-t") do |f| %>
+                <div class="form-group">
+                    <label class="log-label label-email">Email</label>
+                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true, placeholder: "Email", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Email'" %>
+                </div>
+                <div class="form-group">
+                    <label class="log-label label-pass">Password</label>
+                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true, placeholder: "Password", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Password'" %>
+                </div>
+                <%= f.submit "Login", class:"btn full-width m-b btn-primary" %>
+                
+                <center>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              </a>
+                <a href="/employees/password/new"> Forgot Your Password?</a>
+              </center>
+  		
+  		</div>
+  			
+  			<% end %>
+  	</div> 
+  </div>
+</div>
+
+<script>
+	    $(document).ready(function() {
+	    <% for id in 0..7 do %>
+        $('.form-control').eq(<%=id%>).on('focus', function() {
+            $('.log-label').eq(<%=id%>).addClass('label-after');
+            $('.form-control').eq(<%=id%>).css('border-color', '#4771FA');
+        });
+        
+        $('.form-control').on('focusout', function() {
+            if ($('.form-control').eq(<%=id%>).val() == '') {
+                $('.log-label').eq(<%=id%>).removeClass('label-after');
+                $('.form-control').eq(<%=id%>).css('border-color', '#e5e6e7');
+
+            } else if ($('.form-control').eq(<%=id%>).val() != '') {
+                $('.log-label').eq(<%=id%>).addClass('label-after');
+                $('.form-control').eq(<%=id%>).css('border-color', '#4771FA');
+            }
+
+        });
+      <% end %>  
+    });
+        
+	
+</script>

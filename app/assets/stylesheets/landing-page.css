@@ -745,3 +745,7 @@
 .our_icon{
 	padding-right: 10px;
 }}
+
+.modal-backdrop.in{
+    z-index: 0 !important;
+}

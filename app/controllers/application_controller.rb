@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   def unread_message_count
     if @signed_in_user
       @unread_message_count = @signed_in_user.chats.map{|c| c.messages.where.not(message_sender: @signed_in_user,read: true).count }.compact.sum
+      
+    
     end
     
   end

@@ -14,19 +14,19 @@
               <%= devise_error_messages! %>
                 <div class="form-group">
                     <label class="log-label label-name">Name</label>
-                    <%= f.text_field :name, autocomplete:"new-password", class:"form-control input-lg", id:"input-name", required: true %>
+                    <%= f.text_field :name, autocomplete:"new-password", class:"form-control input-lg", id:"input-name", required: true, placeholder: "Name", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Name'" %>
                 </div>
                 <div class="form-group">
                     <label class="log-label label-email">Email</label>
-                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true %>
+                    <%= f.email_field :email, autocomplete:"new-password", class:"form-control input-lg", id:"input-email", required: true, placeholder: "Email", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Email'" %>
                 </div>
                 <div class="form-group">
                     <label class="log-label label-pass">Password</label>
-                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true %>
+                    <%= f.password_field :password, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass",  required: true, placeholder: "Password", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Password'" %>
                 </div>
                 <div class="form-group">
                     <label class="log-label label-pass-c">Password Confirmation</label>
-                    <%= f.password_field :password_confirmation, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass-c",  required: true %>
+                    <%= f.password_field :password_confirmation, autocomplete:"new-password", class:"form-control input-lg", id:"input-pass-c",  required: true, placeholder: "Confirm Password", onfocus:"this.placeholder = ''", onfocusout:"this.placeholder = 'Confirm Password'" %>
                 </div>
                 <%= f.submit "Submit", class:"btn btn-primary block full-width m-b btn-lg" %>
                 <p class="text-muted text-center">Already have an account? <a href="/users/sign_in"  style="font-size:18px; font-weight:bold;"> Login</a></p>
@@ -38,4 +38,27 @@
 </div>
 <div class="col-md-5 back-future col-sm-5 hidden-xs hidden-sm">
 </div>
-</div>   
+</div>   <script>
+	    $(document).ready(function() {
+	    <% for id in 0..7 do %>
+        $('.form-control').eq(<%=id%>).on('focus', function() {
+            $('.log-label').eq(<%=id%>).addClass('label-after');
+            $('.form-control').eq(<%=id%>).css('border-color', '#4771FA');
+        });
+        
+        $('.form-control').on('focusout', function() {
+            if ($('.form-control').eq(<%=id%>).val() == '') {
+                $('.log-label').eq(<%=id%>).removeClass('label-after');
+                $('.form-control').eq(<%=id%>).css('border-color', '#e5e6e7');
+
+            } else if ($('.form-control').eq(<%=id%>).val() != '') {
+                $('.log-label').eq(<%=id%>).addClass('label-after');
+                $('.form-control').eq(<%=id%>).css('border-color', '#4771FA');
+            }
+
+        });
+      <% end %>  
+    });
+        
+	
+</script>

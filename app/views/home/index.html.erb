@@ -73,8 +73,8 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                     </ul>
                 </li>    
                     <% else %>
-                    <li><a class="btn btn-custom-outline" style="margin: 0;" href="/users/sign_in">Login</span></a>
-                        
+                    <li><a class="btn btn-custom-outline" style="margin: 0;" data-toggle="modal" data-target="#social-modal-login">Login</span></a>
+                    
                 <% end %>
                 
           </ul>
@@ -832,7 +832,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     
                                     
                                 <% else %>
-                                    <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> 
+                                    <a style="margin: 0;"  id="modal-link-login" data-toggle="modal" data-target="#social-modal-join" class="btn btn-white btn-raise btn-round">7 DAY FREE TRIAL</a> 
                                 
                                 <% end %>
                             </div>
@@ -868,7 +868,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                     
                                     
                                 <% else %>
-                                    <a href="<%= new_user_registration_path %>" class="btn btn-white btn-raise btn-round">Get Started</a> 
+                                    <a style="margin: 0;"  id="modal-link-login" data-toggle="modal" data-target="#social-modal-join" class="btn btn-white btn-raise btn-round">Get Started</a> 
                                 
                                 <% end %> </div>
                         </div>
@@ -924,16 +924,16 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<p style="color:white;">©2018 Design360. Developed by <a href="http://www.systemplus.com.pk/">System Plus</a></p>
 			</div>
 			<div class="col-md-2 text-center">
-				<a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
-				<a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
-				<a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
+				<a href="https://www.facebook.com/thedesign360" target="_blank" title="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+				<a href="https://twitter.com/thedesign360" target="_blank" title="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+				<a href="https://www.linkedin.com/company/thedesign360/" target="_blank" title="Linkedin"><i class="fab fa-linkedin fa-2x"></i></a>
 			</ul>
 			</div>
 			<div class="col-md-5 text-center">
 				
     			<p><a href="/terms">Terms & Conditions</a> |
     			<a href="/privacy_policy">Privacy Policy</a> |
-    			<a href="/employees/sign_in">Employee Login</a></p>
+    			<a href="#"  class="modal-link" data-toggle="modal" data-target="#email-modal-employ" data-dismiss="modal">Employee Login</a></p>
 
 			</div>
 		</div>
@@ -946,6 +946,4 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 </script>
 <%= render 'plans/modal' %>
 <%= render 'plans/modal_2' %>
-
-
-
+ <%= render 'layouts/modal' %>
