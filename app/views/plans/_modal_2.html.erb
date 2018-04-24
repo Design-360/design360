@@ -12,9 +12,9 @@
         </div>
         <div class="modal-body">
           <p>Some text in the modal.</p>
-          <%# @plans.each do |plan| %>
-          <%= @plans[0][:id] %>
-          <% if user_signed_in? %>
+          
+          <% if user_signed_in? and @plans.present? %>
+          
             <%= form_tag('/subscription_checkout', {method: :post}) do %>
                 <input name="stripe_plan_id" type="hidden" value="<%= @plans[0][:id] %>"></input>
                 <!--<input name="plan_id" type="hidden" value="<%#= plan[:id] %>"></input>-->

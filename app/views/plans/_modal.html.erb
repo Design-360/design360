@@ -14,12 +14,14 @@
           <p>Some text in the modal.</p>
           <%# @plans.each do |plan| %>
           <% if user_signed_in? %>
-            <%= @plans[1][:id] %>
-            <%= form_tag('/subscription_checkout', {method: :post}) do %>
-              
-                <input name="stripe_plan_id" type="hidden" value="<%= @plans[1][:id] %>"></input>
-                <!--<input name="plan_id" type="hidden" value="<%#= plan[:id] %>"></input>-->
-                <script class="stripe-button" data-amount="<%= (@plans[1][:amount]) %>" data-currency="<%= @plans[1][:currency] %>" data-email="<%= @signed_in_user.email %>" data-image="/design360-logo.png" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" src="https://checkout.stripe.com/checkout.js"></script>
+            <%#= @plans[1][:id] %>
+            <% if @plans.present? %>
+              <%= form_tag('/subscription_checkout', {method: :post}) do %>
+                
+                  <input name="stripe_plan_id" type="hidden" value="<%= @plans[1][:id] %>"></input>
+                  <!--<input name="plan_id" type="hidden" value="<%#= plan[:id] %>"></input>-->
+                  <script class="stripe-button" data-amount="<%= (@plans[1][:amount]) %>" data-currency="<%= @plans[1][:currency] %>" data-email="<%= @signed_in_user.email %>" data-image="/design360-logo.png" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" src="https://checkout.stripe.com/checkout.js"></script>
+              <% end %>
             <% end %>
           <% end %>
           
