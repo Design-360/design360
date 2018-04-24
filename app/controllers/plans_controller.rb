@@ -90,16 +90,17 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     # byebug
-    plan_params[:trial_period]  = nil if plan_params[:trial_period]==""
+    # plan_params[:trial_period]  = nil if plan_params[:trial_period]==""
+    price =  plan_params[:trial_period]=="" ? nil : plan_params[:trial_period]
     subscription = Stripe::Plan.create(
       :product => {
-        :name => 'Basic Product',
+        :name => plan_params[:name],
       },
       :amount => (plan_params[:amount].to_i)*100,
       :interval => plan_params[:interval],
       :nickname => plan_params[:name],
       :currency => 'usd',
-      # :trial_period_days => plan_params[:trial_period],
+      :trial_period_days => price ,
       :id => SecureRandom.uuid # This ensures that the plan is unique in stripe
     )
     @plan.stripe_response = subscription

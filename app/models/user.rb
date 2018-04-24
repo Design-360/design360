@@ -7,7 +7,7 @@ class User < ApplicationRecord
   enum subscribed: [:not_subscribe,:subscribe,:cancelled]
   
   has_many :orders, dependent: :destroy
-  has_one :plan_subscriber
+  has_one :plan_subscriber, dependent: :destroy
   has_one :plan, through: :plan_subscriber
   
   has_many :messages, :as => :message_sender
