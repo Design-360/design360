@@ -32,23 +32,23 @@
                 </div>
             </li>
            <li class="<%= active_class(clients_dashboard_path) %>">
-                <a href="<%= clients_dashboard_path %>"><i class="fa fa-user"></i> <span class="nav-label">Dashboard</span></a>
+                <a href="<%= clients_dashboard_path %>"><i class="fas fa-tachometer-alt"></i> <span class="nav-label">Dashboard</span></a>
             </li>
             <li class="<%= active_class('/users/edit') %>">
-                <a href="/users/edit"><i class="fa fa-user"></i> <span class="nav-label">Settings</span></a>
+                <a href="/users/edit"><i class="fas fa-cogs"></i> <span class="nav-label">Settings</span></a>
             </li>
             
             <li class="#">
-                <a href="<%= notifications_path %>"><i class="fa fa-user"></i> <span class="nav-label">Notifications</span></a>
+                <a href="<%= notifications_path %>"><i class="fas fa-bullhorn"></i> <span class="nav-label">Notifications</span></a>
             </li>
             
             <li class="#">
-                <a href="<%= chats_path %>"><i class="fa fa-user"></i> <span class="nav-label">Inbox(<span id="notification_count" data-count="<%= @unread_message_count %>"><%=@unread_message_count%>)</span></span></a>
+                <a href="<%= chats_path %>"><i class="fas fa-inbox"></i> <span class="nav-label">Inbox(<span id="notification_count" data-count="<%= @unread_message_count %>"><%=@unread_message_count%>)</span></span></a>
             </li>
             
             
             <li class="#">
-                <a href="<%= invoices_path %>"><i class="fa fa-user"></i> <span class="nav-label"> Invoices </span></a>
+                <a href="<%= invoices_path %>"><i class="fa fa-money-bill-altuser"></i> <span class="nav-label"> Invoices </span></a>
             </li>
         </ul>
     <% end %>
