@@ -865,7 +865,7 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
                                           
                                             <input name="stripe_plan_id" type="hidden" value="<%= @plans[0][:id] %>"></input>
                                             <!--<input name="plan_id" type="hidden" value="<%#= plan[:id] %>"></input>-->
-                                            <script class="stripe-button" data-amount="<%= 0 #(@plans[0][:amount]) %>" data-currency="<%= @plans[0][:currency] %>" data-email="<%= @signed_in_user.email %>" data-image="/design360-logo.png" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" src="https://checkout.stripe.com/checkout.js"></script>
+                                            <script class="stripe-button" data-amount="0<%#= #(@plans[0][:amount]) %>" data-currency="<%= @plans[0][:currency] %>" data-email="<%= @signed_in_user.email %>" data-image="/design360-logo.png" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" src="https://checkout.stripe.com/checkout.js"></script>
                                         <% end %>
                                     <% end %>
                                     
