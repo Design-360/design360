@@ -56,6 +56,21 @@ Rails.application.configure do
   # Paperclip.options[:command_path] = "/usr/local/bin/"
   
   config.action_mailer.raise_delivery_errors = true
+  
+  # config.action_mailer.delivery_method = :mailgun
+  # config.action_mailer.mailgun_settings = {
+  #   api_key: ENV['MAILGUN_API_KEY'],
+  #   domain: ENV['MAILGUN_DOMAIN']
+  # }
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :address => 'smtp.mailgun.org',
+  #   :port      => ENV['MAILGUN_SMTP_PORT'],
+  #   :domain => ENV['MAILGUN_DOMAIN'],
+  #   :user_name => ENV["MAILGUN_SMTP_LOGIN"],
+  #   :password => ENV["MAILGUN_SMTP_PASSWORD"],
+  #   :authentication => :plain
+  #   }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :address => 'smtpout.secureserver.net',

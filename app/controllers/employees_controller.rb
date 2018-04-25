@@ -27,7 +27,7 @@ class EmployeesController < ApplicationController
     def create
         @manager = Employee.new(manager_params)
         if @manager.save
-            EmployeeMailer.welcome_email(@manager,params[:employee][:password]).deliver_later
+            EmployeeMailer.welcome_email(@manager,params[:employee][:password]).deliver
             redirect_to admin_managers_path, notice: 'Manager was successfully created.'
         else
             redirect_to admin_managers_path, alert: "Error"
